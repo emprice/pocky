@@ -34,6 +34,7 @@ breathe_separate_member_pages = False
 stdin = textwrap.dedent(f'''\
 OUTPUT_LANGUAGE         = English
 EXTENSION_MAPPING       = h=C
+EXCLUDE_PATTERNS       += *.c
 INPUT                   = {root_dir}/src/pocky/ext
 RECURSIVE               = YES
 QUIET                   = YES
