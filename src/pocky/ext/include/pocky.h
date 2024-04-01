@@ -13,12 +13,6 @@
 
 #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
 
-/**
- * @brief Target version of OpenCL
- * @showinitializer
- */
-#define CL_TARGET_OPENCL_VERSION    300
-
 #include <CL/opencl.h>
 
 /** Exception object for OpenCL-specific errors */

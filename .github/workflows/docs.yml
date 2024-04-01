@@ -20,7 +20,7 @@ jobs:
       - name: Install documentation dependencies
         run: |
           sudo apt install opencl-c-headers ocl-icd-opencl-dev doxygen
-          sudo pip3 install --upgrade pip setuptools build
+          sudo pip3 install --upgrade pip setuptools build numpy
           pip3 install --user --upgrade -r $GITHUB_WORKSPACE/doc/requirements.txt
           python3 -m build --wheel $GITHUB_WORKSPACE
           pip3 install --user --upgrade --ignore-installed $GITHUB_WORKSPACE/dist/*.whl
