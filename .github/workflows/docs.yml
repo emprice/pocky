@@ -1,0 +1,45 @@
+# Sphinx documentation build and push to GitHub pages
+
+name: build-docs
+
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      - name: Install documentation dependencies
+        run: |
+          pip3 install -r $GITHUB_WORKSPACE/docs/requirements.txt
+          pip3 install --ignore-installed $GITHUB_WORKSPACE
+
+      - name: Run the documentation build
+        run: |
+          sphinx-build -M html $GITHUB_WORKSPACE/docs $GITHUB_WORKSPACE/build
+          touch $GITHUB_WORKSPACE/build/html/.nojekyll
+
+      - name: JSON endpoint on success
+        if: ${{ success() }}
+        run: python -c 'import json; print(json.dumps(dict(schemaVersion=1, label="build-docs", style="for-the-badge", namedLogo="github", message="success", color="green")))' > $GITHUB_WORKSPACE/build/html/endpoint.json
+
+      - name: JSON endpoint on failure
+        if: ${{ failure() }}
+        run: python -c 'import json; print(json.dumps(dict(schemaVersion=1, label="build-docs", style="for-the-badge", namedLogo="github", message="failure", color="red")))' > $GITHUB_WORKSPACE/build/html/endpoint.json
+
+      - name: Push to documentation branch
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: gh-pages # The branch name where you want to push the assets
+          FOLDER: build/html # The directory where your assets are generated
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this
+          MESSAGE: "Build: ({sha}) {msg}" # The commit message
