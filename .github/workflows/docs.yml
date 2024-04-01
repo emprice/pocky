@@ -19,6 +19,7 @@ jobs:
 
       - name: Install documentation dependencies
         run: |
+          sudo apt install opencl-c-headers
           pip3 install -U -r $GITHUB_WORKSPACE/doc/requirements.txt
           pip3 install -U --ignore-installed $GITHUB_WORKSPACE
 
