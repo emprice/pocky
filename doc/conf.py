@@ -25,7 +25,7 @@ root_dir = os.environ['GITHUB_WORKSPACE']
 
 breathe_projects = { 'pocky' : './doxygen/xml' }
 breathe_default_project = 'pocky'
-breathe_domain_by_extension = { 'h' : 'c', 'cl' : 'c' }
+breathe_domain_by_extension = { 'h' : 'c' }
 breathe_implementation_filename_extensions = ['c']
 breathe_show_define_initializer = True
 breathe_show_enumvalue_initializer = True
@@ -33,9 +33,8 @@ breathe_separate_member_pages = False
 
 stdin = textwrap.dedent(f'''\
 OUTPUT_LANGUAGE         = English
-EXTENSION_MAPPING       = h=C cl=C
-EXCLUDE_PATTERNS       += *.txt *.c *.py
-INPUT                   = {root_dir}/src/ext
+EXTENSION_MAPPING       = h=C
+INPUT                   = {root_dir}/src/pocky/ext
 RECURSIVE               = YES
 QUIET                   = YES
 PREDEFINED             += DOXYGEN_SHOULD_SKIP_THIS
@@ -47,7 +46,7 @@ exhale_args = { 'containmentFolder' : './exhale',
     'rootFileName' : 'lowlevel.rst', 'rootFileTitle' : 'Low-level C API',
     'createTreeView' : True, 'exhaleExecutesDoxygen' : True,
     'contentsDirectives' : False, 'doxygenStripFromPath' : root_dir,
-    'lexerMapping' : { r'.*\.h' : 'c', r'.*\.cl' : 'c' },
+    'lexerMapping' : { r'.*\.h' : 'c' },
     'exhaleDoxygenStdin' : stdin }
 
 smartquotes = True
