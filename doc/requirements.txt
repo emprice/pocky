@@ -1,0 +1,4 @@
+Sphinx
+exhale
+breathe
+furiosa @ git+https://github.com/emprice/furiosa.git@main

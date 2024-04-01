@@ -1,0 +1,44 @@
+{% extends "!base.html" %}
+{% block linktags %}
+<link href="{{ pathto('_static/fonts/OpenSans-Regular.ttf', 1) }}" rel="preload" as="font" type="font/ttf">
+<link href="{{ pathto('_static/fonts/OpenSans-Italic.ttf', 1) }}" rel="preload" as="font" type="font/ttf">
+<link href="{{ pathto('_static/fonts/OpenSans-Bold.ttf', 1) }}" rel="preload" as="font" type="font/ttf">
+<link href="{{ pathto('_static/fonts/OpenSans-BoldItalic.ttf', 1) }}" rel="preload" as="font" type="font/ttf">
+<link href="{{ pathto('_static/fonts/SourceCodePro-Regular.ttf', 1) }}" rel="preload" as="font" type="font/ttf">
+<link href="{{ pathto('_static/fonts/SourceCodePro-Italic.ttf', 1) }}" rel="preload" as="font" type="font/ttf">
+<link href="{{ pathto('_static/fonts/SourceCodePro-Bold.ttf', 1) }}" rel="preload" as="font" type="font/ttf">
+<link href="{{ pathto('_static/fonts/SourceCodePro-BoldItalic.ttf', 1) }}" rel="preload" as="font" type="font/ttf">
+{% endblock %}
+{% block extra_styles %}
+{{ super() }}
+<style>
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('{{ pathto('_static/fonts/OpenSans-Regular.ttf', 1) }}');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('{{ pathto('_static/fonts/OpenSans-Italic.ttf', 1) }}');
+    font-weight: 400;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('{{ pathto('_static/fonts/OpenSans-Bold.ttf', 1) }}');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('{{ pathto('_static/fonts/OpenSans-BoldItalic.ttf', 1) }}');
+    font-weight: 700;
+    font-style: italic;
+  }
+  .sidebar-brand-text {
+    display: block;
+    font-size: 4rem;
+  }
+</style>
+{% endblock %}
