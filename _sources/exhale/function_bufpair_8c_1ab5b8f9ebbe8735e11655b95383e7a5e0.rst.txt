@@ -1,0 +1,14 @@
+.. _exhale_function_bufpair_8c_1ab5b8f9ebbe8735e11655b95383e7a5e0:
+
+Function bufpair_empty_from_shape(context_object \*, size_t, size_t \*, bufpair_object \*\*)
+============================================================================================
+
+- Defined in :ref:`file_src_pocky_ext_bufpair.c`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: bufpair_empty_from_shape(context_object *, size_t, size_t *, bufpair_object **)
+   :project: pocky

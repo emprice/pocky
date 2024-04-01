@@ -1,0 +1,14 @@
+.. _exhale_function_context_8h_1a8d00503a3e94d336445c6ca390189813:
+
+Function context_dealloc(context_object \*)
+===========================================
+
+- Defined in :ref:`file_src_pocky_ext_include_context.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: context_dealloc(context_object *)
+   :project: pocky

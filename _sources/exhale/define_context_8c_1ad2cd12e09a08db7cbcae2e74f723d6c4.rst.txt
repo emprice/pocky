@@ -1,0 +1,14 @@
+.. _exhale_define_context_8c_1ad2cd12e09a08db7cbcae2e74f723d6c4:
+
+Define NO_IMPORT_ARRAY
+======================
+
+- Defined in :ref:`file_src_pocky_ext_context.c`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: NO_IMPORT_ARRAY
+   :project: pocky

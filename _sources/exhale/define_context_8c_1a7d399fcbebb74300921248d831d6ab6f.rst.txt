@@ -1,0 +1,14 @@
+.. _exhale_define_context_8c_1a7d399fcbebb74300921248d831d6ab6f:
+
+Define PY_ARRAY_UNIQUE_SYMBOL
+=============================
+
+- Defined in :ref:`file_src_pocky_ext_context.c`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: PY_ARRAY_UNIQUE_SYMBOL
+   :project: pocky

@@ -1,0 +1,14 @@
+.. _exhale_define_pocky_8h_1ac9efdaac9411d0868b715edccca3269d:
+
+Define PY_SSIZE_T_CLEAN
+=======================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: PY_SSIZE_T_CLEAN
+   :project: pocky

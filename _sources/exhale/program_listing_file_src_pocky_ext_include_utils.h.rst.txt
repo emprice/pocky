@@ -1,0 +1,78 @@
+
+.. _program_listing_file_src_pocky_ext_include_utils.h:
+
+Program Listing for File utils.h
+================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_pocky_ext_include_utils.h>` (``src/pocky/ext/include/utils.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: c
+
+   #ifndef POCKY_UTILS_H
+   #define POCKY_UTILS_H
+   
+   #include <CL/opencl.h>
+   
+   typedef struct _opencl_platform_query_entry
+   {
+       cl_platform_id id;                          
+       char *name;                                 
+       char *version;                              
+       struct _opencl_platform_query_entry *next;  
+   }
+   opencl_platform_query_entry;
+   
+   typedef struct _opencl_device_query_entry
+   {
+       cl_device_id id;                            
+       char *name;                                 
+       cl_device_type type;                        
+       struct _opencl_device_query_entry *next;    
+   }
+   opencl_device_query_entry;
+   
+   extern const char *opencl_error_to_string(cl_int err);
+   
+   extern cl_int opencl_platform_query_all(opencl_platform_query_entry **entries);
+   
+   extern void opencl_platform_query_all_free(opencl_platform_query_entry **entries);
+   
+   extern cl_int opencl_device_query_all(cl_platform_id plat,
+       opencl_device_query_entry **entries);
+   
+   extern void opencl_device_query_all_free(opencl_device_query_entry **entries);
+   
+   extern cl_int opencl_context_default(cl_context *ctx);
+   
+   extern cl_int opencl_context_default_cpus(cl_context *ctx);
+   
+   extern cl_int opencl_context_default_gpus(cl_context *ctx);
+   
+   extern cl_int opencl_context_from_device_list(size_t num_devices,
+       cl_device_id *devices, cl_context *ctx);
+   
+   extern cl_int opencl_context_free(cl_context *ctx);
+   
+   extern cl_int opencl_queues_create_all(cl_context ctx,
+       cl_uint *num_queues, cl_command_queue **queues);
+   
+   extern cl_int opencl_queues_free_all(cl_uint *num_queues, cl_command_queue **queues);
+   
+   extern cl_int opencl_kernels_from_fragments(cl_uint nfrags,
+       const char **frags, cl_context ctx, cl_program *prog,
+       cl_uint *num_kerns, cl_kernel **kerns);
+   
+   extern cl_int opencl_kernels_from_files(cl_uint nfiles,
+       const char **files, cl_context ctx, cl_program *prog,
+       cl_uint *num_kerns, cl_kernel **kerns);
+   
+   extern cl_int opencl_kernel_lookup_by_name(cl_uint num_kerns,
+       cl_kernel *kerns, const char *name, cl_kernel *kern);
+   
+   extern cl_int opencl_kernels_free_all(cl_uint *num_kerns, cl_kernel **kerns);
+   
+   extern cl_int opencl_program_free(cl_program *prog);
+   
+   #endif      /* POCKY_UTILS_H */

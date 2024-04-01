@@ -1,0 +1,14 @@
+.. _exhale_function_utils_8c_1afc37dfe90f15c4590e0550b0ea6312e7:
+
+Function opencl_context_default_gpus(cl_context \*)
+===================================================
+
+- Defined in :ref:`file_src_pocky_ext_utils.c`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: opencl_context_default_gpus(cl_context *)
+   :project: pocky

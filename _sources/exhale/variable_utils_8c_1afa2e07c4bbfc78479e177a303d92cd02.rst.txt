@@ -1,0 +1,14 @@
+.. _exhale_variable_utils_8c_1afa2e07c4bbfc78479e177a303d92cd02:
+
+Variable opencl_msg_invalid_program
+===================================
+
+- Defined in :ref:`file_src_pocky_ext_utils.c`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: opencl_msg_invalid_program
+   :project: pocky

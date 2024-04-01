@@ -1,0 +1,14 @@
+.. _exhale_variable_utils_8c_1a21a0a37c745f3ade6e498d2a52e7ca92:
+
+Variable opencl_msg_success
+===========================
+
+- Defined in :ref:`file_src_pocky_ext_utils.c`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: opencl_msg_success
+   :project: pocky

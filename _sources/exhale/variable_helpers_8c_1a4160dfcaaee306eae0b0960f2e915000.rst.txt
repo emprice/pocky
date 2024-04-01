@@ -1,0 +1,14 @@
+.. _exhale_variable_helpers_8c_1a4160dfcaaee306eae0b0960f2e915000:
+
+Variable platform_fields
+========================
+
+- Defined in :ref:`file_src_pocky_ext_helpers.c`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: platform_fields
+   :project: pocky

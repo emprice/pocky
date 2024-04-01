@@ -1,0 +1,14 @@
+.. _exhale_variable_helpers_8h_1a17ea4ff5a5ac19b445800c345bd8b777:
+
+Variable bufpair_type_doc
+=========================
+
+- Defined in :ref:`file_src_pocky_ext_include_helpers.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: bufpair_type_doc
+   :project: pocky

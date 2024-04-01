@@ -1,0 +1,14 @@
+.. _exhale_variable_utils_8c_1aef48a3d16a52ec083b2c378ab56cf2f3:
+
+Variable opencl_msg_invalid_value
+=================================
+
+- Defined in :ref:`file_src_pocky_ext_utils.c`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: opencl_msg_invalid_value
+   :project: pocky

@@ -1,0 +1,68 @@
+
+.. _file_src_pocky_ext_include_helpers.h:
+
+File helpers.h
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_pocky_ext_include>` (``src/pocky/ext/include``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+Definition (``src/pocky/ext/include/helpers.h``)
+------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_pocky_ext_include_helpers.h.rst
+
+
+
+
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_pocky_ext_include_pocky.h`
+
+
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_helpers_8h_1a17ea4ff5a5ac19b445800c345bd8b777`
+
+- :ref:`exhale_variable_helpers_8h_1a4692b178dc22df9ab87545748df4dbfb`
+
+- :ref:`exhale_variable_helpers_8h_1abbbebb6bc7dce2b0b952d113b95be8b2`
+
+- :ref:`exhale_variable_helpers_8h_1aebecb10b683b1e062526e3fb79858228`
+
+- :ref:`exhale_variable_helpers_8h_1aaebfb6dbc0aa2abefc7828482c054fb4`
+
+- :ref:`exhale_variable_helpers_8h_1a1415ec80699f883a725a8eb65ebfa83c`
+
+- :ref:`exhale_variable_helpers_8h_1aa6c5bc8c8d2614577860a5ac9c91a230`
+
+- :ref:`exhale_variable_helpers_8h_1a49a1b738ab1c2931b9140a27d6d6c664`
+
+- :ref:`exhale_variable_helpers_8h_1a0272ed116b0c7702d5557b30f7a0a23c`
+
+- :ref:`exhale_variable_helpers_8h_1affb8c0dac4d6c1d5cbff23632d48ac03`
+
+- :ref:`exhale_variable_helpers_8h_1a053ce02b5d45b92bbf565a78260965af`
+
+- :ref:`exhale_variable_helpers_8h_1a5e421775b92d0fad6a028edaa3e53480`
+
+- :ref:`exhale_variable_helpers_8h_1a4160dfcaaee306eae0b0960f2e915000`
+
+- :ref:`exhale_variable_helpers_8h_1a9acd739d8e8bcf01849f77f3da8442de`
+
+- :ref:`exhale_variable_helpers_8h_1a53798e6956544775635e9af37d12b493`
+

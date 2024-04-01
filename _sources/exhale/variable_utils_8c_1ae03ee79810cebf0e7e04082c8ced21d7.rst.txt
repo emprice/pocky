@@ -1,0 +1,14 @@
+.. _exhale_variable_utils_8c_1ae03ee79810cebf0e7e04082c8ced21d7:
+
+Variable opencl_msg_device_not_found
+====================================
+
+- Defined in :ref:`file_src_pocky_ext_utils.c`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: opencl_msg_device_not_found
+   :project: pocky

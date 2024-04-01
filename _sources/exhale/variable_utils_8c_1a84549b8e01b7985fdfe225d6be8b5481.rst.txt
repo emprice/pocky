@@ -1,0 +1,14 @@
+.. _exhale_variable_utils_8c_1a84549b8e01b7985fdfe225d6be8b5481:
+
+Variable opencl_msg_invalid_platform
+====================================
+
+- Defined in :ref:`file_src_pocky_ext_utils.c`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: opencl_msg_invalid_platform
+   :project: pocky

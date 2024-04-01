@@ -1,0 +1,72 @@
+
+.. _file_src_pocky_ext_context.c:
+
+File context.c
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_pocky_ext>` (``src/pocky/ext``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+Definition (``src/pocky/ext/context.c``)
+----------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_pocky_ext_context.c.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``numpy/arrayobject.h``
+
+- ``pocky.h`` (:ref:`file_src_pocky_ext_include_pocky.h`)
+
+- ``utils.h`` (:ref:`file_src_pocky_ext_include_utils.h`)
+
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_context_8c_1a8d00503a3e94d336445c6ca390189813`
+
+- :ref:`exhale_function_context_8c_1a0fa4193af5c600aa16244e70bff0a212`
+
+- :ref:`exhale_function_context_8c_1a8d2431db6fcb40ca8cde3c05cfe2c341`
+
+- :ref:`exhale_function_context_8c_1a89571b74673e4d36c33dd5dd40ff978e`
+
+- :ref:`exhale_function_context_8c_1a512b7bb5c56a0eca0438e70a99b7a1b2`
+
+- :ref:`exhale_function_context_8c_1a0fce58811f9e3c451fd986814aba0837`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_context_8c_1ad2cd12e09a08db7cbcae2e74f723d6c4`
+
+- :ref:`exhale_define_context_8c_1a7d399fcbebb74300921248d831d6ab6f`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_context_8c_1a2fa54f212b30c9239cc86eb2b2b61ec3`
+
+- :ref:`exhale_variable_context_8c_1abb2e0e9e04f008d8ff790315e70ceee4`
+

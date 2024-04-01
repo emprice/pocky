@@ -1,0 +1,672 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link href="../_static/fonts/OpenSans-Regular.ttf" rel="preload" as="font" type="font/ttf">
+<link href="../_static/fonts/OpenSans-Italic.ttf" rel="preload" as="font" type="font/ttf">
+<link href="../_static/fonts/OpenSans-Bold.ttf" rel="preload" as="font" type="font/ttf">
+<link href="../_static/fonts/OpenSans-BoldItalic.ttf" rel="preload" as="font" type="font/ttf">
+<link href="../_static/fonts/SourceCodePro-Regular.ttf" rel="preload" as="font" type="font/ttf">
+<link href="../_static/fonts/SourceCodePro-Italic.ttf" rel="preload" as="font" type="font/ttf">
+<link href="../_static/fonts/SourceCodePro-Bold.ttf" rel="preload" as="font" type="font/ttf">
+<link href="../_static/fonts/SourceCodePro-BoldItalic.ttf" rel="preload" as="font" type="font/ttf">
+
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>Define NPY_NO_DEPRECATED_API - pocky</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=de2cfabe" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eceff4;
+  --color-code-foreground: black;
+  --color-problematic: #bf616a;
+  --color-foreground-primary: #2e3440;
+  --color-foreground-secondary: #3b4252;
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #eceff4;
+  --color-annoucnement-background: #a3be8c;
+  --color-annoucnement-text: #eceff4;
+  --color-brand-primary: #5e81ac;
+  --color-brand-content: #5e81ac;
+  --color-highlight-on-target: #ebcb8b;
+  --color-highlighted-text: #eceff4;
+  --color-highlighted-background: #4c566a;
+  --color-table-border: #bbc5d8;
+  --font-size--normal: 100%;
+  --font-size--small: 95%;
+  --font-size--small--2: 90%;
+  --font-size--small--3: 85%;
+  --font-size--small--4: 80%;
+  --font-stack: 'Open Sans', sans-serif;
+  --font-stack--monospace: 'Source Code Pro', monospace;
+  --admonition-font-size: 1rem;
+  --admonition-title-font-size: 1rem;
+  --color-topic-title: #8fbcbb;
+  --color-topic-title-background: rgba(143, 188, 187, 0.3);
+  --color-admonition-title: #b48ead;
+  --color-admonition-title-background: rgba(180, 142, 173, 0.3);
+  --color-admonition-title--admonition-todo: #b48ead;
+  --color-admonition-title-background--admonition-todo: rgba(180, 142, 173, 0.3);
+  --color-admonition-title--caution: #ebcb8b;
+  --color-admonition-title-background--caution: rgba(235, 203, 139, 0.3);
+  --color-admonition-title--warning: #d08770;
+  --color-admonition-title-background--warning: rgba(208, 135, 112, 0.3);
+  --color-admonition-title--danger: #bf616a;
+  --color-admonition-title-background--danger: rgba(191, 97, 106, 0.3);
+  --color-admonition-title--attention: #bf616a;
+  --color-admonition-title-background--attention: rgba(191, 97, 106, 0.3);
+  --color-admonition-title--error: #bf616a;
+  --color-admonition-title-background--error: rgba(191, 97, 106, 0.3);
+  --color-admonition-title--hint: #a3be8c;
+  --color-admonition-title-background--hint: rgba(163, 190, 140, 0.3);
+  --color-admonition-title--important: #8fbcbb;
+  --color-admonition-title-background--important: rgba(143, 188, 187, 0.3);
+  --color-admonition-title--note: #88c0d0;
+  --color-admonition-title-background--note: rgba(136, 192, 208, 0.3);
+  --color-admonition-title--seealso: #81a1c1;
+  --color-admonition-title-background--seealso: rgba(129, 161, 193, 0.3);
+  --color-admonition-title--tip: #a3be8c;
+  --color-admonition-title-background--tip: rgba(163, 190, 140, 0.3);
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #3b4252;
+  --color-code-foreground: white;
+  --color-problematic: #bf616a;
+  --color-foreground-primary: #eceff4;
+  --color-foreground-secondary: #e5e9f0;
+  --color-background-primary: #292e39;
+  --color-background-secondary: #3b4252;
+  --color-annoucnement-background: #a3be8c;
+  --color-annoucnement-text: #eceff4;
+  --color-brand-primary: #88c0d0;
+  --color-brand-content: #88c0d0;
+  --color-highlight-on-target: #d08770;
+  --color-highlighted-text: #2e3440;
+  --color-highlighted-background: #ebcb8b;
+  --color-table-border: rgba(216, 222, 233, 0.5);
+  --font-size--normal: 100%;
+  --font-size--small: 95%;
+  --font-size--small--2: 90%;
+  --font-size--small--3: 85%;
+  --font-size--small--4: 80%;
+  --font-stack: 'Open Sans', sans-serif;
+  --font-stack--monospace: 'Source Code Pro', monospace;
+  --admonition-font-size: 1rem;
+  --admonition-title-font-size: 1rem;
+  --color-topic-title: #8fbcbb;
+  --color-topic-title-background: rgba(143, 188, 187, 0.3);
+  --color-admonition-title: #b48ead;
+  --color-admonition-title-background: rgba(180, 142, 173, 0.3);
+  --color-admonition-title--admonition-todo: #b48ead;
+  --color-admonition-title-background--admonition-todo: rgba(180, 142, 173, 0.3);
+  --color-admonition-title--caution: #ebcb8b;
+  --color-admonition-title-background--caution: rgba(235, 203, 139, 0.3);
+  --color-admonition-title--warning: #d08770;
+  --color-admonition-title-background--warning: rgba(208, 135, 112, 0.3);
+  --color-admonition-title--danger: #bf616a;
+  --color-admonition-title-background--danger: rgba(191, 97, 106, 0.3);
+  --color-admonition-title--attention: #bf616a;
+  --color-admonition-title-background--attention: rgba(191, 97, 106, 0.3);
+  --color-admonition-title--error: #bf616a;
+  --color-admonition-title-background--error: rgba(191, 97, 106, 0.3);
+  --color-admonition-title--hint: #a3be8c;
+  --color-admonition-title-background--hint: rgba(163, 190, 140, 0.3);
+  --color-admonition-title--important: #8fbcbb;
+  --color-admonition-title-background--important: rgba(143, 188, 187, 0.3);
+  --color-admonition-title--note: #88c0d0;
+  --color-admonition-title-background--note: rgba(136, 192, 208, 0.3);
+  --color-admonition-title--seealso: #81a1c1;
+  --color-admonition-title-background--seealso: rgba(129, 161, 193, 0.3);
+  --color-admonition-title--tip: #a3be8c;
+  --color-admonition-title-background--tip: rgba(163, 190, 140, 0.3);
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #3b4252;
+  --color-code-foreground: white;
+  --color-problematic: #bf616a;
+  --color-foreground-primary: #eceff4;
+  --color-foreground-secondary: #e5e9f0;
+  --color-background-primary: #292e39;
+  --color-background-secondary: #3b4252;
+  --color-annoucnement-background: #a3be8c;
+  --color-annoucnement-text: #eceff4;
+  --color-brand-primary: #88c0d0;
+  --color-brand-content: #88c0d0;
+  --color-highlight-on-target: #d08770;
+  --color-highlighted-text: #2e3440;
+  --color-highlighted-background: #ebcb8b;
+  --color-table-border: rgba(216, 222, 233, 0.5);
+  --font-size--normal: 100%;
+  --font-size--small: 95%;
+  --font-size--small--2: 90%;
+  --font-size--small--3: 85%;
+  --font-size--small--4: 80%;
+  --font-stack: 'Open Sans', sans-serif;
+  --font-stack--monospace: 'Source Code Pro', monospace;
+  --admonition-font-size: 1rem;
+  --admonition-title-font-size: 1rem;
+  --color-topic-title: #8fbcbb;
+  --color-topic-title-background: rgba(143, 188, 187, 0.3);
+  --color-admonition-title: #b48ead;
+  --color-admonition-title-background: rgba(180, 142, 173, 0.3);
+  --color-admonition-title--admonition-todo: #b48ead;
+  --color-admonition-title-background--admonition-todo: rgba(180, 142, 173, 0.3);
+  --color-admonition-title--caution: #ebcb8b;
+  --color-admonition-title-background--caution: rgba(235, 203, 139, 0.3);
+  --color-admonition-title--warning: #d08770;
+  --color-admonition-title-background--warning: rgba(208, 135, 112, 0.3);
+  --color-admonition-title--danger: #bf616a;
+  --color-admonition-title-background--danger: rgba(191, 97, 106, 0.3);
+  --color-admonition-title--attention: #bf616a;
+  --color-admonition-title-background--attention: rgba(191, 97, 106, 0.3);
+  --color-admonition-title--error: #bf616a;
+  --color-admonition-title-background--error: rgba(191, 97, 106, 0.3);
+  --color-admonition-title--hint: #a3be8c;
+  --color-admonition-title-background--hint: rgba(163, 190, 140, 0.3);
+  --color-admonition-title--important: #8fbcbb;
+  --color-admonition-title-background--important: rgba(143, 188, 187, 0.3);
+  --color-admonition-title--note: #88c0d0;
+  --color-admonition-title-background--note: rgba(136, 192, 208, 0.3);
+  --color-admonition-title--seealso: #81a1c1;
+  --color-admonition-title-background--seealso: rgba(129, 161, 193, 0.3);
+  --color-admonition-title--tip: #a3be8c;
+  --color-admonition-title-background--tip: rgba(163, 190, 140, 0.3);
+  
+      }
+    }
+  }
+</style>
+
+    
+    <style>
+    @font-face {
+        font-family: 'Raleway';
+        src: url('../_static/fonts/Raleway-Regular.ttf');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Raleway';
+        src: url('../_static/fonts/Raleway-Italic.ttf');
+        font-weight: 400;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: 'Raleway';
+        src: url('../_static/fonts/Raleway-Bold.ttf');
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Raleway';
+        src: url('../_static/fonts/Raleway-BoldItalic.ttf');
+        font-weight: 700;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: 'Source Code Pro';
+        src: url('../_static/fonts/SourceCodePro-Regular.ttf');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Source Code Pro';
+        src: url('../_static/fonts/SourceCodePro-Italic.ttf');
+        font-weight: 400;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: 'Source Code Pro';
+        src: url('../_static/fonts/SourceCodePro-Bold.ttf');
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Source Code Pro';
+        src: url('../_static/fonts/SourceCodePro-BoldItalic.ttf');
+        font-weight: 700;
+        font-style: italic;
+    }
+    body { font-size: 16pt; }
+    .sidebar-brand-text { display: none; }
+    </style>
+
+<style>
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('../_static/fonts/OpenSans-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('../_static/fonts/OpenSans-Italic.ttf');
+    font-weight: 400;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('../_static/fonts/OpenSans-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('../_static/fonts/OpenSans-BoldItalic.ttf');
+    font-weight: 700;
+    font-style: italic;
+  }
+  .sidebar-brand-text {
+    display: block;
+    font-size: 4rem;
+  }
+</style>
+</head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">pocky</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">pocky</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../highlevel.html">High-level Python API</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="lowlevel.html">Low-level C API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Low-level C API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="struct__opencl__device__query__entry.html">Struct _opencl_device_query_entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct__opencl__platform__query__entry.html">Struct _opencl_platform_query_entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structbufpair__object.html">Struct bufpair_object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structcontext__object.html">Struct context_object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_bufpair_8c_1aed7e18c1df864ca18dcab6f466069dde.html">Function bufpair_array(bufpair_object *, PyObject *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_bufpair_8h_1a5727ecb089cc1e76b826d9c7139911a7.html">Function bufpair_array(bufpair_object *, PyObject *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_bufpair_8c_1a1d34151f81d86ab9c1cb50c172ac6791.html">Function bufpair_dealloc(bufpair_object *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_bufpair_8h_1a1d34151f81d86ab9c1cb50c172ac6791.html">Function bufpair_dealloc(bufpair_object *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_bufpair_8c_1ab5b8f9ebbe8735e11655b95383e7a5e0.html">Function bufpair_empty_from_shape(context_object *, size_t, size_t *, bufpair_object **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_bufpair_8h_1ab5b8f9ebbe8735e11655b95383e7a5e0.html">Function bufpair_empty_from_shape(context_object *, size_t, size_t *, bufpair_object **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_bufpair_8c_1ae7290a606a87c4f21ef6a12fb303fe3c.html">Function bufpair_empty_like(context_object *, bufpair_object *, bufpair_object **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_bufpair_8h_1ae7290a606a87c4f21ef6a12fb303fe3c.html">Function bufpair_empty_like(context_object *, bufpair_object *, bufpair_object **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_bufpair_8c_1ac50c16309a08e2a7e2920555678b0622.html">Function bufpair_get_host(bufpair_object *, void *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_bufpair_8h_1ac50c16309a08e2a7e2920555678b0622.html">Function bufpair_get_host(bufpair_object *, void *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_bufpair_8c_1a6b8687dc42d3d9bbb33e6466c60515b7.html">Function bufpair_init(bufpair_object *, PyObject *, PyObject *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_bufpair_8h_1a6b8687dc42d3d9bbb33e6466c60515b7.html">Function bufpair_init(bufpair_object *, PyObject *, PyObject *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_bufpair_8c_1ab70765bd6d6bcf6cfbb4c125a5efe505.html">Function bufpair_new(PyTypeObject *, PyObject *, PyObject *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_bufpair_8h_1ab70765bd6d6bcf6cfbb4c125a5efe505.html">Function bufpair_new(PyTypeObject *, PyObject *, PyObject *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_bufpair_8c_1a8b5cb147f66a767c20c6189637ddbfad.html">Function bufpair_set_host(bufpair_object *, PyObject *, void *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_bufpair_8h_1a8b5cb147f66a767c20c6189637ddbfad.html">Function bufpair_set_host(bufpair_object *, PyObject *, void *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_context_8c_1a8d00503a3e94d336445c6ca390189813.html">Function context_dealloc(context_object *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_context_8h_1a8d00503a3e94d336445c6ca390189813.html">Function context_dealloc(context_object *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_context_8c_1a0fa4193af5c600aa16244e70bff0a212.html">Function context_default(PyObject *, PyObject *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_context_8h_1a3f1a54fbb1b4a1478659974323abf4b2.html">Function context_default(PyObject *, PyObject *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_context_8c_1a8d2431db6fcb40ca8cde3c05cfe2c341.html">Function context_from_device_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_context_8h_1ae2109e214bb71d4fbc4cb5f153469124.html">Function context_from_devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_context_8c_1a89571b74673e4d36c33dd5dd40ff978e.html">Function context_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_context_8c_1a512b7bb5c56a0eca0438e70a99b7a1b2.html">Function context_new(PyTypeObject *, PyObject *, PyObject *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_context_8h_1a512b7bb5c56a0eca0438e70a99b7a1b2.html">Function context_new(PyTypeObject *, PyObject *, PyObject *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_context_8c_1a0fce58811f9e3c451fd986814aba0837.html">Function get_device_ids_from_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_8c_1a9bce66d505a6f5ace6f05b8d50668e5a.html">Function list_all_devices(PyObject *, PyObject *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_8h_1a9bce66d505a6f5ace6f05b8d50668e5a.html">Function list_all_devices(PyObject *, PyObject *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_8c_1a6619a1f98a56aa2d66c783c3086be718.html">Function list_all_platforms(PyObject *, PyObject *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_8h_1a40b8f39b3c8a8d3500088d0f7bf8179b.html">Function list_all_platforms(PyObject *, PyObject *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8h_1a41a2eec34159321eeacd4cafb0dc6a46.html">Function opencl_context_default(cl_context *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8c_1a41a2eec34159321eeacd4cafb0dc6a46.html">Function opencl_context_default(cl_context *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8h_1ad69607263477239308ca44f047a9f8e1.html">Function opencl_context_default_cpus(cl_context *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8c_1ad69607263477239308ca44f047a9f8e1.html">Function opencl_context_default_cpus(cl_context *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8h_1afc37dfe90f15c4590e0550b0ea6312e7.html">Function opencl_context_default_gpus(cl_context *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8c_1afc37dfe90f15c4590e0550b0ea6312e7.html">Function opencl_context_default_gpus(cl_context *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8h_1a82eb2eba688a1961ba85fd46527ca029.html">Function opencl_context_free(cl_context *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8c_1a82eb2eba688a1961ba85fd46527ca029.html">Function opencl_context_free(cl_context *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8h_1a754f74d28341256c827578f1f7915c14.html">Function opencl_context_from_device_list(size_t, cl_device_id *, cl_context *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8c_1a754f74d28341256c827578f1f7915c14.html">Function opencl_context_from_device_list(size_t, cl_device_id *, cl_context *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8h_1a373a4ad179a30a3465b4231d094b60cb.html">Function opencl_device_query_all(cl_platform_id, opencl_device_query_entry **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8c_1a373a4ad179a30a3465b4231d094b60cb.html">Function opencl_device_query_all(cl_platform_id, opencl_device_query_entry **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8h_1a1ecfe83b15bb8d0a52aa14766a4cd90a.html">Function opencl_device_query_all_free(opencl_device_query_entry **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8c_1a1ecfe83b15bb8d0a52aa14766a4cd90a.html">Function opencl_device_query_all_free(opencl_device_query_entry **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8h_1a2bbdbbfa84f171f22433b01fef01d879.html">Function opencl_error_to_string(cl_int)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8c_1a2bbdbbfa84f171f22433b01fef01d879.html">Function opencl_error_to_string(cl_int)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8h_1acbf2d41475b3ef34773e70afaa6b2ddc.html">Function opencl_kernel_lookup_by_name(cl_uint, cl_kernel *, const char *, cl_kernel *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8c_1acbf2d41475b3ef34773e70afaa6b2ddc.html">Function opencl_kernel_lookup_by_name(cl_uint, cl_kernel *, const char *, cl_kernel *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8h_1adbb057bcf45a95e153a44c7dec7ff7d6.html">Function opencl_kernels_free_all(cl_uint *, cl_kernel **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8c_1adbb057bcf45a95e153a44c7dec7ff7d6.html">Function opencl_kernels_free_all(cl_uint *, cl_kernel **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8h_1a6036f706e88a25adcd309db98f559f30.html">Function opencl_kernels_from_files(cl_uint, const char **, cl_context, cl_program *, cl_uint *, cl_kernel **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8c_1a6036f706e88a25adcd309db98f559f30.html">Function opencl_kernels_from_files(cl_uint, const char **, cl_context, cl_program *, cl_uint *, cl_kernel **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8h_1a98fb13ac6f5ec6d4e2bb26c2361a01ab.html">Function opencl_kernels_from_fragments(cl_uint, const char **, cl_context, cl_program *, cl_uint *, cl_kernel **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8c_1a98fb13ac6f5ec6d4e2bb26c2361a01ab.html">Function opencl_kernels_from_fragments(cl_uint, const char **, cl_context, cl_program *, cl_uint *, cl_kernel **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8h_1aa8e2528f0e8b65311d5e6db6f1196ec4.html">Function opencl_platform_query_all(opencl_platform_query_entry **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8c_1aa8e2528f0e8b65311d5e6db6f1196ec4.html">Function opencl_platform_query_all(opencl_platform_query_entry **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8h_1a0fd2073c5f8819ad272d686f4ec9f251.html">Function opencl_platform_query_all_free(opencl_platform_query_entry **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8c_1a0fd2073c5f8819ad272d686f4ec9f251.html">Function opencl_platform_query_all_free(opencl_platform_query_entry **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8h_1a50ee809d45354cb1df451cb40ffbd2cd.html">Function opencl_program_free(cl_program *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8c_1a50ee809d45354cb1df451cb40ffbd2cd.html">Function opencl_program_free(cl_program *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8h_1a87544ac69c3e169d9d66f4e69d658e9a.html">Function opencl_queues_create_all(cl_context, cl_uint *, cl_command_queue **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8c_1a87544ac69c3e169d9d66f4e69d658e9a.html">Function opencl_queues_create_all(cl_context, cl_uint *, cl_command_queue **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8h_1af34473c5d3839fd2cb9337958dc47cfd.html">Function opencl_queues_free_all(cl_uint *, cl_command_queue **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_utils_8c_1af34473c5d3839fd2cb9337958dc47cfd.html">Function opencl_queues_free_all(cl_uint *, cl_command_queue **)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky_8c_1afa5cc1aa417b4acb3c04e0b3e2fe1063.html">Function PyInit_ext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8c_1ae256ed7a51cef1422dafd8b9f7e7e3fb.html">Variable bufpair_desc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8c_1a2eb694b10b9eb7bd0534ab206999a184.html">Variable bufpair_fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_bufpair_8c_1a8ee17df4e5358e9bfcb9fddafeebec1d.html">Variable bufpair_getsetters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_bufpair_8h_1a8ee17df4e5358e9bfcb9fddafeebec1d.html">Variable bufpair_getsetters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_bufpair_8c_1afe93a2e80606591874e27e52272d2cfa.html">Variable bufpair_methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_bufpair_8h_1afe93a2e80606591874e27e52272d2cfa.html">Variable bufpair_methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_bufpair_8c_1a07167210dd0418b7ae5b1bcb83b60771.html">Variable bufpair_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_bufpair_8h_1a07167210dd0418b7ae5b1bcb83b60771.html">Variable bufpair_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8c_1a17ea4ff5a5ac19b445800c345bd8b777.html">Variable bufpair_type_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8h_1a17ea4ff5a5ac19b445800c345bd8b777.html">Variable bufpair_type_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8c_1a545e02a42fa8d4e880acb723b0e7bbc6.html">Variable context_desc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8c_1a4692b178dc22df9ab87545748df4dbfb.html">Variable context_fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8h_1a4692b178dc22df9ab87545748df4dbfb.html">Variable context_fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_context_8c_1a2fa54f212b30c9239cc86eb2b2b61ec3.html">Variable context_methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_context_8h_1a2fa54f212b30c9239cc86eb2b2b61ec3.html">Variable context_methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_context_8c_1abb2e0e9e04f008d8ff790315e70ceee4.html">Variable context_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_context_8h_1abb2e0e9e04f008d8ff790315e70ceee4.html">Variable context_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8c_1abbbebb6bc7dce2b0b952d113b95be8b2.html">Variable context_type_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8h_1abbbebb6bc7dce2b0b952d113b95be8b2.html">Variable context_type_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8c_1aebecb10b683b1e062526e3fb79858228.html">Variable device_desc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8h_1aebecb10b683b1e062526e3fb79858228.html">Variable device_desc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8c_1aaebfb6dbc0aa2abefc7828482c054fb4.html">Variable device_fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8h_1aaebfb6dbc0aa2abefc7828482c054fb4.html">Variable device_fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky_8h_1ab0d6f57f3b5fb9d501872b2a54057e52.html">Variable device_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky_8c_1ab0d6f57f3b5fb9d501872b2a54057e52.html">Variable device_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8c_1a1415ec80699f883a725a8eb65ebfa83c.html">Variable device_type_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8h_1a1415ec80699f883a725a8eb65ebfa83c.html">Variable device_type_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky_8h_1af0d90a7cda880700936c611f559562fb.html">Variable ocl_error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky_8c_1af0d90a7cda880700936c611f559562fb.html">Variable ocl_error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8c_1aa6c5bc8c8d2614577860a5ac9c91a230.html">Variable ocl_fmt_internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8h_1aa6c5bc8c8d2614577860a5ac9c91a230.html">Variable ocl_fmt_internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8c_1a49a1b738ab1c2931b9140a27d6d6c664.html">Variable ocl_msg_kernel_not_found</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8h_1a49a1b738ab1c2931b9140a27d6d6c664.html">Variable ocl_msg_kernel_not_found</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8c_1a0272ed116b0c7702d5557b30f7a0a23c.html">Variable ocl_msg_not_a_capsule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8h_1a0272ed116b0c7702d5557b30f7a0a23c.html">Variable ocl_msg_not_a_capsule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8c_1affb8c0dac4d6c1d5cbff23632d48ac03.html">Variable ocl_msg_not_a_device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8h_1affb8c0dac4d6c1d5cbff23632d48ac03.html">Variable ocl_msg_not_a_device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8c_1a053ce02b5d45b92bbf565a78260965af.html">Variable ocl_msg_not_a_valid_context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8h_1a053ce02b5d45b92bbf565a78260965af.html">Variable ocl_msg_not_a_valid_context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_utils_8c_1a4614d7afd970f7307177cad544680aca.html">Variable opencl_msg_build_failure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_utils_8c_1a02dc791005abd5315592f436ad73f9d6.html">Variable opencl_msg_compiler_unavail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_utils_8c_1ae03ee79810cebf0e7e04082c8ced21d7.html">Variable opencl_msg_device_not_found</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_utils_8c_1a6d738438f9064d679283575ec3ac85ba.html">Variable opencl_msg_invalid_build_opts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_utils_8c_1a9912900f892960e3f63eafcad2b4d2ea.html">Variable opencl_msg_invalid_device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_utils_8c_1a1be1478b415c94e454cebb8e77a00189.html">Variable opencl_msg_invalid_device_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_utils_8c_1a84549b8e01b7985fdfe225d6be8b5481.html">Variable opencl_msg_invalid_platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_utils_8c_1afa2e07c4bbfc78479e177a303d92cd02.html">Variable opencl_msg_invalid_program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_utils_8c_1aef48a3d16a52ec083b2c378ab56cf2f3.html">Variable opencl_msg_invalid_value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_utils_8c_1a824498cffedc4221ea37bae343e419a2.html">Variable opencl_msg_out_of_host_memory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_utils_8c_1a7043247b459456b4f9de3ca496922837.html">Variable opencl_msg_out_of_resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_utils_8c_1a21a0a37c745f3ade6e498d2a52e7ca92.html">Variable opencl_msg_success</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_utils_8c_1add19be256668aa1d91fece06a5f1160f.html">Variable opencl_msg_unknown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8c_1a5e421775b92d0fad6a028edaa3e53480.html">Variable platform_desc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8h_1a5e421775b92d0fad6a028edaa3e53480.html">Variable platform_desc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8c_1a4160dfcaaee306eae0b0960f2e915000.html">Variable platform_fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8h_1a4160dfcaaee306eae0b0960f2e915000.html">Variable platform_fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky_8h_1a98d91c4543ec391daa773917fa6dbe32.html">Variable platform_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky_8c_1a98d91c4543ec391daa773917fa6dbe32.html">Variable platform_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8c_1a9acd739d8e8bcf01849f77f3da8442de.html">Variable platform_type_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8h_1a9acd739d8e8bcf01849f77f3da8442de.html">Variable platform_type_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky_8c_1ad5187802b2373c499e555fd8d7e2adaf.html">Variable pocky_methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky_8c_1a606f581a7f164660d75789752773de8f.html">Variable pocky_module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8c_1a53798e6956544775635e9af37d12b493.html">Variable pocky_module_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_helpers_8h_1a53798e6956544775635e9af37d12b493.html">Variable pocky_module_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_pocky_8h_1a5990dea19d4ccb046a3d81b311457add.html">Define CL_TARGET_OPENCL_VERSION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_bufpair_8c_1ad2cd12e09a08db7cbcae2e74f723d6c4.html">Define NO_IMPORT_ARRAY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_context_8c_1ad2cd12e09a08db7cbcae2e74f723d6c4.html">Define NO_IMPORT_ARRAY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_functions_8c_1ad2cd12e09a08db7cbcae2e74f723d6c4.html">Define NO_IMPORT_ARRAY</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Define NPY_NO_DEPRECATED_API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_bufpair_8c_1a7d399fcbebb74300921248d831d6ab6f.html">Define PY_ARRAY_UNIQUE_SYMBOL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_context_8c_1a7d399fcbebb74300921248d831d6ab6f.html">Define PY_ARRAY_UNIQUE_SYMBOL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_functions_8c_1a7d399fcbebb74300921248d831d6ab6f.html">Define PY_ARRAY_UNIQUE_SYMBOL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_pocky_8c_1a7d399fcbebb74300921248d831d6ab6f.html">Define PY_ARRAY_UNIQUE_SYMBOL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_pocky_8h_1ac9efdaac9411d0868b715edccca3269d.html">Define PY_SSIZE_T_CLEAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typedef_utils_8h_1a5be07ca84581ce035b96030d026b4eb5.html">Typedef opencl_device_query_entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typedef_utils_8h_1a924972d14b9881138cfe1cb9f6f4e642.html">Typedef opencl_platform_query_entry</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="define-npy-no-deprecated-api">
+<span id="exhale-define-pocky-8h-1ab6e6ee86736f9ebb56e74ae21bf3ff8a"></span><h1>Define NPY_NO_DEPRECATED_API<a class="headerlink" href="#define-npy-no-deprecated-api" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_src_pocky_ext_include_pocky.h.html#file-src-pocky-ext-include-pocky-h"><span class="std std-ref">File pocky.h</span></a></p></li>
+</ul>
+<section id="define-documentation">
+<h2>Define Documentation<a class="headerlink" href="#define-documentation" title="Link to this heading">#</a></h2>
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NPY_NO_DEPRECATED_API">
+<span class="target" id="pocky_8h_1ab6e6ee86736f9ebb56e74ae21bf3ff8a"></span><span class="sig-name descname"><span class="n"><span class="pre">NPY_NO_DEPRECATED_API</span></span></span> <span class="pre">NPY_1_7_API_VERSION</span><a class="headerlink" href="#c.NPY_NO_DEPRECATED_API" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="define_bufpair_8c_1a7d399fcbebb74300921248d831d6ab6f.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Define PY_ARRAY_UNIQUE_SYMBOL</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="define_functions_8c_1ad2cd12e09a08db7cbcae2e74f723d6c4.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Define NO_IMPORT_ARRAY</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, Ellen M. Price
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Define NPY_NO_DEPRECATED_API</a><ul>
+<li><a class="reference internal" href="#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    </body>
+</html>

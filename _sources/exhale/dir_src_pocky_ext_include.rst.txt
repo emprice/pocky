@@ -1,0 +1,26 @@
+.. _dir_src_pocky_ext_include:
+
+
+Directory include
+=================
+
+
+|exhale_lsh| :ref:`Parent directory <dir_src_pocky_ext>` (``src/pocky/ext``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+*Directory path:* ``src/pocky/ext/include``
+
+
+Files
+-----
+
+- :ref:`file_src_pocky_ext_include_bufpair.h`
+- :ref:`file_src_pocky_ext_include_context.h`
+- :ref:`file_src_pocky_ext_include_functions.h`
+- :ref:`file_src_pocky_ext_include_helpers.h`
+- :ref:`file_src_pocky_ext_include_pocky.h`
+- :ref:`file_src_pocky_ext_include_utils.h`
+
+

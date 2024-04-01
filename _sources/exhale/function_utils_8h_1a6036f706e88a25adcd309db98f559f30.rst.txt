@@ -1,0 +1,14 @@
+.. _exhale_function_utils_8h_1a6036f706e88a25adcd309db98f559f30:
+
+Function opencl_kernels_from_files(cl_uint, const char \*\*, cl_context, cl_program \*, cl_uint \*, cl_kernel \*\*)
+===================================================================================================================
+
+- Defined in :ref:`file_src_pocky_ext_include_utils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: opencl_kernels_from_files(cl_uint, const char **, cl_context, cl_program *, cl_uint *, cl_kernel **)
+   :project: pocky

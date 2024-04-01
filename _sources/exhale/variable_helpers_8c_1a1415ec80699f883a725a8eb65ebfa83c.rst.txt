@@ -1,0 +1,14 @@
+.. _exhale_variable_helpers_8c_1a1415ec80699f883a725a8eb65ebfa83c:
+
+Variable device_type_doc
+========================
+
+- Defined in :ref:`file_src_pocky_ext_helpers.c`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: device_type_doc
+   :project: pocky

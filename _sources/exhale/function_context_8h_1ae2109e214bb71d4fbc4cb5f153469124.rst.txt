@@ -1,0 +1,14 @@
+.. _exhale_function_context_8h_1ae2109e214bb71d4fbc4cb5f153469124:
+
+Function context_from_devices
+=============================
+
+- Defined in :ref:`file_src_pocky_ext_include_context.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: context_from_devices(PyObject *, PyObject *)
+   :project: pocky

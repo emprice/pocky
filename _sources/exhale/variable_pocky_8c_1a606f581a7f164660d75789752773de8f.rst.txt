@@ -1,0 +1,14 @@
+.. _exhale_variable_pocky_8c_1a606f581a7f164660d75789752773de8f:
+
+Variable pocky_module
+=====================
+
+- Defined in :ref:`file_src_pocky_ext_pocky.c`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: pocky_module
+   :project: pocky

@@ -1,0 +1,14 @@
+.. _exhale_function_utils_8c_1a87544ac69c3e169d9d66f4e69d658e9a:
+
+Function opencl_queues_create_all(cl_context, cl_uint \*, cl_command_queue \*\*)
+================================================================================
+
+- Defined in :ref:`file_src_pocky_ext_utils.c`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: opencl_queues_create_all(cl_context, cl_uint *, cl_command_queue **)
+   :project: pocky

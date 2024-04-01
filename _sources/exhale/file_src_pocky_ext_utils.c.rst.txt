@@ -1,0 +1,109 @@
+
+.. _file_src_pocky_ext_utils.c:
+
+File utils.c
+============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_pocky_ext>` (``src/pocky/ext``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+Definition (``src/pocky/ext/utils.c``)
+--------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_pocky_ext_utils.c.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``stdio.h``
+
+- ``stdlib.h``
+
+- ``string.h``
+
+- ``utils.h`` (:ref:`file_src_pocky_ext_include_utils.h`)
+
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_utils_8c_1a41a2eec34159321eeacd4cafb0dc6a46`
+
+- :ref:`exhale_function_utils_8c_1ad69607263477239308ca44f047a9f8e1`
+
+- :ref:`exhale_function_utils_8c_1afc37dfe90f15c4590e0550b0ea6312e7`
+
+- :ref:`exhale_function_utils_8c_1a82eb2eba688a1961ba85fd46527ca029`
+
+- :ref:`exhale_function_utils_8c_1a754f74d28341256c827578f1f7915c14`
+
+- :ref:`exhale_function_utils_8c_1a373a4ad179a30a3465b4231d094b60cb`
+
+- :ref:`exhale_function_utils_8c_1a1ecfe83b15bb8d0a52aa14766a4cd90a`
+
+- :ref:`exhale_function_utils_8c_1a2bbdbbfa84f171f22433b01fef01d879`
+
+- :ref:`exhale_function_utils_8c_1acbf2d41475b3ef34773e70afaa6b2ddc`
+
+- :ref:`exhale_function_utils_8c_1adbb057bcf45a95e153a44c7dec7ff7d6`
+
+- :ref:`exhale_function_utils_8c_1a6036f706e88a25adcd309db98f559f30`
+
+- :ref:`exhale_function_utils_8c_1a98fb13ac6f5ec6d4e2bb26c2361a01ab`
+
+- :ref:`exhale_function_utils_8c_1aa8e2528f0e8b65311d5e6db6f1196ec4`
+
+- :ref:`exhale_function_utils_8c_1a0fd2073c5f8819ad272d686f4ec9f251`
+
+- :ref:`exhale_function_utils_8c_1a50ee809d45354cb1df451cb40ffbd2cd`
+
+- :ref:`exhale_function_utils_8c_1a87544ac69c3e169d9d66f4e69d658e9a`
+
+- :ref:`exhale_function_utils_8c_1af34473c5d3839fd2cb9337958dc47cfd`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_utils_8c_1a4614d7afd970f7307177cad544680aca`
+
+- :ref:`exhale_variable_utils_8c_1a02dc791005abd5315592f436ad73f9d6`
+
+- :ref:`exhale_variable_utils_8c_1ae03ee79810cebf0e7e04082c8ced21d7`
+
+- :ref:`exhale_variable_utils_8c_1a6d738438f9064d679283575ec3ac85ba`
+
+- :ref:`exhale_variable_utils_8c_1a9912900f892960e3f63eafcad2b4d2ea`
+
+- :ref:`exhale_variable_utils_8c_1a1be1478b415c94e454cebb8e77a00189`
+
+- :ref:`exhale_variable_utils_8c_1a84549b8e01b7985fdfe225d6be8b5481`
+
+- :ref:`exhale_variable_utils_8c_1afa2e07c4bbfc78479e177a303d92cd02`
+
+- :ref:`exhale_variable_utils_8c_1aef48a3d16a52ec083b2c378ab56cf2f3`
+
+- :ref:`exhale_variable_utils_8c_1a824498cffedc4221ea37bae343e419a2`
+
+- :ref:`exhale_variable_utils_8c_1a7043247b459456b4f9de3ca496922837`
+
+- :ref:`exhale_variable_utils_8c_1a21a0a37c745f3ade6e498d2a52e7ca92`
+
+- :ref:`exhale_variable_utils_8c_1add19be256668aa1d91fece06a5f1160f`
+

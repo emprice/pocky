@@ -1,0 +1,14 @@
+.. _exhale_function_utils_8h_1af34473c5d3839fd2cb9337958dc47cfd:
+
+Function opencl_queues_free_all(cl_uint \*, cl_command_queue \*\*)
+==================================================================
+
+- Defined in :ref:`file_src_pocky_ext_include_utils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: opencl_queues_free_all(cl_uint *, cl_command_queue **)
+   :project: pocky

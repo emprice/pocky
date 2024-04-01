@@ -1,0 +1,62 @@
+
+.. _file_src_pocky_ext_include_context.h:
+
+File context.h
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_pocky_ext_include>` (``src/pocky/ext/include``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+Definition (``src/pocky/ext/include/context.h``)
+------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_pocky_ext_include_context.h.rst
+
+
+
+
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_pocky_ext_include_pocky.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structcontext__object`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_context_8h_1a8d00503a3e94d336445c6ca390189813`
+
+- :ref:`exhale_function_context_8h_1a3f1a54fbb1b4a1478659974323abf4b2`
+
+- :ref:`exhale_function_context_8h_1ae2109e214bb71d4fbc4cb5f153469124`
+
+- :ref:`exhale_function_context_8h_1a512b7bb5c56a0eca0438e70a99b7a1b2`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_context_8h_1a2fa54f212b30c9239cc86eb2b2b61ec3`
+
+- :ref:`exhale_variable_context_8h_1abb2e0e9e04f008d8ff790315e70ceee4`
+

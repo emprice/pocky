@@ -1,0 +1,55 @@
+
+.. _file_src_pocky_ext_functions.c:
+
+File functions.c
+================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_pocky_ext>` (``src/pocky/ext``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+Definition (``src/pocky/ext/functions.c``)
+------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_pocky_ext_functions.c.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``numpy/arrayobject.h``
+
+- ``pocky.h`` (:ref:`file_src_pocky_ext_include_pocky.h`)
+
+- ``utils.h`` (:ref:`file_src_pocky_ext_include_utils.h`)
+
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_functions_8c_1a9bce66d505a6f5ace6f05b8d50668e5a`
+
+- :ref:`exhale_function_functions_8c_1a6619a1f98a56aa2d66c783c3086be718`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_functions_8c_1ad2cd12e09a08db7cbcae2e74f723d6c4`
+
+- :ref:`exhale_define_functions_8c_1a7d399fcbebb74300921248d831d6ab6f`
+

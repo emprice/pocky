@@ -1,0 +1,14 @@
+.. _exhale_variable_helpers_8c_1a0272ed116b0c7702d5557b30f7a0a23c:
+
+Variable ocl_msg_not_a_capsule
+==============================
+
+- Defined in :ref:`file_src_pocky_ext_helpers.c`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ocl_msg_not_a_capsule
+   :project: pocky

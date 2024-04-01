@@ -1,0 +1,14 @@
+.. _exhale_variable_helpers_8c_1aa6c5bc8c8d2614577860a5ac9c91a230:
+
+Variable ocl_fmt_internal
+=========================
+
+- Defined in :ref:`file_src_pocky_ext_helpers.c`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ocl_fmt_internal
+   :project: pocky

@@ -1,0 +1,14 @@
+.. _exhale_variable_utils_8c_1add19be256668aa1d91fece06a5f1160f:
+
+Variable opencl_msg_unknown
+===========================
+
+- Defined in :ref:`file_src_pocky_ext_utils.c`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: opencl_msg_unknown
+   :project: pocky

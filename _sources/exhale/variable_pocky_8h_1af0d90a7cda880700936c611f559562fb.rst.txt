@@ -1,0 +1,14 @@
+.. _exhale_variable_pocky_8h_1af0d90a7cda880700936c611f559562fb:
+
+Variable ocl_error
+==================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ocl_error
+   :project: pocky

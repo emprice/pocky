@@ -1,0 +1,84 @@
+
+.. _file_src_pocky_ext_include_pocky.h:
+
+File pocky.h
+============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_pocky_ext_include>` (``src/pocky/ext/include``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Common definitions for the ``pocky`` Python extension. 
+
+
+Definition (``src/pocky/ext/include/pocky.h``)
+----------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_pocky_ext_include_pocky.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``CL/opencl.h``
+
+- ``Python.h``
+
+- ``bufpair.h`` (:ref:`file_src_pocky_ext_include_bufpair.h`)
+
+- ``context.h`` (:ref:`file_src_pocky_ext_include_context.h`)
+
+- ``functions.h`` (:ref:`file_src_pocky_ext_include_functions.h`)
+
+- ``helpers.h`` (:ref:`file_src_pocky_ext_include_helpers.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_pocky_ext_bufpair.c`
+
+- :ref:`file_src_pocky_ext_context.c`
+
+- :ref:`file_src_pocky_ext_functions.c`
+
+- :ref:`file_src_pocky_ext_helpers.c`
+
+- :ref:`file_src_pocky_ext_pocky.c`
+
+
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_pocky_8h_1a5990dea19d4ccb046a3d81b311457add`
+
+- :ref:`exhale_define_pocky_8h_1ab6e6ee86736f9ebb56e74ae21bf3ff8a`
+
+- :ref:`exhale_define_pocky_8h_1ac9efdaac9411d0868b715edccca3269d`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_pocky_8h_1ab0d6f57f3b5fb9d501872b2a54057e52`
+
+- :ref:`exhale_variable_pocky_8h_1af0d90a7cda880700936c611f559562fb`
+
+- :ref:`exhale_variable_pocky_8h_1a98d91c4543ec391daa773917fa6dbe32`
+

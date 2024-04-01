@@ -1,0 +1,14 @@
+.. _exhale_variable_context_8h_1a2fa54f212b30c9239cc86eb2b2b61ec3:
+
+Variable context_methods
+========================
+
+- Defined in :ref:`file_src_pocky_ext_include_context.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: context_methods
+   :project: pocky

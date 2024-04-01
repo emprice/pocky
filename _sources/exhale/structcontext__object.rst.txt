@@ -1,0 +1,17 @@
+.. _exhale_struct_structcontext__object:
+
+Struct context_object
+=====================
+
+- Defined in :ref:`file_src_pocky_ext_include_context.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: context_object
+   :project: pocky
+   :members:
+   :protected-members:
+   :undoc-members:

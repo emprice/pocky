@@ -1,0 +1,14 @@
+.. _exhale_function_utils_8h_1a0fd2073c5f8819ad272d686f4ec9f251:
+
+Function opencl_platform_query_all_free(opencl_platform_query_entry \*\*)
+=========================================================================
+
+- Defined in :ref:`file_src_pocky_ext_include_utils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: opencl_platform_query_all_free(opencl_platform_query_entry **)
+   :project: pocky

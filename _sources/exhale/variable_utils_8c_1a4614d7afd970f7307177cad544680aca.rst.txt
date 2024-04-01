@@ -1,0 +1,14 @@
+.. _exhale_variable_utils_8c_1a4614d7afd970f7307177cad544680aca:
+
+Variable opencl_msg_build_failure
+=================================
+
+- Defined in :ref:`file_src_pocky_ext_utils.c`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: opencl_msg_build_failure
+   :project: pocky

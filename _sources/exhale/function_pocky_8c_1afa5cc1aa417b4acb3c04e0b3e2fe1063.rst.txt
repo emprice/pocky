@@ -1,0 +1,14 @@
+.. _exhale_function_pocky_8c_1afa5cc1aa417b4acb3c04e0b3e2fe1063:
+
+Function PyInit_ext
+===================
+
+- Defined in :ref:`file_src_pocky_ext_pocky.c`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: PyInit_ext(void)
+   :project: pocky

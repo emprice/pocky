@@ -1,0 +1,72 @@
+
+.. _file_src_pocky_ext_include_bufpair.h:
+
+File bufpair.h
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_pocky_ext_include>` (``src/pocky/ext/include``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+Definition (``src/pocky/ext/include/bufpair.h``)
+------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_pocky_ext_include_bufpair.h.rst
+
+
+
+
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_pocky_ext_include_pocky.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structbufpair__object`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_bufpair_8h_1a5727ecb089cc1e76b826d9c7139911a7`
+
+- :ref:`exhale_function_bufpair_8h_1a1d34151f81d86ab9c1cb50c172ac6791`
+
+- :ref:`exhale_function_bufpair_8h_1ab5b8f9ebbe8735e11655b95383e7a5e0`
+
+- :ref:`exhale_function_bufpair_8h_1ae7290a606a87c4f21ef6a12fb303fe3c`
+
+- :ref:`exhale_function_bufpair_8h_1ac50c16309a08e2a7e2920555678b0622`
+
+- :ref:`exhale_function_bufpair_8h_1a6b8687dc42d3d9bbb33e6466c60515b7`
+
+- :ref:`exhale_function_bufpair_8h_1ab70765bd6d6bcf6cfbb4c125a5efe505`
+
+- :ref:`exhale_function_bufpair_8h_1a8b5cb147f66a767c20c6189637ddbfad`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_bufpair_8h_1a8ee17df4e5358e9bfcb9fddafeebec1d`
+
+- :ref:`exhale_variable_bufpair_8h_1afe93a2e80606591874e27e52272d2cfa`
+
+- :ref:`exhale_variable_bufpair_8h_1a07167210dd0418b7ae5b1bcb83b60771`
+

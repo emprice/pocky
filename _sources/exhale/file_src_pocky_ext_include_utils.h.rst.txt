@@ -1,0 +1,102 @@
+
+.. _file_src_pocky_ext_include_utils.h:
+
+File utils.h
+============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_pocky_ext_include>` (``src/pocky/ext/include``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+Definition (``src/pocky/ext/include/utils.h``)
+----------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_pocky_ext_include_utils.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``CL/opencl.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_pocky_ext_bufpair.c`
+
+- :ref:`file_src_pocky_ext_context.c`
+
+- :ref:`file_src_pocky_ext_functions.c`
+
+- :ref:`file_src_pocky_ext_utils.c`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_struct__opencl__device__query__entry`
+
+- :ref:`exhale_struct_struct__opencl__platform__query__entry`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_utils_8h_1a41a2eec34159321eeacd4cafb0dc6a46`
+
+- :ref:`exhale_function_utils_8h_1ad69607263477239308ca44f047a9f8e1`
+
+- :ref:`exhale_function_utils_8h_1afc37dfe90f15c4590e0550b0ea6312e7`
+
+- :ref:`exhale_function_utils_8h_1a82eb2eba688a1961ba85fd46527ca029`
+
+- :ref:`exhale_function_utils_8h_1a754f74d28341256c827578f1f7915c14`
+
+- :ref:`exhale_function_utils_8h_1a373a4ad179a30a3465b4231d094b60cb`
+
+- :ref:`exhale_function_utils_8h_1a1ecfe83b15bb8d0a52aa14766a4cd90a`
+
+- :ref:`exhale_function_utils_8h_1a2bbdbbfa84f171f22433b01fef01d879`
+
+- :ref:`exhale_function_utils_8h_1acbf2d41475b3ef34773e70afaa6b2ddc`
+
+- :ref:`exhale_function_utils_8h_1adbb057bcf45a95e153a44c7dec7ff7d6`
+
+- :ref:`exhale_function_utils_8h_1a6036f706e88a25adcd309db98f559f30`
+
+- :ref:`exhale_function_utils_8h_1a98fb13ac6f5ec6d4e2bb26c2361a01ab`
+
+- :ref:`exhale_function_utils_8h_1aa8e2528f0e8b65311d5e6db6f1196ec4`
+
+- :ref:`exhale_function_utils_8h_1a0fd2073c5f8819ad272d686f4ec9f251`
+
+- :ref:`exhale_function_utils_8h_1a50ee809d45354cb1df451cb40ffbd2cd`
+
+- :ref:`exhale_function_utils_8h_1a87544ac69c3e169d9d66f4e69d658e9a`
+
+- :ref:`exhale_function_utils_8h_1af34473c5d3839fd2cb9337958dc47cfd`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_utils_8h_1a5be07ca84581ce035b96030d026b4eb5`
+
+- :ref:`exhale_typedef_utils_8h_1a924972d14b9881138cfe1cb9f6f4e642`
+

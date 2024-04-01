@@ -1,0 +1,14 @@
+.. _exhale_variable_helpers_8c_1a2eb694b10b9eb7bd0534ab206999a184:
+
+Variable bufpair_fields
+=======================
+
+- Defined in :ref:`file_src_pocky_ext_helpers.c`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: bufpair_fields
+   :project: pocky
