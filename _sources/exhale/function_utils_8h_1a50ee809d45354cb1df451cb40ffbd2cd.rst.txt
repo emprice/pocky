@@ -1,7 +1,7 @@
 .. _exhale_function_utils_8h_1a50ee809d45354cb1df451cb40ffbd2cd:
 
-Function opencl_program_free(cl_program \*)
-===========================================
+Function opencl_program_free
+============================
 
 - Defined in :ref:`file_src_pocky_ext_include_utils.h`
 

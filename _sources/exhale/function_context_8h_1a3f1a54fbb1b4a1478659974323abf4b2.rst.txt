@@ -1,7 +1,7 @@
 .. _exhale_function_context_8h_1a3f1a54fbb1b4a1478659974323abf4b2:
 
-Function context_default(PyObject \*, PyObject \*)
-==================================================
+Function context_default
+========================
 
 - Defined in :ref:`file_src_pocky_ext_include_context.h`
 

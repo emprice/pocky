@@ -1,7 +1,7 @@
 .. _exhale_function_utils_8h_1a2bbdbbfa84f171f22433b01fef01d879:
 
-Function opencl_error_to_string(cl_int)
-=======================================
+Function opencl_error_to_string
+===============================
 
 - Defined in :ref:`file_src_pocky_ext_include_utils.h`
 

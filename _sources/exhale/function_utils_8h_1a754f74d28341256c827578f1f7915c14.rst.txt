@@ -1,7 +1,7 @@
 .. _exhale_function_utils_8h_1a754f74d28341256c827578f1f7915c14:
 
-Function opencl_context_from_device_list(size_t, cl_device_id \*, cl_context \*)
-================================================================================
+Function opencl_context_from_device_list
+========================================
 
 - Defined in :ref:`file_src_pocky_ext_include_utils.h`
 

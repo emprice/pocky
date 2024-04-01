@@ -1,7 +1,7 @@
 .. _exhale_function_utils_8h_1a1ecfe83b15bb8d0a52aa14766a4cd90a:
 
-Function opencl_device_query_all_free(opencl_device_query_entry \*\*)
-=====================================================================
+Function opencl_device_query_all_free
+=====================================
 
 - Defined in :ref:`file_src_pocky_ext_include_utils.h`
 

@@ -1,7 +1,7 @@
 .. _exhale_function_utils_8h_1a98fb13ac6f5ec6d4e2bb26c2361a01ab:
 
-Function opencl_kernels_from_fragments(cl_uint, const char \*\*, cl_context, cl_program \*, cl_uint \*, cl_kernel \*\*)
-=======================================================================================================================
+Function opencl_kernels_from_fragments
+======================================
 
 - Defined in :ref:`file_src_pocky_ext_include_utils.h`
 

@@ -18,14 +18,4 @@ Subdirectories
 - :ref:`dir_src_pocky_ext_include`
 
 
-Files
------
-
-- :ref:`file_src_pocky_ext_bufpair.c`
-- :ref:`file_src_pocky_ext_context.c`
-- :ref:`file_src_pocky_ext_functions.c`
-- :ref:`file_src_pocky_ext_helpers.c`
-- :ref:`file_src_pocky_ext_pocky.c`
-- :ref:`file_src_pocky_ext_utils.c`
-
 

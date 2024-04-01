@@ -1,7 +1,7 @@
 .. _exhale_function_utils_8h_1ad69607263477239308ca44f047a9f8e1:
 
-Function opencl_context_default_cpus(cl_context \*)
-===================================================
+Function opencl_context_default_cpus
+====================================
 
 - Defined in :ref:`file_src_pocky_ext_include_utils.h`
 

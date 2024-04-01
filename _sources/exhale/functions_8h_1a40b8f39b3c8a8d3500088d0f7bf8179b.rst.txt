@@ -1,7 +1,7 @@
 .. _exhale_function_functions_8h_1a40b8f39b3c8a8d3500088d0f7bf8179b:
 
-Function list_all_platforms(PyObject \*, PyObject \*)
-=====================================================
+Function list_all_platforms
+===========================
 
 - Defined in :ref:`file_src_pocky_ext_include_functions.h`
 

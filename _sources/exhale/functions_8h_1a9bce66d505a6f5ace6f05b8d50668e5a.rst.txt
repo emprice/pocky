@@ -1,7 +1,7 @@
 .. _exhale_function_functions_8h_1a9bce66d505a6f5ace6f05b8d50668e5a:
 
-Function list_all_devices(PyObject \*, PyObject \*)
-===================================================
+Function list_all_devices
+=========================
 
 - Defined in :ref:`file_src_pocky_ext_include_functions.h`
 

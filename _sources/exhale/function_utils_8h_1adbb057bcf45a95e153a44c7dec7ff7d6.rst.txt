@@ -1,7 +1,7 @@
 .. _exhale_function_utils_8h_1adbb057bcf45a95e153a44c7dec7ff7d6:
 
-Function opencl_kernels_free_all(cl_uint \*, cl_kernel \*\*)
-============================================================
+Function opencl_kernels_free_all
+================================
 
 - Defined in :ref:`file_src_pocky_ext_include_utils.h`
 

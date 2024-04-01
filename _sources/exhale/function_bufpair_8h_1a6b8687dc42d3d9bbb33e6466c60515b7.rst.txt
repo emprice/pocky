@@ -1,7 +1,7 @@
 .. _exhale_function_bufpair_8h_1a6b8687dc42d3d9bbb33e6466c60515b7:
 
-Function bufpair_init(bufpair_object \*, PyObject \*, PyObject \*)
-==================================================================
+Function bufpair_init
+=====================
 
 - Defined in :ref:`file_src_pocky_ext_include_bufpair.h`
 
