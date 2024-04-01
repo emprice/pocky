@@ -456,7 +456,6 @@
 <li class="toctree-l2"><a class="reference internal" href="exhale/variable_pocky_8h_1a98d91c4543ec391daa773917fa6dbe32.html">Variable platform_type</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exhale/variable_helpers_8h_1a9acd739d8e8bcf01849f77f3da8442de.html">Variable platform_type_doc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exhale/variable_helpers_8h_1a53798e6956544775635e9af37d12b493.html">Variable pocky_module_doc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exhale/define_pocky_8h_1a5990dea19d4ccb046a3d81b311457add.html">Define CL_TARGET_OPENCL_VERSION</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exhale/define_pocky_8h_1ab6e6ee86736f9ebb56e74ae21bf3ff8a.html">Define NPY_NO_DEPRECATED_API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exhale/define_pocky_8h_1ac9efdaac9411d0868b715edccca3269d.html">Define PY_SSIZE_T_CLEAN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exhale/typedef_utils_8h_1a5be07ca84581ce035b96030d026b4eb5.html">Typedef opencl_device_query_entry</a></li>
@@ -503,15 +502,120 @@
 <h2>OpenCL interface<a class="headerlink" href="#opencl-interface" title="Link to this heading">#</a></h2>
 <section id="platforms">
 <h3>Platforms<a class="headerlink" href="#platforms" title="Link to this heading">#</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="pocky.Platform">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pocky.</span></span><span class="sig-name descname"><span class="pre">Platform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Capsule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pocky.Platform" title="Link to this definition">#</a></dt>
+<dd><p>Encapsulated OpenCL platform ID with basic information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – Unique platform ID</p></li>
+<li><p><strong>name</strong> – Platform name, as reported by the hardware</p></li>
+<li><p><strong>version</strong> – Platform version, as reported by the hardware</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Do not instantiate this class directly! Rather, use valid output from   <a class="reference internal" href="#pocky.list_all_platforms" title="pocky.list_all_platforms"><code class="xref py py-func docutils literal notranslate"><span class="pre">pocky.list_all_platforms()</span></code></a>.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pocky.list_all_platforms">
+<span class="sig-prename descclassname"><span class="pre">pocky.</span></span><span class="sig-name descname"><span class="pre">list_all_platforms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pocky.Platform" title="pocky.Platform"><span class="pre">Platform</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pocky.list_all_platforms" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of all available OpenCL platforms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of available platforms</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="devices">
 <h3>Devices<a class="headerlink" href="#devices" title="Link to this heading">#</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="pocky.Device">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pocky.</span></span><span class="sig-name descname"><span class="pre">Device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pocky.Device" title="Link to this definition">#</a></dt>
+<dd><p>This is a stub</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pocky.list_all_devices">
+<span class="sig-prename descclassname"><span class="pre">pocky.</span></span><span class="sig-name descname"><span class="pre">list_all_devices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pocky.Platform" title="pocky.Platform"><span class="pre">Platform</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pocky.Device" title="pocky.Device"><span class="pre">Device</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pocky.list_all_devices" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of all available OpenCL devices for a platform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>platform</strong> – The platform to query for available devices</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of devices available on the platform</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="contexts">
 <h3>Contexts<a class="headerlink" href="#contexts" title="Link to this heading">#</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="pocky.Context">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pocky.</span></span><span class="sig-name descname"><span class="pre">Context</span></span><a class="headerlink" href="#pocky.Context" title="Link to this definition">#</a></dt>
+<dd><p>Opaque object encapsulating the OpenCL context, command queues, kernels, and program.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Do not instantiate this class directly! Rather, use valid output from   <code class="xref py py-func docutils literal notranslate"><span class="pre">pocky.context_default()</span></code> or   <code class="xref py py-func docutils literal notranslate"><span class="pre">pocky.context_from_devices()</span></code>.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="pocky.Context.default">
+<span class="sig-name descname"><span class="pre">default</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pocky.Context" title="pocky.Context"><span class="pre">Context</span></a></span></span><a class="headerlink" href="#pocky.Context.default" title="Link to this definition">#</a></dt>
+<dd><p>Create a context with the default OpenCL platform and devices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An initialized Context</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pocky.Context.from_device_list">
+<span class="sig-name descname"><span class="pre">from_device_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">devices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pocky.Device" title="pocky.Device"><span class="pre">Device</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pocky.Context" title="pocky.Context"><span class="pre">Context</span></a></span></span><a class="headerlink" href="#pocky.Context.from_device_list" title="Link to this definition">#</a></dt>
+<dd><p>Create a context from a subset of OpenCL devices on the same platform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>devices</strong> – The devices to include in the returned context</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An initialized Context</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="buffers">
 <h3>Buffers<a class="headerlink" href="#buffers" title="Link to this heading">#</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="pocky.BufferPair">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pocky.</span></span><span class="sig-name descname"><span class="pre">BufferPair</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pocky.Context" title="pocky.Context"><span class="pre">Context</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">host_array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pocky.BufferPair" title="Link to this definition">#</a></dt>
+<dd><p>Pair of buffers, one host and one device, used for input and output to compiled kernels. Copy operations are carried out before and after each kernel execution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>context</strong> – Valid existing OpenCL context</p></li>
+<li><p><strong>host_array</strong> – NumPy array to serve as host memory buffer</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pocky.BufferPair.host">
+<span class="sig-name descname"><span class="pre">host</span></span><a class="headerlink" href="#pocky.BufferPair.host" title="Link to this definition">#</a></dt>
+<dd><p>Exposes the underlying NumPy host array. The size of the array cannot be increased after the BufferPair is created, but the array can be replaced by one of the same dtype and equal or smaller size.</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 </section>
@@ -573,10 +677,31 @@
             <ul>
 <li><a class="reference internal" href="#">High-level Python API</a><ul>
 <li><a class="reference internal" href="#opencl-interface">OpenCL interface</a><ul>
-<li><a class="reference internal" href="#platforms">Platforms</a></li>
-<li><a class="reference internal" href="#devices">Devices</a></li>
-<li><a class="reference internal" href="#contexts">Contexts</a></li>
-<li><a class="reference internal" href="#buffers">Buffers</a></li>
+<li><a class="reference internal" href="#platforms">Platforms</a><ul>
+<li><a class="reference internal" href="#pocky.Platform"><code class="docutils literal notranslate"><span class="pre">Platform</span></code></a></li>
+<li><a class="reference internal" href="#pocky.list_all_platforms"><code class="docutils literal notranslate"><span class="pre">list_all_platforms()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#devices">Devices</a><ul>
+<li><a class="reference internal" href="#pocky.Device"><code class="docutils literal notranslate"><span class="pre">Device</span></code></a></li>
+<li><a class="reference internal" href="#pocky.list_all_devices"><code class="docutils literal notranslate"><span class="pre">list_all_devices()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contexts">Contexts</a><ul>
+<li><a class="reference internal" href="#pocky.Context"><code class="docutils literal notranslate"><span class="pre">Context</span></code></a><ul>
+<li><a class="reference internal" href="#pocky.Context.default"><code class="docutils literal notranslate"><span class="pre">Context.default()</span></code></a></li>
+<li><a class="reference internal" href="#pocky.Context.from_device_list"><code class="docutils literal notranslate"><span class="pre">Context.from_device_list()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#buffers">Buffers</a><ul>
+<li><a class="reference internal" href="#pocky.BufferPair"><code class="docutils literal notranslate"><span class="pre">BufferPair</span></code></a><ul>
+<li><a class="reference internal" href="#pocky.BufferPair.host"><code class="docutils literal notranslate"><span class="pre">BufferPair.host</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

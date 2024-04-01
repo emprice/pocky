@@ -51,8 +51,6 @@ Defines
 -------
 
 
-- :ref:`exhale_define_pocky_8h_1a5990dea19d4ccb046a3d81b311457add`
-
 - :ref:`exhale_define_pocky_8h_1ab6e6ee86736f9ebb56e74ae21bf3ff8a`
 
 - :ref:`exhale_define_pocky_8h_1ac9efdaac9411d0868b715edccca3269d`

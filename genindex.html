@@ -454,7 +454,6 @@
 <li class="toctree-l2"><a class="reference internal" href="exhale/variable_pocky_8h_1a98d91c4543ec391daa773917fa6dbe32.html">Variable platform_type</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exhale/variable_helpers_8h_1a9acd739d8e8bcf01849f77f3da8442de.html">Variable platform_type_doc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exhale/variable_helpers_8h_1a53798e6956544775635e9af37d12b493.html">Variable pocky_module_doc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exhale/define_pocky_8h_1a5990dea19d4ccb046a3d81b311457add.html">Define CL_TARGET_OPENCL_VERSION</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exhale/define_pocky_8h_1ab6e6ee86736f9ebb56e74ae21bf3ff8a.html">Define NPY_NO_DEPRECATED_API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exhale/define_pocky_8h_1ac9efdaac9411d0868b715edccca3269d.html">Define PY_SSIZE_T_CLEAN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exhale/typedef_utils_8h_1a5be07ca84581ce035b96030d026b4eb5.html">Typedef opencl_device_query_entry</a></li>
@@ -497,7 +496,7 @@
           
 <section class="genindex-section">
   <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"><a href="#_"><strong>_</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a></div>
+  <div class="genindex-jumpbox"><a href="#_"><strong>_</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a></div>
 </section>
 <section id="_" class="genindex-section">
   <h2>_</h2>
@@ -533,6 +532,8 @@
   <h2>B</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="highlevel.html#pocky.BufferPair">BufferPair (class in pocky)</a>
+</li>
         <li><a href="exhale/function_bufpair_8h_1a5727ecb089cc1e76b826d9c7139911a7.html#c.bufpair_array">bufpair_array (C function)</a>
 </li>
         <li><a href="exhale/function_bufpair_8h_1a1d34151f81d86ab9c1cb50c172ac6791.html#c.bufpair_dealloc">bufpair_dealloc (C function)</a>
@@ -549,10 +550,10 @@
 </li>
         <li><a href="exhale/variable_bufpair_8h_1afe93a2e80606591874e27e52272d2cfa.html#c.bufpair_methods">bufpair_methods (C var)</a>
 </li>
-        <li><a href="exhale/function_bufpair_8h_1ab70765bd6d6bcf6cfbb4c125a5efe505.html#c.bufpair_new">bufpair_new (C function)</a>
-</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="exhale/function_bufpair_8h_1ab70765bd6d6bcf6cfbb4c125a5efe505.html#c.bufpair_new">bufpair_new (C function)</a>
+</li>
         <li><a href="exhale/structbufpair__object.html#c.bufpair_object">bufpair_object (C struct)</a>
 </li>
         <li><a href="exhale/structbufpair__object.html#c.bufpair_object.context">bufpair_object.context (C var)</a>
@@ -579,7 +580,7 @@
   <h2>C</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="exhale/define_pocky_8h_1a5990dea19d4ccb046a3d81b311457add.html#c.CL_TARGET_OPENCL_VERSION">CL_TARGET_OPENCL_VERSION (C macro)</a>
+        <li><a href="highlevel.html#pocky.Context">Context (class in pocky)</a>
 </li>
         <li><a href="exhale/function_context_8h_1a8d00503a3e94d336445c6ca390189813.html#c.context_dealloc">context_dealloc (C function)</a>
 </li>
@@ -617,15 +618,39 @@
   <h2>D</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="exhale/variable_helpers_8h_1aebecb10b683b1e062526e3fb79858228.html#c.device_desc">device_desc (C var)</a>
+        <li><a href="highlevel.html#pocky.Context.default">default() (pocky.Context method)</a>
 </li>
-        <li><a href="exhale/variable_helpers_8h_1aaebfb6dbc0aa2abefc7828482c054fb4.html#c.device_fields">device_fields (C var)</a>
+        <li><a href="highlevel.html#pocky.Device">Device (class in pocky)</a>
+</li>
+        <li><a href="exhale/variable_helpers_8h_1aebecb10b683b1e062526e3fb79858228.html#c.device_desc">device_desc (C var)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="exhale/variable_helpers_8h_1aaebfb6dbc0aa2abefc7828482c054fb4.html#c.device_fields">device_fields (C var)</a>
+</li>
         <li><a href="exhale/variable_pocky_8h_1ab0d6f57f3b5fb9d501872b2a54057e52.html#c.device_type">device_type (C var)</a>
 </li>
         <li><a href="exhale/variable_helpers_8h_1a1415ec80699f883a725a8eb65ebfa83c.html#c.device_type_doc">device_type_doc (C var)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="F" class="genindex-section">
+  <h2>F</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="highlevel.html#pocky.Context.from_device_list">from_device_list() (pocky.Context method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="H" class="genindex-section">
+  <h2>H</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="highlevel.html#pocky.BufferPair.host">host (pocky.BufferPair attribute)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -637,9 +662,13 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="exhale/functions_8h_1a9bce66d505a6f5ace6f05b8d50668e5a.html#c.list_all_devices">list_all_devices (C function)</a>
 </li>
+        <li><a href="highlevel.html#pocky.list_all_devices">list_all_devices() (in module pocky)</a>
+</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="exhale/functions_8h_1a40b8f39b3c8a8d3500088d0f7bf8179b.html#c.list_all_platforms">list_all_platforms (C function)</a>
+</li>
+        <li><a href="highlevel.html#pocky.list_all_platforms">list_all_platforms() (in module pocky)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -719,14 +748,16 @@
   <h2>P</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="highlevel.html#pocky.Platform">Platform (class in pocky)</a>
+</li>
         <li><a href="exhale/variable_helpers_8h_1a5e421775b92d0fad6a028edaa3e53480.html#c.platform_desc">platform_desc (C var)</a>
 </li>
         <li><a href="exhale/variable_helpers_8h_1a4160dfcaaee306eae0b0960f2e915000.html#c.platform_fields">platform_fields (C var)</a>
 </li>
-        <li><a href="exhale/variable_pocky_8h_1a98d91c4543ec391daa773917fa6dbe32.html#c.platform_type">platform_type (C var)</a>
-</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="exhale/variable_pocky_8h_1a98d91c4543ec391daa773917fa6dbe32.html#c.platform_type">platform_type (C var)</a>
+</li>
         <li><a href="exhale/variable_helpers_8h_1a9acd739d8e8bcf01849f77f3da8442de.html#c.platform_type_doc">platform_type_doc (C var)</a>
 </li>
         <li><a href="exhale/variable_helpers_8h_1a53798e6956544775635e9af37d12b493.html#c.pocky_module_doc">pocky_module_doc (C var)</a>
