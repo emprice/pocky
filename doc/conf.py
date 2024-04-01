@@ -4,9 +4,6 @@ import os
 import textwrap
 import furiosa
 
-import sys
-sys.path.append('../build/src/module')
-
 # -- Project information -----------------------------------------------------
 
 project = 'pocky'
@@ -24,7 +21,7 @@ release = '1.0'
 extensions = ['furiosa', 'breathe', 'exhale', 'sphinx.ext.todo',
               'sphinx.ext.autodoc', 'sphinx.ext.napoleon']
 
-root_dir = os.environ['ROOT_DIR']
+root_dir = os.environ['GITHUB_WORKSPACE']
 
 breathe_projects = { 'pocky' : './doxygen/xml' }
 breathe_default_project = 'pocky'
@@ -38,7 +35,7 @@ stdin = textwrap.dedent(f'''\
 OUTPUT_LANGUAGE         = English
 EXTENSION_MAPPING       = h=C cl=C
 EXCLUDE_PATTERNS       += *.txt *.c *.py
-INPUT                   = {root_dir}/src
+INPUT                   = {root_dir}/src/ext
 RECURSIVE               = YES
 QUIET                   = YES
 PREDEFINED             += DOXYGEN_SHOULD_SKIP_THIS
