@@ -310,6 +310,7 @@ cl_int pocky_opencl_kernels_from_fragments(cl_uint nfrags,
     cl_uint *num_kerns, cl_kernel **kerns)
 {
     size_t *lens;
+    char buf[BUFSIZ];
     cl_int err, err1;
 
     lens = malloc(nfrags * sizeof(size_t));
@@ -376,6 +377,14 @@ cl_int pocky_opencl_kernels_from_fragments(cl_uint nfrags,
     }
 
     free(lens);
+
+    if (err != CL_SUCCESS)
+    {
+        snprintf(buf, BUFSIZ, pocky_ocl_fmt_internal,
+            pocky_opencl_error_to_string(err), err);
+        PyErr_SetString(pocky_ocl_error, buf);
+    }
+
     return err;
 }
 
@@ -474,6 +483,11 @@ cl_int pocky_opencl_kernel_lookup_by_name(cl_uint num_kerns,
         }
 
         err = err0;
+    }
+
+    if (err != CL_SUCCESS)
+    {
+        PyErr_SetString(pocky_ocl_error, pocky_ocl_msg_kernel_not_found);
     }
 
     return err;
