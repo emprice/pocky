@@ -1,4 +1,4 @@
-#include "utils.h"
+#include "pocky.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,7 +18,7 @@ static const char opencl_msg_out_of_resources[]    = "CL_OUT_OF_RESOURCES";
 static const char opencl_msg_out_of_host_memory[]  = "CL_OUT_OF_HOST_MEMORY";
 static const char opencl_msg_unknown[]             = "(not a recognized code)";
 
-const char *opencl_error_to_string(cl_int err)
+const char *pocky_opencl_error_to_string(cl_int err)
 {
     switch (err)
     {
@@ -39,13 +39,13 @@ const char *opencl_error_to_string(cl_int err)
     return opencl_msg_unknown;
 }
 
-cl_int opencl_platform_query_all(opencl_platform_query_entry **entries)
+cl_int pocky_opencl_platform_query_all(pocky_opencl_platform_query_entry **entries)
 {
     cl_int err;
     cl_uint idx;
     cl_uint num_platforms;
     cl_platform_id *platforms;
-    opencl_platform_query_entry *prev = NULL;
+    pocky_opencl_platform_query_entry *prev = NULL;
 
     /* Query for the number of platforms */
     err = clGetPlatformIDs(0, NULL, &num_platforms);
@@ -65,9 +65,9 @@ cl_int opencl_platform_query_all(opencl_platform_query_entry **entries)
         size_t sz;
 
         cl_platform_id id = platforms[idx];
-        opencl_platform_query_entry *entry;
+        pocky_opencl_platform_query_entry *entry;
 
-        entry = malloc(sizeof(opencl_platform_query_entry));
+        entry = malloc(sizeof(pocky_opencl_platform_query_entry));
 
         entry->id = id;
         entry->next = prev;
@@ -98,9 +98,9 @@ cl_int opencl_platform_query_all(opencl_platform_query_entry **entries)
     return err;
 }
 
-void opencl_platform_query_all_free(opencl_platform_query_entry **entries)
+void pocky_opencl_platform_query_all_free(pocky_opencl_platform_query_entry **entries)
 {
-    opencl_platform_query_entry *next, *entry = *entries;
+    pocky_opencl_platform_query_entry *next, *entry = *entries;
 
     while (entry)
     {
@@ -115,14 +115,14 @@ void opencl_platform_query_all_free(opencl_platform_query_entry **entries)
     *entries = NULL;
 }
 
-cl_int opencl_device_query_all(cl_platform_id plat,
-    opencl_device_query_entry **entries)
+cl_int pocky_opencl_device_query_all(cl_platform_id plat,
+    pocky_opencl_device_query_entry **entries)
 {
     cl_int err;
     cl_uint idx;
     cl_uint num_devices;
     cl_device_id *devices;
-    opencl_device_query_entry *prev = NULL;
+    pocky_opencl_device_query_entry *prev = NULL;
 
     err = clGetDeviceIDs(plat, CL_DEVICE_TYPE_ALL, 0, NULL, &num_devices);
     if (err != CL_SUCCESS) return err;
@@ -140,9 +140,9 @@ cl_int opencl_device_query_all(cl_platform_id plat,
         size_t sz;
 
         cl_device_id id = devices[idx];
-        opencl_device_query_entry *entry;
+        pocky_opencl_device_query_entry *entry;
 
-        entry = malloc(sizeof(opencl_device_query_entry));
+        entry = malloc(sizeof(pocky_opencl_device_query_entry));
 
         entry->id = id;
         entry->next = prev;
@@ -169,9 +169,9 @@ cl_int opencl_device_query_all(cl_platform_id plat,
     return err;
 }
 
-void opencl_device_query_all_free(opencl_device_query_entry **entries)
+void pocky_opencl_device_query_all_free(pocky_opencl_device_query_entry **entries)
 {
-    opencl_device_query_entry *next, *entry = *entries;
+    pocky_opencl_device_query_entry *next, *entry = *entries;
 
     while (entry)
     {
@@ -185,7 +185,7 @@ void opencl_device_query_all_free(opencl_device_query_entry **entries)
     *entries = NULL;
 }
 
-cl_int opencl_context_default(cl_context *ctx)
+cl_int pocky_opencl_context_default(cl_context *ctx)
 {
     cl_int err;
     cl_device_id *devices;
@@ -215,7 +215,7 @@ cl_int opencl_context_default(cl_context *ctx)
     return err;
 }
 
-cl_int opencl_context_from_device_list(size_t num_devices,
+cl_int pocky_opencl_context_from_device_list(size_t num_devices,
     cl_device_id *devices, cl_context *ctx)
 {
     cl_int err;
@@ -223,7 +223,7 @@ cl_int opencl_context_from_device_list(size_t num_devices,
     return err;
 }
 
-cl_int opencl_queues_create_all(cl_context ctx,
+cl_int pocky_opencl_queues_create_all(cl_context ctx,
     cl_uint *num_queues, cl_command_queue **queues)
 {
     cl_int err;
@@ -265,7 +265,7 @@ cl_int opencl_queues_create_all(cl_context ctx,
     return err;
 }
 
-cl_int opencl_queues_free_all(cl_uint *num_queues, cl_command_queue **queues)
+cl_int pocky_opencl_queues_free_all(cl_uint *num_queues, cl_command_queue **queues)
 {
     cl_uint i;
     cl_int err;
@@ -283,21 +283,21 @@ cl_int opencl_queues_free_all(cl_uint *num_queues, cl_command_queue **queues)
     return err;
 }
 
-cl_int opencl_context_default_cpus(cl_context *ctx)
+cl_int pocky_opencl_context_default_cpus(cl_context *ctx)
 {
     cl_int err;
     *ctx = clCreateContextFromType(NULL, CL_DEVICE_TYPE_CPU, NULL, NULL, &err);
     return err;
 }
 
-cl_int opencl_context_default_gpus(cl_context *ctx)
+cl_int pocky_opencl_context_default_gpus(cl_context *ctx)
 {
     cl_int err;
     *ctx = clCreateContextFromType(NULL, CL_DEVICE_TYPE_GPU, NULL, NULL, &err);
     return err;
 }
 
-cl_int opencl_context_free(cl_context *ctx)
+cl_int pocky_opencl_context_free(cl_context *ctx)
 {
     cl_int err;
     err = clReleaseContext(*ctx);
@@ -305,7 +305,7 @@ cl_int opencl_context_free(cl_context *ctx)
     return err;
 }
 
-cl_int opencl_kernels_from_fragments(cl_uint nfrags,
+cl_int pocky_opencl_kernels_from_fragments(cl_uint nfrags,
     const char **frags, cl_context ctx, cl_program *prog,
     cl_uint *num_kerns, cl_kernel **kerns)
 {
@@ -379,7 +379,7 @@ cl_int opencl_kernels_from_fragments(cl_uint nfrags,
     return err;
 }
 
-cl_int opencl_kernels_from_files(cl_uint nfiles,
+cl_int pocky_opencl_kernels_from_files(cl_uint nfiles,
     const char **files, cl_context ctx, cl_program *prog,
     cl_uint *num_kerns, cl_kernel **kerns)
 {
@@ -410,7 +410,7 @@ cl_int opencl_kernels_from_files(cl_uint nfiles,
         frags[i] = ssrc;
     }
 
-    err = opencl_kernels_from_fragments(nfiles, frags,
+    err = pocky_opencl_kernels_from_fragments(nfiles, frags,
         ctx, prog, num_kerns, kerns);
 
     for (i = 0; i < nfiles; ++i)
@@ -422,7 +422,7 @@ cl_int opencl_kernels_from_files(cl_uint nfiles,
     return err;
 }
 
-cl_int opencl_kernels_free_all(cl_uint *num_kerns, cl_kernel **kerns)
+cl_int pocky_opencl_kernels_free_all(cl_uint *num_kerns, cl_kernel **kerns)
 {
     cl_uint i;
     cl_int err;
@@ -440,7 +440,7 @@ cl_int opencl_kernels_free_all(cl_uint *num_kerns, cl_kernel **kerns)
     return err;
 }
 
-cl_int opencl_kernel_lookup_by_name(cl_uint num_kerns,
+cl_int pocky_opencl_kernel_lookup_by_name(cl_uint num_kerns,
     cl_kernel *kerns, const char *name, cl_kernel *kern)
 {
     cl_uint i;
@@ -479,10 +479,12 @@ cl_int opencl_kernel_lookup_by_name(cl_uint num_kerns,
     return err;
 }
 
-cl_int opencl_program_free(cl_program *prog)
+cl_int pocky_opencl_program_free(cl_program *prog)
 {
     cl_int err;
     err = clReleaseProgram(*prog);
     *prog = NULL;
     return err;
 }
+
+/* vim: set ft=c.doxygen: */

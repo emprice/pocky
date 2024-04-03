@@ -11,27 +11,28 @@ typedef struct
     cl_uint num_queues;         /**< Number of command queues */
     cl_command_queue *queues;   /**< Array of command queues */
 }
-context_object;
+pocky_context_object;
 
-/** Python type object for the @c Context object type */
-extern PyTypeObject context_type;
+/** Python type object for the @c pocky.ext.Context object type */
+extern PyTypeObject pocky_context_type;
 
-extern PyMethodDef context_methods[];
+extern PyMethodDef pocky_context_methods[];
 
 /**
- * @brief Allocates and initializes an empty Python @c Context object
+ * @brief Allocates and initializes an empty Python @c pocky.ext.Context object
  * @param[in] type Type of object to allocate
  * @param[in] args Python arguments to be parsed
  * @param[in] kwargs Python keyword arguments to be parsed
- * @return A new Python @c Context object
+ * @return A new Python @c pocky.ext.Context object
  */
-extern PyObject *context_new(PyTypeObject *type, PyObject *args, PyObject *kwargs);
+extern PyObject *pocky_context_new(PyTypeObject *type,
+        PyObject *args, PyObject *kwargs);
 
 /**
- * @brief Deallocates a Python @c Context object
+ * @brief Deallocates a Python @c pocky.ext.Context object
  * @param[in] self Object to be deallocated
  */
-extern void context_dealloc(context_object *self);
+extern void pocky_context_dealloc(pocky_context_object *self);
 
 /**
  * @brief Classmethod to create a context for the default platform
@@ -39,9 +40,9 @@ extern void context_dealloc(context_object *self);
  * @param[in] self Class reference
  * @param[in] args Python arguments to be parsed; any non-empty object
  * is a fatal error
- * @return Python @c Context object
+ * @return Python @c pocky.ext.Context object
  */
-extern PyObject *context_default(PyObject *self, PyObject *args);
+extern PyObject *pocky_context_default(PyObject *self, PyObject *args);
 
 /**
  * @brief Classmethod to create a context for a list of devices, as
@@ -49,9 +50,11 @@ extern PyObject *context_default(PyObject *self, PyObject *args);
  * @param[in] self Class reference
  * @param[in] args Python arguments to be parsed; expects exactly one
  * argument that must be a Python @c PyList object containing only
- * Python @c Device structs
- * @return Python @c Context object
+ * Python @c pocky.ext.Device structs
+ * @return Python @c pocky.ext.Context object
  */
-extern PyObject *context_from_devices(PyObject *self, PyObject *args);
+extern PyObject *pocky_context_from_device_list(PyObject *self, PyObject *args);
 
 #endif      /* POCKY_CONTEXT_H */
+
+/* vim: set ft=c.doxygen: */

@@ -1,8 +1,6 @@
 #ifndef POCKY_UTILS_H
 #define POCKY_UTILS_H
 
-#include <CL/opencl.h>
-
 /**
  * @brief Linked list for platform handles, useful for querying
  * capabilities and choosing from those options
@@ -14,7 +12,7 @@ typedef struct _opencl_platform_query_entry
     char *version;                              /**< Platform version string */
     struct _opencl_platform_query_entry *next;  /**< Pointer to next item */
 }
-opencl_platform_query_entry;
+pocky_opencl_platform_query_entry;
 
 /**
  * @brief Linked list for device handles, useful for querying
@@ -27,21 +25,21 @@ typedef struct _opencl_device_query_entry
     cl_device_type type;                        /**< Device type bitfield */
     struct _opencl_device_query_entry *next;    /**< Pointer to next item */
 }
-opencl_device_query_entry;
+pocky_opencl_device_query_entry;
 
 /**
  * @brief Converts the given error code to a nicer string representation
  * @param[in] err Error code as produced internally by OpenCL
  * @return String representation of @c err
  */
-extern const char *opencl_error_to_string(cl_int err);
+extern const char *pocky_opencl_error_to_string(cl_int err);
 
 /**
  * @brief Creates a linked list of all available platforms
  * @param[out] entries Available platforms
  * @return On success, @c CL_SUCCESS, otherwise an OpenCL error code
  */
-extern cl_int opencl_platform_query_all(opencl_platform_query_entry **entries);
+extern cl_int pocky_opencl_platform_query_all(pocky_opencl_platform_query_entry **entries);
 
 /**
  * @brief Frees the resources allocated by @c opencl_platform_query_all
@@ -54,7 +52,7 @@ extern cl_int opencl_platform_query_all(opencl_platform_query_entry **entries);
  *    cannot be dereferenced after this call.
  * @endrst
  */
-extern void opencl_platform_query_all_free(opencl_platform_query_entry **entries);
+extern void pocky_opencl_platform_query_all_free(pocky_opencl_platform_query_entry **entries);
 
 /**
  * @brief Creates a linked list of all available devices for a platform
@@ -62,8 +60,8 @@ extern void opencl_platform_query_all_free(opencl_platform_query_entry **entries
  * @param[out] entries Available devices for @c plat
  * @return On success, @c CL_SUCCESS, otherwise an OpenCL error code
  */
-extern cl_int opencl_device_query_all(cl_platform_id plat,
-    opencl_device_query_entry **entries);
+extern cl_int pocky_opencl_device_query_all(cl_platform_id plat,
+    pocky_opencl_device_query_entry **entries);
 
 /**
  * @brief Frees the resources allocated by @c opencl_device_query_all
@@ -76,7 +74,7 @@ extern cl_int opencl_device_query_all(cl_platform_id plat,
  *    cannot be dereferenced after this call.
  * @endrst
  */
-extern void opencl_device_query_all_free(opencl_device_query_entry **entries);
+extern void pocky_opencl_device_query_all_free(pocky_opencl_device_query_entry **entries);
 
 /**
  * @brief Creates a context with the default platform and devices
@@ -91,7 +89,7 @@ extern void opencl_device_query_all_free(opencl_device_query_entry **entries);
  *    context could not be created.
  * @endrst
  */
-extern cl_int opencl_context_default(cl_context *ctx);
+extern cl_int pocky_opencl_context_default(cl_context *ctx);
 
 /**
  * @brief Creates a context with the default platform and its CPU devices
@@ -106,7 +104,7 @@ extern cl_int opencl_context_default(cl_context *ctx);
  *    context could not be created.
  * @endrst
  */
-extern cl_int opencl_context_default_cpus(cl_context *ctx);
+extern cl_int pocky_opencl_context_default_cpus(cl_context *ctx);
 
 /**
  * @brief Creates a context with the default platform and its GPU devices
@@ -121,7 +119,7 @@ extern cl_int opencl_context_default_cpus(cl_context *ctx);
  *    context could not be created.
  * @endrst
  */
-extern cl_int opencl_context_default_gpus(cl_context *ctx);
+extern cl_int pocky_opencl_context_default_gpus(cl_context *ctx);
 
 /**
  * @brief Creates a context from an array of devices
@@ -138,7 +136,7 @@ extern cl_int opencl_context_default_gpus(cl_context *ctx);
  *    context for the requested devices could not be created.
  * @endrst
  */
-extern cl_int opencl_context_from_device_list(size_t num_devices,
+extern cl_int pocky_opencl_context_from_device_list(size_t num_devices,
     cl_device_id *devices, cl_context *ctx);
 
 /**
@@ -147,7 +145,7 @@ extern cl_int opencl_context_from_device_list(size_t num_devices,
  * is set to @c NULL on return
  * @return On success, @c CL_SUCCESS, otherwise an OpenCL error code
  */
-extern cl_int opencl_context_free(cl_context *ctx);
+extern cl_int pocky_opencl_context_free(cl_context *ctx);
 
 /**
  * @brief Creates all command queues for the devices in the given context
@@ -163,7 +161,7 @@ extern cl_int opencl_context_free(cl_context *ctx);
  *    but the user must free that memory to avoid a memory leak.
  * @endrst
  */
-extern cl_int opencl_queues_create_all(cl_context ctx,
+extern cl_int pocky_opencl_queues_create_all(cl_context ctx,
     cl_uint *num_queues, cl_command_queue **queues);
 
 /**
@@ -174,7 +172,8 @@ extern cl_int opencl_queues_create_all(cl_context ctx,
  * handle is set to @c NULL, and the container itself is freed on return
  * @return On success, @c CL_SUCCESS, otherwise an OpenCL error code
  */
-extern cl_int opencl_queues_free_all(cl_uint *num_queues, cl_command_queue **queues);
+extern cl_int pocky_opencl_queues_free_all(cl_uint *num_queues,
+        cl_command_queue **queues);
 
 /**
  * @brief Creates and builds all kernels in the given array of fragments for the
@@ -196,7 +195,7 @@ extern cl_int opencl_queues_free_all(cl_uint *num_queues, cl_command_queue **que
  *    any of these handles may not valid if building failed.
  * @endrst
  */
-extern cl_int opencl_kernels_from_fragments(cl_uint nfrags,
+extern cl_int pocky_opencl_kernels_from_fragments(cl_uint nfrags,
     const char **frags, cl_context ctx, cl_program *prog,
     cl_uint *num_kerns, cl_kernel **kerns);
 
@@ -220,7 +219,7 @@ extern cl_int opencl_kernels_from_fragments(cl_uint nfrags,
  *    any of these handles may not valid if building failed.
  * @endrst
  */
-extern cl_int opencl_kernels_from_files(cl_uint nfiles,
+extern cl_int pocky_opencl_kernels_from_files(cl_uint nfiles,
     const char **files, cl_context ctx, cl_program *prog,
     cl_uint *num_kerns, cl_kernel **kerns);
 
@@ -240,7 +239,7 @@ extern cl_int opencl_kernels_from_files(cl_uint nfiles,
  *    matching kernel was found.
  * @endrst
  */
-extern cl_int opencl_kernel_lookup_by_name(cl_uint num_kerns,
+extern cl_int pocky_opencl_kernel_lookup_by_name(cl_uint num_kerns,
     cl_kernel *kerns, const char *name, cl_kernel *kern);
 
 /**
@@ -251,7 +250,7 @@ extern cl_int opencl_kernel_lookup_by_name(cl_uint num_kerns,
  * handle is set to @c NULL, and the container itself is freed on return
  * @return On success, @c CL_SUCCESS, otherwise an OpenCL error code
  */
-extern cl_int opencl_kernels_free_all(cl_uint *num_kerns, cl_kernel **kerns);
+extern cl_int pocky_opencl_kernels_free_all(cl_uint *num_kerns, cl_kernel **kerns);
 
 /**
  * @brief Frees the given program handle
@@ -259,6 +258,8 @@ extern cl_int opencl_kernels_free_all(cl_uint *num_kerns, cl_kernel **kerns);
  * is set to @c NULL on return
  * @return On success, @c CL_SUCCESS, otherwise an OpenCL error code
  */
-extern cl_int opencl_program_free(cl_program *prog);
+extern cl_int pocky_opencl_program_free(cl_program *prog);
 
 #endif      /* POCKY_UTILS_H */
+
+/* vim: set ft=c.doxygen: */

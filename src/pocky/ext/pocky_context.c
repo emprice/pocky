@@ -1,17 +1,17 @@
 #include "pocky.h"
-#include "utils.h"
 
 #define NO_IMPORT_ARRAY
 #define PY_ARRAY_UNIQUE_SYMBOL pocky_ARRAY_API
 #include <numpy/arrayobject.h>
 
-PyTypeObject context_type;
+PyTypeObject pocky_context_type;
 
-PyObject *context_new(PyTypeObject *type, PyObject *args, PyObject *kwargs)
+PyObject *pocky_context_new(PyTypeObject *type,
+        PyObject *args, PyObject *kwargs)
 {
-    context_object *self;
+    pocky_context_object *self;
 
-    if ((self = (context_object *) type->tp_alloc(type, 0)))
+    if ((self = (pocky_context_object *) type->tp_alloc(type, 0)))
     {
         self->ctx = NULL;
         self->queues = NULL;
@@ -21,23 +21,23 @@ PyObject *context_new(PyTypeObject *type, PyObject *args, PyObject *kwargs)
     return (PyObject *) self;
 }
 
-static void context_init(context_object *context)
+static void pocky_context_init(pocky_context_object *context)
 {
     cl_int err;
     char buf[BUFSIZ];
 
-    err = opencl_queues_create_all(context->ctx,
+    err = pocky_opencl_queues_create_all(context->ctx,
         &(context->num_queues), &(context->queues));
     if (err != CL_SUCCESS)
     {
-        snprintf(buf, BUFSIZ,
-            ocl_fmt_internal, opencl_error_to_string(err), err);
-        PyErr_SetString(ocl_error, buf);
+        snprintf(buf, BUFSIZ, pocky_ocl_fmt_internal,
+            pocky_opencl_error_to_string(err), err);
+        PyErr_SetString(pocky_ocl_error, buf);
         return;
     }
 }
 
-void context_dealloc(context_object *self)
+void pocky_context_dealloc(pocky_context_object *self)
 {
     size_t idx;
 
@@ -52,31 +52,32 @@ void context_dealloc(context_object *self)
     Py_TYPE(self)->tp_free((PyObject *) self);
 }
 
-PyObject *context_default(PyObject *self, PyObject *Py_UNUSED(args))
+PyObject *pocky_context_default(PyObject *self, PyObject *Py_UNUSED(args))
 {
     cl_int err;
     char buf[BUFSIZ];
-    context_object *context;
+    pocky_context_object *context;
 
     /* create the object */
-    context = (context_object *) context_new(&context_type, NULL, NULL);
+    context = (pocky_context_object *)
+        pocky_context_new(&pocky_context_type, NULL, NULL);
 
     /* get the default context handle */
-    err = opencl_context_default(&(context->ctx));
+    err = pocky_opencl_context_default(&(context->ctx));
     if (err != CL_SUCCESS)
     {
-        snprintf(buf, BUFSIZ, ocl_fmt_internal,
-            opencl_error_to_string(err), err);
-        PyErr_SetString(ocl_error, buf);
+        snprintf(buf, BUFSIZ, pocky_ocl_fmt_internal,
+            pocky_opencl_error_to_string(err), err);
+        PyErr_SetString(pocky_ocl_error, buf);
         return NULL;
     }
 
     /* bundle and return */
-    context_init(context);
+    pocky_context_init(context);
     return (PyObject *) context;
 }
 
-static int get_device_ids_from_list(PyObject *devs,
+static int pocky_get_device_ids_from_list(PyObject *devs,
     Py_ssize_t *num_dev_ids, cl_device_id **dev_ids)
 {
     Py_ssize_t idx;
@@ -89,16 +90,16 @@ static int get_device_ids_from_list(PyObject *devs,
         PyObject *dev, *cap;
 
         dev = PyList_GetItem(devs, idx);
-        if (!PyObject_TypeCheck(dev, device_type))
+        if (!PyObject_TypeCheck(dev, pocky_device_type))
         {
-            PyErr_SetString(PyExc_TypeError, ocl_msg_not_a_device);
+            PyErr_SetString(PyExc_TypeError, pocky_ocl_msg_not_a_device);
             return -1;
         }
 
         cap = PyStructSequence_GetItem(dev, 0);
         if (!PyCapsule_CheckExact(cap))
         {
-            PyErr_SetString(PyExc_TypeError, ocl_msg_not_a_capsule);
+            PyErr_SetString(PyExc_TypeError, pocky_ocl_msg_not_a_capsule);
             return -1;
         }
 
@@ -108,11 +109,11 @@ static int get_device_ids_from_list(PyObject *devs,
     return 0;
 }
 
-PyObject *context_from_device_list(PyObject *self, PyObject *args)
+PyObject *pocky_context_from_device_list(PyObject *self, PyObject *args)
 {
     cl_int err;
     char buf[BUFSIZ];
-    context_object *context;
+    pocky_context_object *context;
 
     PyObject *devs;
     cl_device_id *dev_ids;
@@ -121,38 +122,38 @@ PyObject *context_from_device_list(PyObject *self, PyObject *args)
     /* expect one argument, a list */
     if (!PyArg_ParseTuple(args, "O!", &PyList_Type, &devs)) return NULL;
     /* convert to device ids */
-    if (get_device_ids_from_list(devs, &num_dev_ids, &dev_ids)) return NULL;
+    if (pocky_get_device_ids_from_list(devs, &num_dev_ids, &dev_ids)) return NULL;
 
     /* create the object */
-    context = (context_object *) context_new(&context_type, NULL, NULL);
+    context = (pocky_context_object *)
+        pocky_context_new(&pocky_context_type, NULL, NULL);
 
     /* create the context */
-    err = opencl_context_from_device_list(num_dev_ids, dev_ids, &(context->ctx));
+    err = pocky_opencl_context_from_device_list(num_dev_ids, dev_ids, &(context->ctx));
     if (err != CL_SUCCESS)
     {
-        snprintf(buf, BUFSIZ, ocl_fmt_internal, opencl_error_to_string(err), err);
-        PyErr_SetString(ocl_error, buf);
+        snprintf(buf, BUFSIZ, pocky_ocl_fmt_internal,
+            pocky_opencl_error_to_string(err), err);
+        PyErr_SetString(pocky_ocl_error, buf);
         return NULL;
     }
 
     /* bundle and return */
-    context_init(context);
+    pocky_context_init(context);
     return (PyObject *) context;
 }
 
-PyMethodDef context_methods[] = {
+PyMethodDef pocky_context_methods[] = {
 
     /* classmethods for object creation */
     { "default",
-      (PyCFunction) context_default,
-      METH_NOARGS | METH_CLASS,
+      (PyCFunction) pocky_context_default, METH_NOARGS | METH_CLASS,
       "default() -> Context\n"
       "Create a context with the default OpenCL platform and devices.\n\n"
       "Returns:\n"
       "  An initialized Context\n" },
     { "from_device_list",
-      (PyCFunction) context_from_device_list,
-      METH_VARARGS | METH_CLASS,
+      (PyCFunction) pocky_context_from_device_list, METH_VARARGS | METH_CLASS,
       "from_device_list(devices: list[Device]) -> Context\n"
       "Create a context from a subset of OpenCL devices on the same platform.\n\n"
       "Args:\n"
@@ -162,3 +163,5 @@ PyMethodDef context_methods[] = {
 
     { NULL, NULL, 0, NULL }    /* sentinel */
 };
+
+/* vim: set ft=c.doxygen: */

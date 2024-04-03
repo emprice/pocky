@@ -1,17 +1,16 @@
 #include "pocky.h"
-#include "utils.h"
 
 #define NO_IMPORT_ARRAY
 #define PY_ARRAY_UNIQUE_SYMBOL pocky_ARRAY_API
 #include <numpy/arrayobject.h>
 
-PyTypeObject bufpair_type;
+PyTypeObject pocky_bufpair_type;
 
-PyObject *bufpair_new(PyTypeObject *type, PyObject *args, PyObject *kwargs)
+PyObject *pocky_bufpair_new(PyTypeObject *type, PyObject *args, PyObject *kwargs)
 {
-    bufpair_object *self;
+    pocky_bufpair_object *self;
 
-    if ((self = (bufpair_object *) type->tp_alloc(type, 0)))
+    if ((self = (pocky_bufpair_object *) type->tp_alloc(type, 0)))
     {
         self->host = NULL;
         self->context = NULL;
@@ -23,15 +22,16 @@ PyObject *bufpair_new(PyTypeObject *type, PyObject *args, PyObject *kwargs)
     return (PyObject *) self;
 }
 
-int bufpair_init(bufpair_object *self, PyObject *args, PyObject *kwargs)
+int pocky_bufpair_init(pocky_bufpair_object *self,
+        PyObject *args, PyObject *kwargs)
 {
     cl_int err;
     PyObject *host, *tmp;
-    context_object *context;
+    pocky_context_object *context;
     char *keys[] = { "context", "host", NULL };
 
     if (!PyArg_ParseTupleAndKeywords(args, kwargs, "O!O!", keys,
-        &context_type, &context, &PyArray_Type, &host)) return -1;
+        &pocky_context_type, &context, &PyArray_Type, &host)) return -1;
 
     if (!PyArray_Check(host) ||
         !(PyArray_FLAGS((PyArrayObject *) host) & NPY_ARRAY_C_CONTIGUOUS) ||
@@ -63,14 +63,15 @@ int bufpair_init(bufpair_object *self, PyObject *args, PyObject *kwargs)
     return 0;
 }
 
-void bufpair_dealloc(bufpair_object *self)
+void pocky_bufpair_dealloc(pocky_bufpair_object *self)
 {
     Py_XDECREF(self->context);
     Py_XDECREF(self->host);
     Py_TYPE(self)->tp_free((PyObject *) self);
 }
 
-PyObject *bufpair_array(bufpair_object *self, PyObject *Py_UNUSED(noargs))
+PyObject *pocky_bufpair_array(pocky_bufpair_object *self,
+        PyObject *Py_UNUSED(noargs))
 {
     if (!self->host)
     {
@@ -81,12 +82,13 @@ PyObject *bufpair_array(bufpair_object *self, PyObject *Py_UNUSED(noargs))
     return Py_NewRef(self->host);
 }
 
-PyObject *bufpair_get_host(bufpair_object *self, void *closure)
+PyObject *pocky_bufpair_get_host(pocky_bufpair_object *self, void *closure)
 {
     return Py_NewRef(self->host);
 }
 
-int bufpair_set_host(bufpair_object *self, PyObject *value, void *closure)
+int pocky_bufpair_set_host(pocky_bufpair_object *self,
+        PyObject *value, void *closure)
 {
     size_t new_size;
 
@@ -120,28 +122,29 @@ int bufpair_set_host(bufpair_object *self, PyObject *value, void *closure)
     return 0;
 }
 
-PyGetSetDef bufpair_getsetters[] = {
-    { "host", (getter) bufpair_get_host, (setter) bufpair_set_host,
+PyGetSetDef pocky_bufpair_getsetters[] = {
+    { "host", (getter) pocky_bufpair_get_host, (setter) pocky_bufpair_set_host,
       "Exposes the underlying NumPy host array. The size of the array cannot "
       "be increased after the BufferPair is created, but the array can be "
       "replaced by one of the same dtype and equal or smaller size.", NULL },
     { NULL }    /* sentinel */
 };
 
-PyMethodDef bufpair_methods[] = {
-    { "__array__", (PyCFunction) bufpair_array, METH_NOARGS,
+PyMethodDef pocky_bufpair_methods[] = {
+    { "__array__", (PyCFunction) pocky_bufpair_array, METH_NOARGS,
       "Return the host NumPy array" },
     { NULL, NULL, 0, NULL }    /* sentinel */
 };
 
-int bufpair_empty_like(context_object *context,
-    bufpair_object *like, bufpair_object **bufpair)
+int pocky_bufpair_empty_like(pocky_context_object *context,
+    pocky_bufpair_object *like, pocky_bufpair_object **bufpair)
 {
     cl_int err;
     char buf[BUFSIZ];
 
     /* Create the buffer memory object */
-    *bufpair = (bufpair_object *) bufpair_new(&bufpair_type, NULL, NULL);
+    *bufpair = (pocky_bufpair_object *)
+        pocky_bufpair_new(&pocky_bufpair_type, NULL, NULL);
     if (*bufpair == NULL) return -1;
 
     Py_INCREF(context);
@@ -158,23 +161,24 @@ int bufpair_empty_like(context_object *context,
         (*bufpair)->device_size * sizeof(cl_float), NULL, &err);
     if (err != CL_SUCCESS)
     {
-        snprintf(buf, BUFSIZ, ocl_fmt_internal,
-            opencl_error_to_string(err), err);
-        PyErr_SetString(ocl_error, buf);
+        snprintf(buf, BUFSIZ, pocky_ocl_fmt_internal,
+            pocky_opencl_error_to_string(err), err);
+        PyErr_SetString(pocky_ocl_error, buf);
         return -1;
     }
 
     return 0;
 }
 
-int bufpair_empty_from_shape(context_object *context,
-    size_t ndim, size_t *shape, bufpair_object **bufpair)
+int pocky_bufpair_empty_from_shape(pocky_context_object *context,
+    size_t ndim, size_t *shape, pocky_bufpair_object **bufpair)
 {
     cl_int err;
     char buf[BUFSIZ];
 
     /* Create the buffer memory object */
-    *bufpair = (bufpair_object *) bufpair_new(&bufpair_type, NULL, NULL);
+    *bufpair = (pocky_bufpair_object *)
+        pocky_bufpair_new(&pocky_bufpair_type, NULL, NULL);
     if (*bufpair == NULL) return -1;
 
     Py_INCREF(context);
@@ -192,11 +196,13 @@ int bufpair_empty_from_shape(context_object *context,
         (*bufpair)->device_size * sizeof(cl_float), NULL, &err);
     if (err != CL_SUCCESS)
     {
-        snprintf(buf, BUFSIZ, ocl_fmt_internal,
-            opencl_error_to_string(err), err);
-        PyErr_SetString(ocl_error, buf);
+        snprintf(buf, BUFSIZ, pocky_ocl_fmt_internal,
+            pocky_opencl_error_to_string(err), err);
+        PyErr_SetString(pocky_ocl_error, buf);
         return -1;
     }
 
     return 0;
 }
+
+/* vim: set ft=c.doxygen: */

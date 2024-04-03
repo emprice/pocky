@@ -1,23 +1,23 @@
 #include "pocky.h"
-#include "utils.h"
 
 #define NO_IMPORT_ARRAY
 #define PY_ARRAY_UNIQUE_SYMBOL pocky_ARRAY_API
 #include <numpy/arrayobject.h>
 
-PyObject *list_all_platforms(PyObject *self, PyObject *Py_UNUSED(args))
+PyObject *pocky_list_all_platforms(PyObject *self, PyObject *Py_UNUSED(args))
 {
     cl_int err;
     char buf[BUFSIZ];
 
     PyObject *result;
-    opencl_platform_query_entry *entries, *entry;
+    pocky_opencl_platform_query_entry *entries, *entry;
 
-    err = opencl_platform_query_all(&entries);
+    err = pocky_opencl_platform_query_all(&entries);
     if (err != CL_SUCCESS)
     {
-        snprintf(buf, BUFSIZ, ocl_fmt_internal, opencl_error_to_string(err), err);
-        PyErr_SetString(ocl_error, buf);
+        snprintf(buf, BUFSIZ, pocky_ocl_fmt_internal,
+                pocky_opencl_error_to_string(err), err);
+        PyErr_SetString(pocky_ocl_error, buf);
         return NULL;
     }
 
@@ -29,7 +29,7 @@ PyObject *list_all_platforms(PyObject *self, PyObject *Py_UNUSED(args))
     {
         PyObject *seq, *id, *name, *version;
 
-        seq = PyStructSequence_New(platform_type);
+        seq = PyStructSequence_New(pocky_platform_type);
         if (!seq) return NULL;
 
         id      = PyCapsule_New(entry->id, "PlatformID", NULL);
@@ -57,34 +57,35 @@ PyObject *list_all_platforms(PyObject *self, PyObject *Py_UNUSED(args))
         entry = entry->next;
     }
 
-    opencl_platform_query_all_free(&entries);
+    pocky_opencl_platform_query_all_free(&entries);
     return result;
 }
 
-PyObject *list_all_devices(PyObject *self, PyObject *args)
+PyObject *pocky_list_all_devices(PyObject *self, PyObject *args)
 {
     cl_int err;
     char buf[BUFSIZ];
 
     cl_platform_id plat_id;
     PyObject *plat, *cap, *result;
-    opencl_device_query_entry *entries, *entry;
+    pocky_opencl_device_query_entry *entries, *entry;
 
-    if (!PyArg_ParseTuple(args, "O!", platform_type, &plat)) return NULL;
+    if (!PyArg_ParseTuple(args, "O!", pocky_platform_type, &plat)) return NULL;
 
     cap = PyStructSequence_GetItem(plat, 0);
     if (!PyCapsule_CheckExact(cap))
     {
-        PyErr_SetString(PyExc_TypeError, ocl_msg_not_a_capsule);
+        PyErr_SetString(PyExc_TypeError, pocky_ocl_msg_not_a_capsule);
         return NULL;
     }
     plat_id = PyCapsule_GetPointer(cap, "PlatformID");
 
-    err = opencl_device_query_all(plat_id, &entries);
+    err = pocky_opencl_device_query_all(plat_id, &entries);
     if (err != CL_SUCCESS)
     {
-        snprintf(buf, BUFSIZ, ocl_fmt_internal, opencl_error_to_string(err), err);
-        PyErr_SetString(ocl_error, buf);
+        snprintf(buf, BUFSIZ, pocky_ocl_fmt_internal,
+            pocky_opencl_error_to_string(err), err);
+        PyErr_SetString(pocky_ocl_error, buf);
         return NULL;
     }
 
@@ -96,7 +97,7 @@ PyObject *list_all_devices(PyObject *self, PyObject *args)
     {
         PyObject *seq, *id, *name, *type, *t;
 
-        seq = PyStructSequence_New(device_type);
+        seq = PyStructSequence_New(pocky_device_type);
         if (!seq) return NULL;
 
         id   = PyCapsule_New(entry->id, "DeviceID", NULL);
@@ -152,6 +153,8 @@ PyObject *list_all_devices(PyObject *self, PyObject *args)
         entry = entry->next;
     }
 
-    opencl_device_query_all_free(&entries);
+    pocky_opencl_device_query_all_free(&entries);
     return result;
 }
+
+/* vim: set ft=c.doxygen: */

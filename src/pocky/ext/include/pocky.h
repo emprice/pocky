@@ -13,20 +13,25 @@
 
 #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
 
+#define CL_TARGET_OPENCL_VERSION    (300)
+
 #include <CL/opencl.h>
 
 /** Exception object for OpenCL-specific errors */
-extern PyObject *ocl_error;
+extern PyObject *pocky_ocl_error;
 
 /** Handle of the Python @c Platform type */
-extern PyTypeObject *platform_type;
+extern PyTypeObject *pocky_platform_type;
 
 /** Handle of the Python @c Device type */
-extern PyTypeObject *device_type;
+extern PyTypeObject *pocky_device_type;
 
-#include "context.h"
-#include "bufpair.h"
-#include "functions.h"
-#include "helpers.h"
+#include "pocky_context.h"
+#include "pocky_bufpair.h"
+#include "pocky_functions.h"
+#include "pocky_helpers.h"
+#include "pocky_utils.h"
 
 #endif      /* POCKY_H */
+
+/* vim: set ft=c.doxygen: */
