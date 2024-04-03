@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__utils_8h_1a96cd49b6f03fa05c163c3f6cbf4bbf0b:
+
+Function pocky_opencl_kernel_lookup_by_name
+===========================================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_utils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_opencl_kernel_lookup_by_name(cl_uint, cl_kernel *, const char *, cl_kernel *)
+   :project: pocky

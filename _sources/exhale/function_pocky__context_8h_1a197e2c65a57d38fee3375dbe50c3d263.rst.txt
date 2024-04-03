@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__context_8h_1a197e2c65a57d38fee3375dbe50c3d263:
+
+Function pocky_context_default
+==============================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_context.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_context_default(PyObject *, PyObject *)
+   :project: pocky

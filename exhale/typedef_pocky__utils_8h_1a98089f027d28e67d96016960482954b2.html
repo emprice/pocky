@@ -1,0 +1,583 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link href="../_static/fonts/OpenSans-Regular.ttf" rel="preload" as="font" type="font/ttf">
+<link href="../_static/fonts/OpenSans-Italic.ttf" rel="preload" as="font" type="font/ttf">
+<link href="../_static/fonts/OpenSans-Bold.ttf" rel="preload" as="font" type="font/ttf">
+<link href="../_static/fonts/OpenSans-BoldItalic.ttf" rel="preload" as="font" type="font/ttf">
+<link href="../_static/fonts/SourceCodePro-Regular.ttf" rel="preload" as="font" type="font/ttf">
+<link href="../_static/fonts/SourceCodePro-Italic.ttf" rel="preload" as="font" type="font/ttf">
+<link href="../_static/fonts/SourceCodePro-Bold.ttf" rel="preload" as="font" type="font/ttf">
+<link href="../_static/fonts/SourceCodePro-BoldItalic.ttf" rel="preload" as="font" type="font/ttf">
+
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>Typedef pocky_opencl_platform_query_entry - pocky</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=de2cfabe" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eceff4;
+  --color-code-foreground: black;
+  --color-problematic: #bf616a;
+  --color-foreground-primary: #2e3440;
+  --color-foreground-secondary: #3b4252;
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #eceff4;
+  --color-annoucnement-background: #a3be8c;
+  --color-annoucnement-text: #eceff4;
+  --color-brand-primary: #5e81ac;
+  --color-brand-content: #5e81ac;
+  --color-highlight-on-target: #ebcb8b;
+  --color-highlighted-text: #eceff4;
+  --color-highlighted-background: #4c566a;
+  --color-table-border: #bbc5d8;
+  --font-size--normal: 100%;
+  --font-size--small: 95%;
+  --font-size--small--2: 90%;
+  --font-size--small--3: 85%;
+  --font-size--small--4: 80%;
+  --font-stack: 'Open Sans', sans-serif;
+  --font-stack--monospace: 'Source Code Pro', monospace;
+  --admonition-font-size: 1rem;
+  --admonition-title-font-size: 1rem;
+  --color-topic-title: #8fbcbb;
+  --color-topic-title-background: rgba(143, 188, 187, 0.3);
+  --color-admonition-title: #b48ead;
+  --color-admonition-title-background: rgba(180, 142, 173, 0.3);
+  --color-admonition-title--admonition-todo: #b48ead;
+  --color-admonition-title-background--admonition-todo: rgba(180, 142, 173, 0.3);
+  --color-admonition-title--caution: #ebcb8b;
+  --color-admonition-title-background--caution: rgba(235, 203, 139, 0.3);
+  --color-admonition-title--warning: #d08770;
+  --color-admonition-title-background--warning: rgba(208, 135, 112, 0.3);
+  --color-admonition-title--danger: #bf616a;
+  --color-admonition-title-background--danger: rgba(191, 97, 106, 0.3);
+  --color-admonition-title--attention: #bf616a;
+  --color-admonition-title-background--attention: rgba(191, 97, 106, 0.3);
+  --color-admonition-title--error: #bf616a;
+  --color-admonition-title-background--error: rgba(191, 97, 106, 0.3);
+  --color-admonition-title--hint: #a3be8c;
+  --color-admonition-title-background--hint: rgba(163, 190, 140, 0.3);
+  --color-admonition-title--important: #8fbcbb;
+  --color-admonition-title-background--important: rgba(143, 188, 187, 0.3);
+  --color-admonition-title--note: #88c0d0;
+  --color-admonition-title-background--note: rgba(136, 192, 208, 0.3);
+  --color-admonition-title--seealso: #81a1c1;
+  --color-admonition-title-background--seealso: rgba(129, 161, 193, 0.3);
+  --color-admonition-title--tip: #a3be8c;
+  --color-admonition-title-background--tip: rgba(163, 190, 140, 0.3);
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #3b4252;
+  --color-code-foreground: white;
+  --color-problematic: #bf616a;
+  --color-foreground-primary: #eceff4;
+  --color-foreground-secondary: #e5e9f0;
+  --color-background-primary: #292e39;
+  --color-background-secondary: #3b4252;
+  --color-annoucnement-background: #a3be8c;
+  --color-annoucnement-text: #eceff4;
+  --color-brand-primary: #88c0d0;
+  --color-brand-content: #88c0d0;
+  --color-highlight-on-target: #d08770;
+  --color-highlighted-text: #2e3440;
+  --color-highlighted-background: #ebcb8b;
+  --color-table-border: rgba(216, 222, 233, 0.5);
+  --font-size--normal: 100%;
+  --font-size--small: 95%;
+  --font-size--small--2: 90%;
+  --font-size--small--3: 85%;
+  --font-size--small--4: 80%;
+  --font-stack: 'Open Sans', sans-serif;
+  --font-stack--monospace: 'Source Code Pro', monospace;
+  --admonition-font-size: 1rem;
+  --admonition-title-font-size: 1rem;
+  --color-topic-title: #8fbcbb;
+  --color-topic-title-background: rgba(143, 188, 187, 0.3);
+  --color-admonition-title: #b48ead;
+  --color-admonition-title-background: rgba(180, 142, 173, 0.3);
+  --color-admonition-title--admonition-todo: #b48ead;
+  --color-admonition-title-background--admonition-todo: rgba(180, 142, 173, 0.3);
+  --color-admonition-title--caution: #ebcb8b;
+  --color-admonition-title-background--caution: rgba(235, 203, 139, 0.3);
+  --color-admonition-title--warning: #d08770;
+  --color-admonition-title-background--warning: rgba(208, 135, 112, 0.3);
+  --color-admonition-title--danger: #bf616a;
+  --color-admonition-title-background--danger: rgba(191, 97, 106, 0.3);
+  --color-admonition-title--attention: #bf616a;
+  --color-admonition-title-background--attention: rgba(191, 97, 106, 0.3);
+  --color-admonition-title--error: #bf616a;
+  --color-admonition-title-background--error: rgba(191, 97, 106, 0.3);
+  --color-admonition-title--hint: #a3be8c;
+  --color-admonition-title-background--hint: rgba(163, 190, 140, 0.3);
+  --color-admonition-title--important: #8fbcbb;
+  --color-admonition-title-background--important: rgba(143, 188, 187, 0.3);
+  --color-admonition-title--note: #88c0d0;
+  --color-admonition-title-background--note: rgba(136, 192, 208, 0.3);
+  --color-admonition-title--seealso: #81a1c1;
+  --color-admonition-title-background--seealso: rgba(129, 161, 193, 0.3);
+  --color-admonition-title--tip: #a3be8c;
+  --color-admonition-title-background--tip: rgba(163, 190, 140, 0.3);
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #3b4252;
+  --color-code-foreground: white;
+  --color-problematic: #bf616a;
+  --color-foreground-primary: #eceff4;
+  --color-foreground-secondary: #e5e9f0;
+  --color-background-primary: #292e39;
+  --color-background-secondary: #3b4252;
+  --color-annoucnement-background: #a3be8c;
+  --color-annoucnement-text: #eceff4;
+  --color-brand-primary: #88c0d0;
+  --color-brand-content: #88c0d0;
+  --color-highlight-on-target: #d08770;
+  --color-highlighted-text: #2e3440;
+  --color-highlighted-background: #ebcb8b;
+  --color-table-border: rgba(216, 222, 233, 0.5);
+  --font-size--normal: 100%;
+  --font-size--small: 95%;
+  --font-size--small--2: 90%;
+  --font-size--small--3: 85%;
+  --font-size--small--4: 80%;
+  --font-stack: 'Open Sans', sans-serif;
+  --font-stack--monospace: 'Source Code Pro', monospace;
+  --admonition-font-size: 1rem;
+  --admonition-title-font-size: 1rem;
+  --color-topic-title: #8fbcbb;
+  --color-topic-title-background: rgba(143, 188, 187, 0.3);
+  --color-admonition-title: #b48ead;
+  --color-admonition-title-background: rgba(180, 142, 173, 0.3);
+  --color-admonition-title--admonition-todo: #b48ead;
+  --color-admonition-title-background--admonition-todo: rgba(180, 142, 173, 0.3);
+  --color-admonition-title--caution: #ebcb8b;
+  --color-admonition-title-background--caution: rgba(235, 203, 139, 0.3);
+  --color-admonition-title--warning: #d08770;
+  --color-admonition-title-background--warning: rgba(208, 135, 112, 0.3);
+  --color-admonition-title--danger: #bf616a;
+  --color-admonition-title-background--danger: rgba(191, 97, 106, 0.3);
+  --color-admonition-title--attention: #bf616a;
+  --color-admonition-title-background--attention: rgba(191, 97, 106, 0.3);
+  --color-admonition-title--error: #bf616a;
+  --color-admonition-title-background--error: rgba(191, 97, 106, 0.3);
+  --color-admonition-title--hint: #a3be8c;
+  --color-admonition-title-background--hint: rgba(163, 190, 140, 0.3);
+  --color-admonition-title--important: #8fbcbb;
+  --color-admonition-title-background--important: rgba(143, 188, 187, 0.3);
+  --color-admonition-title--note: #88c0d0;
+  --color-admonition-title-background--note: rgba(136, 192, 208, 0.3);
+  --color-admonition-title--seealso: #81a1c1;
+  --color-admonition-title-background--seealso: rgba(129, 161, 193, 0.3);
+  --color-admonition-title--tip: #a3be8c;
+  --color-admonition-title-background--tip: rgba(163, 190, 140, 0.3);
+  
+      }
+    }
+  }
+</style>
+
+    
+    <style>
+    @font-face {
+        font-family: 'Raleway';
+        src: url('../_static/fonts/Raleway-Regular.ttf');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Raleway';
+        src: url('../_static/fonts/Raleway-Italic.ttf');
+        font-weight: 400;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: 'Raleway';
+        src: url('../_static/fonts/Raleway-Bold.ttf');
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Raleway';
+        src: url('../_static/fonts/Raleway-BoldItalic.ttf');
+        font-weight: 700;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: 'Source Code Pro';
+        src: url('../_static/fonts/SourceCodePro-Regular.ttf');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Source Code Pro';
+        src: url('../_static/fonts/SourceCodePro-Italic.ttf');
+        font-weight: 400;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: 'Source Code Pro';
+        src: url('../_static/fonts/SourceCodePro-Bold.ttf');
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Source Code Pro';
+        src: url('../_static/fonts/SourceCodePro-BoldItalic.ttf');
+        font-weight: 700;
+        font-style: italic;
+    }
+    body { font-size: 16pt; }
+    .sidebar-brand-text { display: none; }
+    </style>
+
+<style>
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('../_static/fonts/OpenSans-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('../_static/fonts/OpenSans-Italic.ttf');
+    font-weight: 400;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('../_static/fonts/OpenSans-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('../_static/fonts/OpenSans-BoldItalic.ttf');
+    font-weight: 700;
+    font-style: italic;
+  }
+  .sidebar-brand-text {
+    display: block;
+    font-size: 4rem;
+  }
+</style>
+</head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">pocky</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">pocky</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../highlevel.html">High-level Python API</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="lowlevel.html">Low-level C API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Low-level C API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="struct__opencl__device__query__entry.html">Struct _opencl_device_query_entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct__opencl__platform__query__entry.html">Struct _opencl_platform_query_entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structpocky__bufpair__object.html">Struct pocky_bufpair_object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structpocky__context__object.html">Struct pocky_context_object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__bufpair_8h_1a6050f3a85392019f3e1e6bc4a6d19fc9.html">Function pocky_bufpair_array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__bufpair_8h_1a843e1d96e56084f6eba14deb897f708a.html">Function pocky_bufpair_dealloc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__bufpair_8h_1a546ba0d25162a516c787f5bd86f030f6.html">Function pocky_bufpair_empty_from_shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__bufpair_8h_1aa431280e9fda39d410eaa2ade5d51c76.html">Function pocky_bufpair_empty_like</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__bufpair_8h_1a842bbe0abe5de8e8dd77dd4b96f0f315.html">Function pocky_bufpair_get_host</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__bufpair_8h_1a9657a00720358de97eeb3160ec62fd04.html">Function pocky_bufpair_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__bufpair_8h_1aa57c24c06f8b4ce50cc19d3590375e88.html">Function pocky_bufpair_new</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__bufpair_8h_1adcc10b9ad889daba4ef4383c4384f9ae.html">Function pocky_bufpair_set_host</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__context_8h_1a6dceaef963a85c36d3002530c68c2244.html">Function pocky_context_dealloc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__context_8h_1a197e2c65a57d38fee3375dbe50c3d263.html">Function pocky_context_default</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__context_8h_1a66084d5795f4d4be1dcde1be346d6ad3.html">Function pocky_context_from_device_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__context_8h_1acc13f208452b37b961cfd3d1b532b825.html">Function pocky_context_new</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__functions_8h_1a82a893432f8ae1b79943f4ee8a415077.html">Function pocky_list_all_devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__functions_8h_1ab60029fc893ffcb6c4c75f9253ba9bfc.html">Function pocky_list_all_platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__utils_8h_1a440e9e6cec004c5e2f448f9f46827e26.html">Function pocky_opencl_context_default</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__utils_8h_1ac13dd3269612f0ae677220d8869b51e1.html">Function pocky_opencl_context_default_cpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__utils_8h_1a5c48fbc9c2ecc10c8252b3663bae8fb1.html">Function pocky_opencl_context_default_gpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__utils_8h_1a2187d9d8d1133fec80ebf529804eb06a.html">Function pocky_opencl_context_free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__utils_8h_1a8cef2a618ce5a35fe10443ffc6fcc51e.html">Function pocky_opencl_context_from_device_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__utils_8h_1aafeb09ba8df9b30a375c82fe4faad4b5.html">Function pocky_opencl_device_query_all</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__utils_8h_1a10ed5b843b898571f3c31bd830b33e07.html">Function pocky_opencl_device_query_all_free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__utils_8h_1a630555db77172facc119cbe0d63d532a.html">Function pocky_opencl_error_to_string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__utils_8h_1a96cd49b6f03fa05c163c3f6cbf4bbf0b.html">Function pocky_opencl_kernel_lookup_by_name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__utils_8h_1ac5afb6f150da51f0055ef83d756c91e8.html">Function pocky_opencl_kernels_free_all</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__utils_8h_1a7302b3878ad5b4456bacdd21f48d8deb.html">Function pocky_opencl_kernels_from_files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__utils_8h_1a820bc923083f63ad3e1b7ea605c74bf9.html">Function pocky_opencl_kernels_from_fragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__utils_8h_1a3954f2c5b1cd26488eae48b0230411d5.html">Function pocky_opencl_platform_query_all</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__utils_8h_1a65aad9d99008d77552581845227071f9.html">Function pocky_opencl_platform_query_all_free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__utils_8h_1adfe8ccc3399c3063bc9a56616a319ee4.html">Function pocky_opencl_program_free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__utils_8h_1aa0e55e69ee55f14203ba78fc29e88182.html">Function pocky_opencl_queues_create_all</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_pocky__utils_8h_1a79c1219787c59fdfd658c119fa4631cc.html">Function pocky_opencl_queues_free_all</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__bufpair_8h_1ac57a597b59882dfa826cfac48e03df31.html">Variable pocky_bufpair_getsetters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__bufpair_8h_1aa5e06a24414a715cc07befa1c03cc26e.html">Variable pocky_bufpair_methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__bufpair_8h_1acb7805e25cdfa5dd0d6c5b5201802768.html">Variable pocky_bufpair_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__helpers_8h_1add1d6b24f17dffbd9da9570407324876.html">Variable pocky_bufpair_type_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__helpers_8h_1a0ba9b074a73f2865938e959bf1d82a04.html">Variable pocky_context_fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__context_8h_1a4f9eb746bb0942d49d55218f2e530624.html">Variable pocky_context_methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__context_8h_1addc9a0182ff0066f11b24642582ac648.html">Variable pocky_context_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__helpers_8h_1ad5eb028a932be66098bbd866e0b7b0d7.html">Variable pocky_context_type_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__helpers_8h_1aa566f9bd12d464aaa2b91b73f8df2ad0.html">Variable pocky_device_desc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__helpers_8h_1af5a9e21eea0c7737dc9b134848798927.html">Variable pocky_device_fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky_8h_1a44ff0ed62e062fc9f08708783b4c40fc.html">Variable pocky_device_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__helpers_8h_1a2e105da91142821fdb1a41ac5eafb9b9.html">Variable pocky_device_type_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__helpers_8h_1a53798e6956544775635e9af37d12b493.html">Variable pocky_module_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky_8h_1ad56e1f417089dca7983c63d7b2b56c19.html">Variable pocky_ocl_error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__helpers_8h_1ad298204c03cb5984b8bb5fa6894ce0fa.html">Variable pocky_ocl_fmt_internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__helpers_8h_1a73de3e83197b73e3b04beee8731a17cf.html">Variable pocky_ocl_msg_kernel_not_found</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__helpers_8h_1a2f5eb441f658ff5b54fc559a044212f5.html">Variable pocky_ocl_msg_not_a_capsule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__helpers_8h_1a7e075f6618e1e6704dc35c75d4ec63bd.html">Variable pocky_ocl_msg_not_a_device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__helpers_8h_1a14e659608bf20655de67b5dc3a702a73.html">Variable pocky_ocl_msg_not_a_valid_context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__helpers_8h_1a17c24d5ef65ee327be988a83fd3e1e82.html">Variable pocky_platform_desc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__helpers_8h_1a9334c18f1b0a7f7bdf1ba5fb7b6aebb3.html">Variable pocky_platform_fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky_8h_1a0cd81f6fdee02b661a18af843502f259.html">Variable pocky_platform_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_pocky__helpers_8h_1a773e16f7a97ba45161f8eafbb50852f2.html">Variable pocky_platform_type_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_pocky_8h_1a5990dea19d4ccb046a3d81b311457add.html">Define CL_TARGET_OPENCL_VERSION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_pocky_8h_1ab6e6ee86736f9ebb56e74ae21bf3ff8a.html">Define NPY_NO_DEPRECATED_API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_pocky_8h_1ac9efdaac9411d0868b715edccca3269d.html">Define PY_SSIZE_T_CLEAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typedef_pocky__utils_8h_1ac6f16b2a3cdd6ec17d7f02472ba55a28.html">Typedef pocky_opencl_device_query_entry</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Typedef pocky_opencl_platform_query_entry</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="typedef-pocky-opencl-platform-query-entry">
+<span id="exhale-typedef-pocky-utils-8h-1a98089f027d28e67d96016960482954b2"></span><h1>Typedef pocky_opencl_platform_query_entry<a class="headerlink" href="#typedef-pocky-opencl-platform-query-entry" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_src_pocky_ext_include_pocky_utils.h.html#file-src-pocky-ext-include-pocky-utils-h"><span class="std std-ref">File pocky_utils.h</span></a></p></li>
+</ul>
+<section id="typedef-documentation">
+<h2>Typedef Documentation<a class="headerlink" href="#typedef-documentation" title="Link to this heading">#</a></h2>
+<dl class="c type">
+<dt class="sig sig-object c" id="c.pocky_opencl_platform_query_entry">
+<span class="target" id="pocky__utils_8h_1a98089f027d28e67d96016960482954b2"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="struct__opencl__platform__query__entry.html#c._opencl_platform_query_entry" title="_opencl_platform_query_entry"><span class="n"><span class="pre">_opencl_platform_query_entry</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pocky_opencl_platform_query_entry</span></span></span><a class="headerlink" href="#c.pocky_opencl_platform_query_entry" title="Link to this definition">#</a><br /></dt>
+<dd><p>Linked list for platform handles, useful for querying capabilities and choosing from those options. </p>
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="typedef_pocky__utils_8h_1ac6f16b2a3cdd6ec17d7f02472ba55a28.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Typedef pocky_opencl_device_query_entry</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, Ellen M. Price
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Typedef pocky_opencl_platform_query_entry</a><ul>
+<li><a class="reference internal" href="#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    </body>
+</html>

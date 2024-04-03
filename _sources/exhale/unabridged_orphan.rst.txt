@@ -35,29 +35,29 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_pocky_ext_include_bufpair.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_src_pocky_ext_include_context.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_src_pocky_ext_include_functions.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_src_pocky_ext_include_helpers.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
    file_src_pocky_ext_include_pocky.h.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_pocky_ext_include_utils.h.rst
+   file_src_pocky_ext_include_pocky_bufpair.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_pocky_ext_include_pocky_context.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_pocky_ext_include_pocky_functions.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_pocky_ext_include_pocky_helpers.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_pocky_ext_include_pocky_utils.h.rst

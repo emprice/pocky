@@ -1,0 +1,90 @@
+
+.. _file_src_pocky_ext_include_pocky_utils.h:
+
+File pocky_utils.h
+==================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_pocky_ext_include>` (``src/pocky/ext/include``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+Definition (``src/pocky/ext/include/pocky_utils.h``)
+----------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_pocky_ext_include_pocky_utils.h.rst
+
+
+
+
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_pocky_ext_include_pocky.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_struct__opencl__device__query__entry`
+
+- :ref:`exhale_struct_struct__opencl__platform__query__entry`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_pocky__utils_8h_1a440e9e6cec004c5e2f448f9f46827e26`
+
+- :ref:`exhale_function_pocky__utils_8h_1ac13dd3269612f0ae677220d8869b51e1`
+
+- :ref:`exhale_function_pocky__utils_8h_1a5c48fbc9c2ecc10c8252b3663bae8fb1`
+
+- :ref:`exhale_function_pocky__utils_8h_1a2187d9d8d1133fec80ebf529804eb06a`
+
+- :ref:`exhale_function_pocky__utils_8h_1a8cef2a618ce5a35fe10443ffc6fcc51e`
+
+- :ref:`exhale_function_pocky__utils_8h_1aafeb09ba8df9b30a375c82fe4faad4b5`
+
+- :ref:`exhale_function_pocky__utils_8h_1a10ed5b843b898571f3c31bd830b33e07`
+
+- :ref:`exhale_function_pocky__utils_8h_1a630555db77172facc119cbe0d63d532a`
+
+- :ref:`exhale_function_pocky__utils_8h_1a96cd49b6f03fa05c163c3f6cbf4bbf0b`
+
+- :ref:`exhale_function_pocky__utils_8h_1ac5afb6f150da51f0055ef83d756c91e8`
+
+- :ref:`exhale_function_pocky__utils_8h_1a7302b3878ad5b4456bacdd21f48d8deb`
+
+- :ref:`exhale_function_pocky__utils_8h_1a820bc923083f63ad3e1b7ea605c74bf9`
+
+- :ref:`exhale_function_pocky__utils_8h_1a3954f2c5b1cd26488eae48b0230411d5`
+
+- :ref:`exhale_function_pocky__utils_8h_1a65aad9d99008d77552581845227071f9`
+
+- :ref:`exhale_function_pocky__utils_8h_1adfe8ccc3399c3063bc9a56616a319ee4`
+
+- :ref:`exhale_function_pocky__utils_8h_1aa0e55e69ee55f14203ba78fc29e88182`
+
+- :ref:`exhale_function_pocky__utils_8h_1a79c1219787c59fdfd658c119fa4631cc`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_pocky__utils_8h_1ac6f16b2a3cdd6ec17d7f02472ba55a28`
+
+- :ref:`exhale_typedef_pocky__utils_8h_1a98089f027d28e67d96016960482954b2`
+

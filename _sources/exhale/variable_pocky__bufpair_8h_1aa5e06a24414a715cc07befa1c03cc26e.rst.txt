@@ -1,0 +1,14 @@
+.. _exhale_variable_pocky__bufpair_8h_1aa5e06a24414a715cc07befa1c03cc26e:
+
+Variable pocky_bufpair_methods
+==============================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_bufpair.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: pocky_bufpair_methods
+   :project: pocky

@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__utils_8h_1adfe8ccc3399c3063bc9a56616a319ee4:
+
+Function pocky_opencl_program_free
+==================================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_utils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_opencl_program_free(cl_program *)
+   :project: pocky

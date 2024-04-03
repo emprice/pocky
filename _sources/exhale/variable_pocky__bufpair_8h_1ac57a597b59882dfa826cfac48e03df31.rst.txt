@@ -1,0 +1,14 @@
+.. _exhale_variable_pocky__bufpair_8h_1ac57a597b59882dfa826cfac48e03df31:
+
+Variable pocky_bufpair_getsetters
+=================================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_bufpair.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: pocky_bufpair_getsetters
+   :project: pocky

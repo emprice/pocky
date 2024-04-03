@@ -1,0 +1,14 @@
+.. _exhale_variable_pocky__helpers_8h_1a73de3e83197b73e3b04beee8731a17cf:
+
+Variable pocky_ocl_msg_kernel_not_found
+=======================================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_helpers.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: pocky_ocl_msg_kernel_not_found
+   :project: pocky

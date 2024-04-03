@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__utils_8h_1a8cef2a618ce5a35fe10443ffc6fcc51e:
+
+Function pocky_opencl_context_from_device_list
+==============================================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_utils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_opencl_context_from_device_list(size_t, cl_device_id *, cl_context *)
+   :project: pocky

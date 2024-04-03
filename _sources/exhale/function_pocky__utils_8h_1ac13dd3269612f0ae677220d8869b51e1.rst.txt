@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__utils_8h_1ac13dd3269612f0ae677220d8869b51e1:
+
+Function pocky_opencl_context_default_cpus
+==========================================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_utils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_opencl_context_default_cpus(cl_context *)
+   :project: pocky

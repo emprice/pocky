@@ -1,0 +1,22 @@
+
+.. _program_listing_file_src_pocky_ext_include_pocky_functions.h:
+
+Program Listing for File pocky_functions.h
+==========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_pocky_ext_include_pocky_functions.h>` (``src/pocky/ext/include/pocky_functions.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: c
+
+   #ifndef POCKY_FUNCTIONS_H
+   #define POCKY_FUNCTIONS_H
+   
+   extern PyObject *pocky_list_all_platforms(PyObject *self, PyObject *args);
+   
+   extern PyObject *pocky_list_all_devices(PyObject *self, PyObject *args);
+   
+   #endif      /* POCKY_FUNCTIONS_H */
+   
+   /* vim: set ft=c.doxygen: */

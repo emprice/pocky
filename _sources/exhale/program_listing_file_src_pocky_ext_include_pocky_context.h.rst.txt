@@ -1,0 +1,43 @@
+
+.. _program_listing_file_src_pocky_ext_include_pocky_context.h:
+
+Program Listing for File pocky_context.h
+========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_pocky_ext_include_pocky_context.h>` (``src/pocky/ext/include/pocky_context.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: c
+
+   #ifndef POCKY_CONTEXT_H
+   #define POCKY_CONTEXT_H
+   
+   typedef struct
+   {
+   #ifndef DOXYGEN_SHOULD_SKIP_THIS
+       PyObject_HEAD
+   #endif  /* DOXYGEN_SHOULD_SKIP_THIS */
+       cl_context ctx;             
+       cl_program program;         
+       cl_uint num_queues;         
+       cl_command_queue *queues;   
+   }
+   pocky_context_object;
+   
+   extern PyTypeObject pocky_context_type;
+   
+   extern PyMethodDef pocky_context_methods[];
+   
+   extern PyObject *pocky_context_new(PyTypeObject *type,
+           PyObject *args, PyObject *kwargs);
+   
+   extern void pocky_context_dealloc(pocky_context_object *self);
+   
+   extern PyObject *pocky_context_default(PyObject *self, PyObject *args);
+   
+   extern PyObject *pocky_context_from_device_list(PyObject *self, PyObject *args);
+   
+   #endif      /* POCKY_CONTEXT_H */
+   
+   /* vim: set ft=c.doxygen: */

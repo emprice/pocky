@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__utils_8h_1ac5afb6f150da51f0055ef83d756c91e8:
+
+Function pocky_opencl_kernels_free_all
+======================================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_utils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_opencl_kernels_free_all(cl_uint *, cl_kernel **)
+   :project: pocky

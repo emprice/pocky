@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__utils_8h_1a10ed5b843b898571f3c31bd830b33e07:
+
+Function pocky_opencl_device_query_all_free
+===========================================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_utils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_opencl_device_query_all_free(pocky_opencl_device_query_entry **)
+   :project: pocky

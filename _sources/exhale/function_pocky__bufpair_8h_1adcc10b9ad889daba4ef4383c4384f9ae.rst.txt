@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__bufpair_8h_1adcc10b9ad889daba4ef4383c4384f9ae:
+
+Function pocky_bufpair_set_host
+===============================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_bufpair.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_bufpair_set_host(pocky_bufpair_object *, PyObject *, void *)
+   :project: pocky

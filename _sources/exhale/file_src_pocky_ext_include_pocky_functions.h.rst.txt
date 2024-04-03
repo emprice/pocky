@@ -1,0 +1,42 @@
+
+.. _file_src_pocky_ext_include_pocky_functions.h:
+
+File pocky_functions.h
+======================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_pocky_ext_include>` (``src/pocky/ext/include``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+Definition (``src/pocky/ext/include/pocky_functions.h``)
+--------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_pocky_ext_include_pocky_functions.h.rst
+
+
+
+
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_pocky_ext_include_pocky.h`
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_pocky__functions_8h_1a82a893432f8ae1b79943f4ee8a415077`
+
+- :ref:`exhale_function_pocky__functions_8h_1ab60029fc893ffcb6c4c75f9253ba9bfc`
+

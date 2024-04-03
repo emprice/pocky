@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__bufpair_8h_1a843e1d96e56084f6eba14deb897f708a:
+
+Function pocky_bufpair_dealloc
+==============================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_bufpair.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_bufpair_dealloc(pocky_bufpair_object *)
+   :project: pocky

@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__utils_8h_1a2187d9d8d1133fec80ebf529804eb06a:
+
+Function pocky_opencl_context_free
+==================================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_utils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_opencl_context_free(cl_context *)
+   :project: pocky

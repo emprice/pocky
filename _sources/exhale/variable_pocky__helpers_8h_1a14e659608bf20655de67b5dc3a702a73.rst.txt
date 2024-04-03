@@ -1,0 +1,14 @@
+.. _exhale_variable_pocky__helpers_8h_1a14e659608bf20655de67b5dc3a702a73:
+
+Variable pocky_ocl_msg_not_a_valid_context
+==========================================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_helpers.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: pocky_ocl_msg_not_a_valid_context
+   :project: pocky

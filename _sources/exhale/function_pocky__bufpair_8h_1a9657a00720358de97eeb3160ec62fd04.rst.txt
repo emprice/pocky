@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__bufpair_8h_1a9657a00720358de97eeb3160ec62fd04:
+
+Function pocky_bufpair_init
+===========================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_bufpair.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_bufpair_init(pocky_bufpair_object *, PyObject *, PyObject *)
+   :project: pocky

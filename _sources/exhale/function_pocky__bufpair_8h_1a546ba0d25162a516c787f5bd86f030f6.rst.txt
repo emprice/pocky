@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__bufpair_8h_1a546ba0d25162a516c787f5bd86f030f6:
+
+Function pocky_bufpair_empty_from_shape
+=======================================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_bufpair.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_bufpair_empty_from_shape(pocky_context_object *, size_t, size_t *, pocky_bufpair_object **)
+   :project: pocky

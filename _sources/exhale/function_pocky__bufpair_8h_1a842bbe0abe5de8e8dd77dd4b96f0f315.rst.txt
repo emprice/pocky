@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__bufpair_8h_1a842bbe0abe5de8e8dd77dd4b96f0f315:
+
+Function pocky_bufpair_get_host
+===============================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_bufpair.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_bufpair_get_host(pocky_bufpair_object *, void *)
+   :project: pocky

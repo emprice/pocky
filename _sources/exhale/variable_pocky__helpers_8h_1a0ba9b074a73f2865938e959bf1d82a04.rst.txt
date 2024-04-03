@@ -1,0 +1,14 @@
+.. _exhale_variable_pocky__helpers_8h_1a0ba9b074a73f2865938e959bf1d82a04:
+
+Variable pocky_context_fields
+=============================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_helpers.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: pocky_context_fields
+   :project: pocky

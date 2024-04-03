@@ -1,0 +1,14 @@
+.. _exhale_variable_pocky__helpers_8h_1a7e075f6618e1e6704dc35c75d4ec63bd:
+
+Variable pocky_ocl_msg_not_a_device
+===================================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_helpers.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: pocky_ocl_msg_not_a_device
+   :project: pocky

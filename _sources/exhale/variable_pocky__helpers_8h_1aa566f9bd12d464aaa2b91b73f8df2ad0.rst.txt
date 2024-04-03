@@ -1,0 +1,14 @@
+.. _exhale_variable_pocky__helpers_8h_1aa566f9bd12d464aaa2b91b73f8df2ad0:
+
+Variable pocky_device_desc
+==========================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_helpers.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: pocky_device_desc
+   :project: pocky

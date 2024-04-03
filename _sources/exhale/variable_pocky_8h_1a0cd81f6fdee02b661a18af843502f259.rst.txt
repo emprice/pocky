@@ -1,0 +1,14 @@
+.. _exhale_variable_pocky_8h_1a0cd81f6fdee02b661a18af843502f259:
+
+Variable pocky_platform_type
+============================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: pocky_platform_type
+   :project: pocky

@@ -1,0 +1,17 @@
+.. _exhale_struct_structpocky__bufpair__object:
+
+Struct pocky_bufpair_object
+===========================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_bufpair.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: pocky_bufpair_object
+   :project: pocky
+   :members:
+   :protected-members:
+   :undoc-members:

@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__functions_8h_1a82a893432f8ae1b79943f4ee8a415077:
+
+Function pocky_list_all_devices
+===============================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_functions.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_list_all_devices(PyObject *, PyObject *)
+   :project: pocky

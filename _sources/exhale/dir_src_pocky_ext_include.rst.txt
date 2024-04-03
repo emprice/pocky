@@ -16,11 +16,11 @@ Directory include
 Files
 -----
 
-- :ref:`file_src_pocky_ext_include_bufpair.h`
-- :ref:`file_src_pocky_ext_include_context.h`
-- :ref:`file_src_pocky_ext_include_functions.h`
-- :ref:`file_src_pocky_ext_include_helpers.h`
 - :ref:`file_src_pocky_ext_include_pocky.h`
-- :ref:`file_src_pocky_ext_include_utils.h`
+- :ref:`file_src_pocky_ext_include_pocky_bufpair.h`
+- :ref:`file_src_pocky_ext_include_pocky_context.h`
+- :ref:`file_src_pocky_ext_include_pocky_functions.h`
+- :ref:`file_src_pocky_ext_include_pocky_helpers.h`
+- :ref:`file_src_pocky_ext_include_pocky_utils.h`
 
 

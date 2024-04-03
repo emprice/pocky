@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__functions_8h_1ab60029fc893ffcb6c4c75f9253ba9bfc:
+
+Function pocky_list_all_platforms
+=================================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_functions.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_list_all_platforms(PyObject *, PyObject *)
+   :project: pocky

@@ -1,0 +1,14 @@
+.. _exhale_typedef_pocky__utils_8h_1a98089f027d28e67d96016960482954b2:
+
+Typedef pocky_opencl_platform_query_entry
+=========================================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_utils.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: pocky_opencl_platform_query_entry
+   :project: pocky

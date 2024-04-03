@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__utils_8h_1a820bc923083f63ad3e1b7ea605c74bf9:
+
+Function pocky_opencl_kernels_from_fragments
+============================================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_utils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_opencl_kernels_from_fragments(cl_uint, const char **, cl_context, cl_program *, cl_uint *, cl_kernel **)
+   :project: pocky

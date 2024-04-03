@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__bufpair_8h_1aa431280e9fda39d410eaa2ade5d51c76:
+
+Function pocky_bufpair_empty_like
+=================================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_bufpair.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_bufpair_empty_like(pocky_context_object *, pocky_bufpair_object *, pocky_bufpair_object **)
+   :project: pocky

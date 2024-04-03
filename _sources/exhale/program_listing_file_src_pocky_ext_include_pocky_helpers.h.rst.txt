@@ -1,0 +1,44 @@
+
+.. _program_listing_file_src_pocky_ext_include_pocky_helpers.h:
+
+Program Listing for File pocky_helpers.h
+========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_pocky_ext_include_pocky_helpers.h>` (``src/pocky/ext/include/pocky_helpers.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: c
+
+   #ifndef POCKY_HELPERS_H
+   #define POCKY_HELPERS_H
+   
+   extern const char pocky_module_doc[];
+   
+   extern const char pocky_platform_type_doc[];
+   
+   extern const char pocky_device_type_doc[];
+   
+   extern const char pocky_context_type_doc[];
+   
+   extern const char pocky_bufpair_type_doc[];
+   
+   extern const char pocky_ocl_msg_not_a_device[];
+   extern const char pocky_ocl_msg_not_a_capsule[];
+   extern const char pocky_ocl_msg_not_a_valid_context[];
+   extern const char pocky_ocl_msg_kernel_not_found[];
+   extern const char pocky_ocl_fmt_internal[];
+   
+   extern PyStructSequence_Field pocky_platform_fields[];
+   
+   extern PyStructSequence_Desc pocky_platform_desc;
+   
+   extern PyStructSequence_Field pocky_device_fields[];
+   
+   extern PyStructSequence_Desc pocky_device_desc;
+   
+   extern PyStructSequence_Field pocky_context_fields[];
+   
+   #endif      /* POCKY_HELPERS_H */
+   
+   /* vim: set ft=c.doxygen: */

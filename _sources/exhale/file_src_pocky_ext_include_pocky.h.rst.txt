@@ -34,13 +34,15 @@ Includes
 
 - ``Python.h``
 
-- ``bufpair.h`` (:ref:`file_src_pocky_ext_include_bufpair.h`)
+- ``pocky_bufpair.h`` (:ref:`file_src_pocky_ext_include_pocky_bufpair.h`)
 
-- ``context.h`` (:ref:`file_src_pocky_ext_include_context.h`)
+- ``pocky_context.h`` (:ref:`file_src_pocky_ext_include_pocky_context.h`)
 
-- ``functions.h`` (:ref:`file_src_pocky_ext_include_functions.h`)
+- ``pocky_functions.h`` (:ref:`file_src_pocky_ext_include_pocky_functions.h`)
 
-- ``helpers.h`` (:ref:`file_src_pocky_ext_include_helpers.h`)
+- ``pocky_helpers.h`` (:ref:`file_src_pocky_ext_include_pocky_helpers.h`)
+
+- ``pocky_utils.h`` (:ref:`file_src_pocky_ext_include_pocky_utils.h`)
 
 
 
@@ -51,6 +53,8 @@ Defines
 -------
 
 
+- :ref:`exhale_define_pocky_8h_1a5990dea19d4ccb046a3d81b311457add`
+
 - :ref:`exhale_define_pocky_8h_1ab6e6ee86736f9ebb56e74ae21bf3ff8a`
 
 - :ref:`exhale_define_pocky_8h_1ac9efdaac9411d0868b715edccca3269d`
@@ -60,9 +64,9 @@ Variables
 ---------
 
 
-- :ref:`exhale_variable_pocky_8h_1ab0d6f57f3b5fb9d501872b2a54057e52`
+- :ref:`exhale_variable_pocky_8h_1a44ff0ed62e062fc9f08708783b4c40fc`
 
-- :ref:`exhale_variable_pocky_8h_1af0d90a7cda880700936c611f559562fb`
+- :ref:`exhale_variable_pocky_8h_1ad56e1f417089dca7983c63d7b2b56c19`
 
-- :ref:`exhale_variable_pocky_8h_1a98d91c4543ec391daa773917fa6dbe32`
+- :ref:`exhale_variable_pocky_8h_1a0cd81f6fdee02b661a18af843502f259`
 

@@ -3,7 +3,7 @@
 Struct _opencl_device_query_entry
 =================================
 
-- Defined in :ref:`file_src_pocky_ext_include_utils.h`
+- Defined in :ref:`file_src_pocky_ext_include_pocky_utils.h`
 
 
 Struct Documentation
