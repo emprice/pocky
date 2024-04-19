@@ -171,7 +171,7 @@ int pocky_bufpair_empty_like(pocky_context_object *context,
 }
 
 int pocky_bufpair_empty_from_shape(pocky_context_object *context,
-    size_t ndim, size_t *shape, pocky_bufpair_object **bufpair)
+    size_t ndim, long *shape, pocky_bufpair_object **bufpair)
 {
     cl_int err;
     char buf[BUFSIZ];
@@ -186,7 +186,7 @@ int pocky_bufpair_empty_from_shape(pocky_context_object *context,
 
     (*bufpair)->host = (PyObject *)
         PyArray_NewFromDescr(&PyArray_Type, PyArray_DescrFromType(NPY_FLOAT32),
-            ndim, shape, NULL, NULL, NPY_ARRAY_C_CONTIGUOUS, NULL);
+            ndim, shape, NULL, NULL, 0, NULL);
     if ((*bufpair)->host == NULL) return -1;
 
     (*bufpair)->host_size = PyArray_SIZE((PyArrayObject *) (*bufpair)->host);

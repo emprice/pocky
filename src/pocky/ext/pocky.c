@@ -1,5 +1,8 @@
 #include "pocky.h"
 
+#define NO_IMPORT_POCKY
+#include "pocky_api.h"
+
 #define PY_ARRAY_UNIQUE_SYMBOL pocky_ARRAY_API
 #include <numpy/arrayobject.h>
 
@@ -37,18 +40,20 @@ struct PyModuleDef pocky_module = {
 
 PyMODINIT_FUNC PyInit_ext(void)
 {
-    PyObject *mod;
+    PyObject *mod, *pocky_c_api;
+    static pocky_api_object pocky_api;
 
     mod = PyModule_Create(&pocky_module);
     if (!mod) return NULL;
 
-    /* exceptions */
-    pocky_ocl_error = PyErr_NewException("pocky.ext.OpenCL", NULL, NULL);
+    /* Define exceptions */
+    pocky_ocl_error = PyErr_NewException("pocky.ext.OpenCLError", NULL, NULL);
 
-    /* structure types */
+    /* Define structure types */
     pocky_platform_type = PyStructSequence_NewType(&pocky_platform_desc);
     pocky_device_type = PyStructSequence_NewType(&pocky_device_desc);
 
+    /* Definition of the Context type */
     pocky_context_type = (PyTypeObject) {
         .ob_base = PyVarObject_HEAD_INIT(NULL, 0)
         .tp_name = "pocky.ext.Context",
@@ -61,6 +66,7 @@ PyMODINIT_FUNC PyInit_ext(void)
         .tp_methods = pocky_context_methods,
     };
 
+    /* Definition of the BufferPair type */
     pocky_bufpair_type = (PyTypeObject) {
         .ob_base = PyVarObject_HEAD_INIT(NULL, 0)
         .tp_name = "pocky.ext.BufferPair",
@@ -75,7 +81,27 @@ PyMODINIT_FUNC PyInit_ext(void)
         .tp_getset = pocky_bufpair_getsetters,
     };
 
-    if (PyModule_AddObject(mod, "OpenCL", pocky_ocl_error) ||
+    /* Attach types to API */
+    pocky_api.context_type = &pocky_context_type;
+    pocky_api.bufpair_type = &pocky_bufpair_type;
+
+    /* Attach functions to API */
+    pocky_api.opencl_kernels_from_fragments = &pocky_opencl_kernels_from_fragments;
+    pocky_api.opencl_kernels_from_files = &pocky_opencl_kernels_from_files;
+    pocky_api.opencl_kernel_lookup_by_name = &pocky_opencl_kernel_lookup_by_name;
+    pocky_api.opencl_kernels_free_all = &pocky_opencl_kernels_free_all;
+    pocky_api.opencl_program_free = &pocky_opencl_program_free;
+
+    pocky_api.bufpair_empty_like = &pocky_bufpair_empty_like;
+    pocky_api.bufpair_empty_from_shape = &pocky_bufpair_empty_from_shape;
+
+    pocky_api.opencl_error_to_string = &pocky_opencl_error_to_string;
+
+    /* Encapsulate the API */
+    pocky_c_api = PyCapsule_New((void *) &pocky_api, "pocky.ext._C_API", NULL);
+
+    if (PyModule_AddObject(mod, "OpenCLError", pocky_ocl_error) ||
+        PyModule_AddObject(mod, "_C_API", pocky_c_api) ||
         PyModule_AddType(mod, pocky_platform_type) ||
         PyModule_AddType(mod, pocky_device_type) ||
         PyType_Ready(&pocky_context_type) ||
@@ -83,9 +109,10 @@ PyMODINIT_FUNC PyInit_ext(void)
         PyType_Ready(&pocky_bufpair_type) ||
         PyModule_AddType(mod, &pocky_bufpair_type))
     {
+        Py_XDECREF(pocky_c_api);
         Py_XDECREF(pocky_ocl_error);
-        Py_XDECREF(pocky_platform_type);
         Py_XDECREF(pocky_device_type);
+        Py_XDECREF(pocky_platform_type);
 
         Py_DECREF(mod);
         return NULL;

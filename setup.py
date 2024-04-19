@@ -3,14 +3,15 @@ import numpy as np
 from setuptools import Extension, setup
 
 source_dir = 'src/pocky/ext'
-include_dir = 'src/pocky/ext/include'
+include_dir = os.path.join(source_dir, 'include')
 
 source_files = ['pocky.c', 'pocky_bufpair.c', 'pocky_context.c',
                 'pocky_functions.c', 'pocky_helpers.c', 'pocky_utils.c']
 source_files = [os.path.join(source_dir, fname) for fname in source_files]
 
 header_files = ['pocky.h', 'pocky_bufpair.h', 'pocky_context.h',
-                'pocky_functions.h', 'pocky_helpers.h', 'pocky_utils.h']
+                'pocky_functions.h', 'pocky_helpers.h', 'pocky_utils.h',
+                'pocky_api.h']
 header_files = [os.path.join(include_dir, fname) for fname in header_files]
 
 ext_modules = [
