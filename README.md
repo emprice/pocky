@@ -19,3 +19,19 @@ for plat in pocky.list_all_platforms():
 # Create a context for the default platform
 ctx = pocky.Context.default()
 ```
+
+## Installing
+
+The easiest way to install is using pip directly:
+```sh
+pip install git+https://github.com/emprice/pocky.git@main
+```
+
+To build from source, you can follow this pattern:
+```sh
+git clone https://github.com/emprice/pocky
+cd pocky
+python -m build .
+pip install --force-reinstall --ignore-installed dist/pocky-1.0-cp311-cp311-linux_x86_64.whl
+```
+You may need to change the path to the wheel depending on your OS, architecture, and Python version.
