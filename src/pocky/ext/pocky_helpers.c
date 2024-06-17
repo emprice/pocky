@@ -72,32 +72,4 @@ PyStructSequence_Desc pocky_device_desc = {
     3                           /* number of visible fields */
 };
 
-PyStructSequence_Field pocky_context_fields[] = {
-    { "context", NULL },    /* context handle */
-    { "queues", NULL },     /* command queue(s) */
-    { "program", NULL },    /* compiled program */
-    { "kernels", NULL },    /* available kernel(s) */
-    { NULL, NULL }          /* sentinel value */
-};
-
-PyStructSequence_Desc pocky_context_desc = {
-    "Context",                  /* struct sequence type name */
-    pocky_context_type_doc,     /* documentation for this type */
-    pocky_context_fields,       /* list of fields in this type */
-    2                           /* number of visible fields */
-};
-
-PyStructSequence_Field pocky_bufpair_fields[] = {
-    { "host", NULL },   /* host buffer (NumPy array) */
-    { "device", NULL }, /* device buffer handle */
-    { NULL, NULL }      /* sentinel value */
-};
-
-PyStructSequence_Desc pocky_bufpair_desc = {
-    "BufferPair",               /* struct sequence type name */
-    pocky_bufpair_type_doc,     /* documentation for this type */
-    pocky_bufpair_fields,       /* list of fields in this type */
-    2                           /* number of visible fields */
-};
-
 /* vim: set ft=c.doxygen: */

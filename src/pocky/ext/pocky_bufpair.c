@@ -13,6 +13,7 @@ PyObject *pocky_bufpair_new(PyTypeObject *type, PyObject *args, PyObject *kwargs
     if ((self = (pocky_bufpair_object *) type->tp_alloc(type, 0)))
     {
         self->host = NULL;
+        self->dirty = NULL;
         self->context = NULL;
         self->device = NULL;
         self->host_size = 0;
@@ -52,13 +53,22 @@ int pocky_bufpair_init(pocky_bufpair_object *self,
     self->host = host;
     Py_XDECREF(tmp);
 
+    self->dirty = Py_NewRef(Py_True);
     self->host_size = PyArray_SIZE((PyArrayObject *) self->host);
     self->device_size = self->host_size;
 
     if (self->device != NULL) clReleaseMemObject(self->device);
-    self->device = clCreateBuffer(context->ctx, CL_MEM_READ_WRITE,
-        self->device_size * sizeof(cl_float), NULL, &err);
-    if (err != CL_SUCCESS) return -1;
+
+    if (self->device_size > 0)
+    {
+        self->device = clCreateBuffer(context->ctx, CL_MEM_READ_WRITE,
+            self->device_size * sizeof(cl_float), NULL, &err);
+        if (err != CL_SUCCESS) return -1;
+    }
+    else
+    {
+        self->device = NULL;
+    }
 
     return 0;
 }
@@ -67,6 +77,7 @@ void pocky_bufpair_dealloc(pocky_bufpair_object *self)
 {
     Py_XDECREF(self->context);
     Py_XDECREF(self->host);
+    Py_XDECREF(self->dirty);
     Py_TYPE(self)->tp_free((PyObject *) self);
 }
 
@@ -80,6 +91,118 @@ PyObject *pocky_bufpair_array(pocky_bufpair_object *self,
     }
 
     return Py_NewRef(self->host);
+}
+
+PyObject *pocky_bufpair_copy_to_device(pocky_bufpair_object *self, PyObject *args)
+{
+    cl_int err;
+    cl_uint idx;
+    char buf[BUFSIZ];
+    PyObject *device = NULL;
+    cl_device_id dev = NULL;
+
+    if (!PyArg_ParseTuple(args, "|O!", pocky_device_type, &device)) return NULL;
+
+    if (device)
+    {
+        PyObject *cap;
+
+        cap = PyStructSequence_GetItem(device, 0);
+        if (!PyCapsule_CheckExact(cap))
+        {
+            PyErr_SetString(PyExc_TypeError, pocky_ocl_msg_not_a_capsule);
+            return NULL;
+        }
+
+        dev = PyCapsule_GetPointer(cap, "DeviceID");
+    }
+
+    for (idx = 0; idx < self->context->num_queues; ++idx)
+    {
+        cl_device_id qdev = NULL;
+        cl_command_queue queue = self->context->queues[idx];
+
+        if (device)
+        {
+            err = clGetCommandQueueInfo(queue,
+                CL_QUEUE_DEVICE, sizeof(cl_device_id), &qdev, NULL);
+            if (err != CL_SUCCESS)
+            {
+                snprintf(buf, BUFSIZ, pocky_ocl_fmt_internal,
+                    pocky_opencl_error_to_string(err), err);
+                PyErr_SetString(pocky_ocl_error, buf);
+                return NULL;
+            }
+        }
+
+        if (qdev == dev)
+        {
+            err = clEnqueueWriteBuffer(queue, self->device,
+                CL_TRUE, 0, self->host_size * sizeof(cl_float),
+                PyArray_DATA((PyArrayObject *) self->host), 0, NULL, NULL);
+            if (err != CL_SUCCESS)
+            {
+                snprintf(buf, BUFSIZ, pocky_ocl_fmt_internal,
+                    pocky_opencl_error_to_string(err), err);
+                PyErr_SetString(pocky_ocl_error, buf);
+                return NULL;
+            }
+        }
+    }
+
+    return Py_NewRef(Py_None);
+}
+
+PyObject *pocky_bufpair_copy_from_device(pocky_bufpair_object *self, PyObject *args)
+{
+    cl_int err;
+    cl_uint idx;
+    char buf[BUFSIZ];
+    PyObject *device, *cap;
+    cl_device_id dev = NULL;
+
+    if (!PyArg_ParseTuple(args, "O!", pocky_device_type, &device)) return NULL;
+
+    cap = PyStructSequence_GetItem(device, 0);
+    if (!PyCapsule_CheckExact(cap))
+    {
+        PyErr_SetString(PyExc_TypeError, pocky_ocl_msg_not_a_capsule);
+        return NULL;
+    }
+
+    dev = PyCapsule_GetPointer(cap, "DeviceID");
+
+    for (idx = 0; idx < self->context->num_queues; ++idx)
+    {
+        cl_device_id qdev = NULL;
+        cl_command_queue queue = self->context->queues[idx];
+
+        err = clGetCommandQueueInfo(queue,
+            CL_QUEUE_DEVICE, sizeof(cl_device_id), &qdev, NULL);
+        if (err != CL_SUCCESS)
+        {
+            snprintf(buf, BUFSIZ, pocky_ocl_fmt_internal,
+                pocky_opencl_error_to_string(err), err);
+            PyErr_SetString(pocky_ocl_error, buf);
+            return NULL;
+        }
+
+        if (qdev == dev)
+        {
+            err = clEnqueueReadBuffer(queue, self->device,
+                CL_TRUE, 0, self->host_size * sizeof(cl_float),
+                PyArray_DATA((PyArrayObject *) self->host), 0, NULL, NULL);
+            if (err != CL_SUCCESS)
+            {
+                snprintf(buf, BUFSIZ, pocky_ocl_fmt_internal,
+                    pocky_opencl_error_to_string(err), err);
+                PyErr_SetString(pocky_ocl_error, buf);
+                return NULL;
+            }
+        }
+    }
+
+    return Py_NewRef(Py_None);
 }
 
 PyObject *pocky_bufpair_get_host(pocky_bufpair_object *self, void *closure)
@@ -122,17 +245,50 @@ int pocky_bufpair_set_host(pocky_bufpair_object *self,
     return 0;
 }
 
+PyObject *pocky_bufpair_get_dirty(pocky_bufpair_object *self, void *closure)
+{
+    return Py_NewRef(self->dirty);
+}
+
+int pocky_bufpair_set_dirty(pocky_bufpair_object *self,
+        PyObject *value, void *closure)
+{
+    if (value == NULL)
+    {
+        PyErr_SetString(PyExc_TypeError, "Cannot delete dirty marker");
+        return -1;
+    }
+
+    if (!PyBool_Check(value))
+    {
+        PyErr_SetString(PyExc_ValueError, "Dirty marker must be a boolean");
+        return -1;
+    }
+
+    Py_SETREF(self->dirty, Py_NewRef(value));
+    return 0;
+}
+
 PyGetSetDef pocky_bufpair_getsetters[] = {
     { "host", (getter) pocky_bufpair_get_host, (setter) pocky_bufpair_set_host,
       "Exposes the underlying NumPy host array. The size of the array cannot "
       "be increased after the BufferPair is created, but the array can be "
       "replaced by one of the same dtype and equal or smaller size.", NULL },
+    { "dirty", (getter) pocky_bufpair_get_dirty, (setter) pocky_bufpair_set_dirty,
+      "Indicates that the host array needs to be copied to the device (True) "
+      "or that it is unchanged since the last copy (False). This can be used "
+      "by external modules to avoid redundant copies, but it is not updated "
+      "dynamically by pocky." },
     { NULL }    /* sentinel */
 };
 
 PyMethodDef pocky_bufpair_methods[] = {
     { "__array__", (PyCFunction) pocky_bufpair_array, METH_NOARGS,
       "Return the host NumPy array" },
+    { "copy_to_device", (PyCFunction) pocky_bufpair_copy_to_device, METH_VARARGS,
+      "Copy the host data to the specified device" },
+    { "copy_from_device", (PyCFunction) pocky_bufpair_copy_from_device, METH_VARARGS,
+      "Copy the specified device data to the host" },
     { NULL, NULL, 0, NULL }    /* sentinel */
 };
 

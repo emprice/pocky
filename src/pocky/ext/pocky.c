@@ -64,6 +64,7 @@ PyMODINIT_FUNC PyInit_ext(void)
         .tp_new = pocky_context_new,
         .tp_dealloc = (destructor) pocky_context_dealloc,
         .tp_methods = pocky_context_methods,
+        .tp_getset = pocky_context_getsetters,
     };
 
     /* Definition of the BufferPair type */

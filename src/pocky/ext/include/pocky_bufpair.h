@@ -8,6 +8,7 @@ typedef struct
 #endif  /* DOXYGEN_SHOULD_SKIP_THIS */
     pocky_context_object *context;
     PyObject *host;
+    PyObject *dirty;
     cl_mem device;
     size_t host_size;
     size_t device_size;
@@ -22,10 +23,17 @@ extern int pocky_bufpair_init(pocky_bufpair_object *self,
     PyObject *args, PyObject *kwargs);
 extern void pocky_bufpair_dealloc(pocky_bufpair_object *self);
 
+extern PyObject *pocky_bufpair_copy_to_device(pocky_bufpair_object *self, PyObject *args);
+extern PyObject *pocky_bufpair_copy_from_device(pocky_bufpair_object *self, PyObject *args);
+
 extern PyObject *pocky_bufpair_array(pocky_bufpair_object *self, PyObject *noargs);
 
 extern PyObject *pocky_bufpair_get_host(pocky_bufpair_object *self, void *closure);
 extern int pocky_bufpair_set_host(pocky_bufpair_object *self,
+    PyObject *value, void *closure);
+
+extern PyObject *pocky_bufpair_get_dirty(pocky_bufpair_object *self, void *closure);
+extern int pocky_bufpair_set_dirty(pocky_bufpair_object *self,
     PyObject *value, void *closure);
 
 extern PyGetSetDef pocky_bufpair_getsetters[];

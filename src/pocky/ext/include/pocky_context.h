@@ -7,7 +7,6 @@ typedef struct
     PyObject_HEAD
 #endif  /* DOXYGEN_SHOULD_SKIP_THIS */
     cl_context ctx;             /**< OpenCL context handle */
-    cl_program program;         /**< OpenCL program handle */
     cl_uint num_queues;         /**< Number of command queues */
     cl_command_queue *queues;   /**< Array of command queues */
 }
@@ -17,6 +16,7 @@ pocky_context_object;
 extern PyTypeObject pocky_context_type;
 
 extern PyMethodDef pocky_context_methods[];
+extern PyGetSetDef pocky_context_getsetters[];
 
 /**
  * @brief Allocates and initializes an empty Python @c pocky.ext.Context object
