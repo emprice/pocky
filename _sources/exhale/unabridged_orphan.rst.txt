@@ -40,6 +40,11 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_src_pocky_ext_include_pocky_api.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_src_pocky_ext_include_pocky_bufpair.h.rst
 
 .. toctree::

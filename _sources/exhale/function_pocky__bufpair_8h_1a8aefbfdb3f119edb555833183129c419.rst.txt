@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__bufpair_8h_1a8aefbfdb3f119edb555833183129c419:
+
+Function pocky_bufpair_get_dirty
+================================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_bufpair.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_bufpair_get_dirty(pocky_bufpair_object *, void *)
+   :project: pocky

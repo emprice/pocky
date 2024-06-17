@@ -1,0 +1,14 @@
+.. _exhale_variable_pocky__api_8h_1aece7ff3e3aad730351705c07c2cffdd8:
+
+Variable pocky_api
+==================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_api.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: pocky_api
+   :project: pocky

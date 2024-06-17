@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__api_8h_1a1a332a875ad207687ddbcbd1508ec671:
+
+Function import_pocky
+=====================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_api.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: import_pocky(void)
+   :project: pocky

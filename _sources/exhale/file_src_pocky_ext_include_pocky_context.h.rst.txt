@@ -56,6 +56,8 @@ Variables
 ---------
 
 
+- :ref:`exhale_variable_pocky__context_8h_1acf2efc722d14ac05b5d6926066873461`
+
 - :ref:`exhale_variable_pocky__context_8h_1a4f9eb746bb0942d49d55218f2e530624`
 
 - :ref:`exhale_variable_pocky__context_8h_1addc9a0182ff0066f11b24642582ac648`

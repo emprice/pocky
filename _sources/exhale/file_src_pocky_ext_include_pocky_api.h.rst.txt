@@ -1,0 +1,48 @@
+
+.. _file_src_pocky_ext_include_pocky_api.h:
+
+File pocky_api.h
+================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_pocky_ext_include>` (``src/pocky/ext/include``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+Definition (``src/pocky/ext/include/pocky_api.h``)
+--------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_pocky_ext_include_pocky_api.h.rst
+
+
+
+
+
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structpocky__api__object`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_pocky__api_8h_1a1a332a875ad207687ddbcbd1508ec671`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_pocky__api_8h_1aece7ff3e3aad730351705c07c2cffdd8`
+

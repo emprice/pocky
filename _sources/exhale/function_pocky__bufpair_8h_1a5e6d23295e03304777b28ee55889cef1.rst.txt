@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__bufpair_8h_1a5e6d23295e03304777b28ee55889cef1:
+
+Function pocky_bufpair_copy_to_device
+=====================================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_bufpair.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_bufpair_copy_to_device(pocky_bufpair_object *, PyObject *)
+   :project: pocky

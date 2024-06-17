@@ -19,7 +19,6 @@ Program Listing for File pocky_context.h
        PyObject_HEAD
    #endif  /* DOXYGEN_SHOULD_SKIP_THIS */
        cl_context ctx;             
-       cl_program program;         
        cl_uint num_queues;         
        cl_command_queue *queues;   
    }
@@ -28,6 +27,7 @@ Program Listing for File pocky_context.h
    extern PyTypeObject pocky_context_type;
    
    extern PyMethodDef pocky_context_methods[];
+   extern PyGetSetDef pocky_context_getsetters[];
    
    extern PyObject *pocky_context_new(PyTypeObject *type,
            PyObject *args, PyObject *kwargs);
