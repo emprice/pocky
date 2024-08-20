@@ -158,33 +158,41 @@ PyObject *pocky_bufpair_copy_from_device(pocky_bufpair_object *self, PyObject *a
     cl_int err;
     cl_uint idx;
     char buf[BUFSIZ];
-    PyObject *device, *cap;
+    PyObject *device = NULL;
     cl_device_id dev = NULL;
 
-    if (!PyArg_ParseTuple(args, "O!", pocky_device_type, &device)) return NULL;
+    if (!PyArg_ParseTuple(args, "|O!", pocky_device_type, &device)) return NULL;
 
-    cap = PyStructSequence_GetItem(device, 0);
-    if (!PyCapsule_CheckExact(cap))
+    if (device)
     {
-        PyErr_SetString(PyExc_TypeError, pocky_ocl_msg_not_a_capsule);
-        return NULL;
-    }
+        PyObject *cap;
 
-    dev = PyCapsule_GetPointer(cap, "DeviceID");
+        cap = PyStructSequence_GetItem(device, 0);
+        if (!PyCapsule_CheckExact(cap))
+        {
+            PyErr_SetString(PyExc_TypeError, pocky_ocl_msg_not_a_capsule);
+            return NULL;
+        }
+
+        dev = PyCapsule_GetPointer(cap, "DeviceID");
+    }
 
     for (idx = 0; idx < self->context->num_queues; ++idx)
     {
         cl_device_id qdev = NULL;
         cl_command_queue queue = self->context->queues[idx];
 
-        err = clGetCommandQueueInfo(queue,
-            CL_QUEUE_DEVICE, sizeof(cl_device_id), &qdev, NULL);
-        if (err != CL_SUCCESS)
+        if (device)
         {
-            snprintf(buf, BUFSIZ, pocky_ocl_fmt_internal,
-                pocky_opencl_error_to_string(err), err);
-            PyErr_SetString(pocky_ocl_error, buf);
-            return NULL;
+            err = clGetCommandQueueInfo(queue,
+                CL_QUEUE_DEVICE, sizeof(cl_device_id), &qdev, NULL);
+            if (err != CL_SUCCESS)
+            {
+                snprintf(buf, BUFSIZ, pocky_ocl_fmt_internal,
+                    pocky_opencl_error_to_string(err), err);
+                PyErr_SetString(pocky_ocl_error, buf);
+                return NULL;
+            }
         }
 
         if (qdev == dev)
