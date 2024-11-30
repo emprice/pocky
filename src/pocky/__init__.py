@@ -1,5 +1,7 @@
 from .ext import *
 
+__version__ = '1.1'
+
 def get_include():
     import os
     import pocky.ext as ext
