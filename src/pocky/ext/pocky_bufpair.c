@@ -75,6 +75,8 @@ int pocky_bufpair_init(pocky_bufpair_object *self,
 
 void pocky_bufpair_dealloc(pocky_bufpair_object *self)
 {
+    if (self->device != NULL) clReleaseMemObject(self->device);
+
     Py_XDECREF(self->context);
     Py_XDECREF(self->host);
     Py_XDECREF(self->dirty);
