@@ -45,11 +45,11 @@ Functions
 
 - :ref:`exhale_function_pocky__context_8h_1a6dceaef963a85c36d3002530c68c2244`
 
-- :ref:`exhale_function_pocky__context_8h_1a197e2c65a57d38fee3375dbe50c3d263`
+- :ref:`exhale_function_pocky__context_8h_1a13290e6dd48080eeb440d50c2e034141`
 
-- :ref:`exhale_function_pocky__context_8h_1a66084d5795f4d4be1dcde1be346d6ad3`
+- :ref:`exhale_function_pocky__context_8h_1a9a68016c5cb3aa0ba80b32d653e4cff7`
 
-- :ref:`exhale_function_pocky__context_8h_1acc13f208452b37b961cfd3d1b532b825`
+- :ref:`exhale_function_pocky__context_8h_1ab46da3aa1a36e4a9b40fc6fab2e5632c`
 
 
 Variables

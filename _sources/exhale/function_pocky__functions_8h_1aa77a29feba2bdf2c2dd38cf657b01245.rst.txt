@@ -1,4 +1,4 @@
-.. _exhale_function_pocky__functions_8h_1a82a893432f8ae1b79943f4ee8a415077:
+.. _exhale_function_pocky__functions_8h_1aa77a29feba2bdf2c2dd38cf657b01245:
 
 Function pocky_list_all_devices
 ===============================

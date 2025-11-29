@@ -59,7 +59,7 @@ Functions
 
 - :ref:`exhale_function_pocky__utils_8h_1a10ed5b843b898571f3c31bd830b33e07`
 
-- :ref:`exhale_function_pocky__utils_8h_1a630555db77172facc119cbe0d63d532a`
+- :ref:`exhale_function_pocky__utils_8h_1adff94c5e414d4b6f0c64785aeb31dd66`
 
 - :ref:`exhale_function_pocky__utils_8h_1a96cd49b6f03fa05c163c3f6cbf4bbf0b`
 

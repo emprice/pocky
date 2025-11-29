@@ -43,11 +43,11 @@ Functions
 ---------
 
 
-- :ref:`exhale_function_pocky__bufpair_8h_1a6050f3a85392019f3e1e6bc4a6d19fc9`
+- :ref:`exhale_function_pocky__bufpair_8h_1ae83409ec8e3a23a7b3c3bf0229c5da64`
 
-- :ref:`exhale_function_pocky__bufpair_8h_1aca4d73b48d6df04e7725205c0a6e9998`
+- :ref:`exhale_function_pocky__bufpair_8h_1a1a6a86066bace9681039a6f651f7be16`
 
-- :ref:`exhale_function_pocky__bufpair_8h_1a5e6d23295e03304777b28ee55889cef1`
+- :ref:`exhale_function_pocky__bufpair_8h_1a9289001ff591dc8fd6787927812c58d0`
 
 - :ref:`exhale_function_pocky__bufpair_8h_1a843e1d96e56084f6eba14deb897f708a`
 
@@ -55,13 +55,13 @@ Functions
 
 - :ref:`exhale_function_pocky__bufpair_8h_1aa431280e9fda39d410eaa2ade5d51c76`
 
-- :ref:`exhale_function_pocky__bufpair_8h_1a8aefbfdb3f119edb555833183129c419`
+- :ref:`exhale_function_pocky__bufpair_8h_1a16720204e309f4b45c8e42ee9ad88f12`
 
-- :ref:`exhale_function_pocky__bufpair_8h_1a842bbe0abe5de8e8dd77dd4b96f0f315`
+- :ref:`exhale_function_pocky__bufpair_8h_1a4ceb3a31627901295585cf6fb595c142`
 
 - :ref:`exhale_function_pocky__bufpair_8h_1a9657a00720358de97eeb3160ec62fd04`
 
-- :ref:`exhale_function_pocky__bufpair_8h_1aa57c24c06f8b4ce50cc19d3590375e88`
+- :ref:`exhale_function_pocky__bufpair_8h_1aeb8f79018e7350d37beeac4bfd476d08`
 
 - :ref:`exhale_function_pocky__bufpair_8h_1a7ccc00ba502d039c1e8e6e9fdca0efbf`
 
