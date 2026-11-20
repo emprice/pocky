@@ -1,0 +1,14 @@
+.. _exhale_variable_pocky_8h_1a1ef50f4205db5a3b3657678fcac17cdf:
+
+Variable pocky_event_type
+=========================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: pocky_event_type
+   :project: pocky

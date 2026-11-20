@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__functions_8h_1a52a3d7c5198b5fa8615e4103ba105bfc:
+
+Function pocky_wait_all
+=======================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_functions.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_wait_all(PyObject *, PyObject *)
+   :project: pocky

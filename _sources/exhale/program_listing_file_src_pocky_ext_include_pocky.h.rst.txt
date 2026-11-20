@@ -11,6 +11,7 @@ Program Listing for File pocky.h
 .. code-block:: c
 
    
+   
    #ifndef POCKY_H
    #define POCKY_H
    
@@ -29,6 +30,8 @@ Program Listing for File pocky.h
    extern PyTypeObject *pocky_platform_type;
    
    extern PyTypeObject *pocky_device_type;
+   
+   extern PyTypeObject *pocky_event_type;
    
    #include "pocky_context.h"
    #include "pocky_bufpair.h"

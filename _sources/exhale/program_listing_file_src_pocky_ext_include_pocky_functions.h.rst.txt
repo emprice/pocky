@@ -17,6 +17,8 @@ Program Listing for File pocky_functions.h
    
    extern PyObject *pocky_list_all_devices(PyObject *self, PyObject *args);
    
+   extern PyObject *pocky_wait_all(PyObject *self, PyObject *args);
+   
    #endif      /* POCKY_FUNCTIONS_H */
    
    /* vim: set ft=c.doxygen: */

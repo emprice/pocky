@@ -1,0 +1,14 @@
+.. _exhale_function_pocky__utils_8h_1a4eecc3a6efa89e930372e4340c0ed5e6:
+
+Function pocky_event_new
+========================
+
+- Defined in :ref:`file_src_pocky_ext_include_pocky_utils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pocky_event_new(cl_event)
+   :project: pocky

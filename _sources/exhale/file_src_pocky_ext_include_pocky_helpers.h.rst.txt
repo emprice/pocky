@@ -48,6 +48,12 @@ Variables
 
 - :ref:`exhale_variable_pocky__helpers_8h_1a2e105da91142821fdb1a41ac5eafb9b9`
 
+- :ref:`exhale_variable_pocky__helpers_8h_1a15fcc19101676b2196f147e9a98aa8f1`
+
+- :ref:`exhale_variable_pocky__helpers_8h_1a7b19d8f186c6c1275c85c26b3789ef02`
+
+- :ref:`exhale_variable_pocky__helpers_8h_1a3a40a684a7c4ae80dee908f817401731`
+
 - :ref:`exhale_variable_pocky__helpers_8h_1a53798e6956544775635e9af37d12b493`
 
 - :ref:`exhale_variable_pocky__helpers_8h_1ad298204c03cb5984b8bb5fa6894ce0fa`

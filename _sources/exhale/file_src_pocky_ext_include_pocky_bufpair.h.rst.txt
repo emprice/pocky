@@ -51,7 +51,7 @@ Functions
 
 - :ref:`exhale_function_pocky__bufpair_8h_1a843e1d96e56084f6eba14deb897f708a`
 
-- :ref:`exhale_function_pocky__bufpair_8h_1a2ae63ed0d21df07da0f13001e3c1b41e`
+- :ref:`exhale_function_pocky__bufpair_8h_1a5bbbf159c8a464b9742fa8141ac8e715`
 
 - :ref:`exhale_function_pocky__bufpair_8h_1aa431280e9fda39d410eaa2ade5d51c76`
 

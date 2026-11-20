@@ -19,6 +19,8 @@ Program Listing for File pocky_helpers.h
    
    extern const char pocky_device_type_doc[];
    
+   extern const char pocky_event_type_doc[];
+   
    extern const char pocky_context_type_doc[];
    
    extern const char pocky_bufpair_type_doc[];
@@ -36,6 +38,10 @@ Program Listing for File pocky_helpers.h
    extern PyStructSequence_Field pocky_device_fields[];
    
    extern PyStructSequence_Desc pocky_device_desc;
+   
+   extern PyStructSequence_Field pocky_event_fields[];
+   
+   extern PyStructSequence_Desc pocky_event_desc;
    
    extern PyStructSequence_Field pocky_context_fields[];
    

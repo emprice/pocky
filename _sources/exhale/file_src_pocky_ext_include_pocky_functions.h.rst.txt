@@ -40,3 +40,5 @@ Functions
 
 - :ref:`exhale_function_pocky__functions_8h_1ae151dc06523a4174be6609bbff5fe0d6`
 
+- :ref:`exhale_function_pocky__functions_8h_1a52a3d7c5198b5fa8615e4103ba105bfc`
+
