@@ -157,4 +157,49 @@ PyObject *pocky_list_all_devices(PyObject *self, PyObject *args)
     return result;
 }
 
+PyObject *pocky_wait_all(PyObject *self, PyObject *args)
+{
+    char buf[BUFSIZ];
+
+    PyObject *events_list;
+    size_t num_events, i;
+
+    cl_int err;
+    cl_event *events;
+
+    if (!PyArg_ParseTuple(args, "O!", &PyList_Type, &events_list)) return NULL;
+
+    num_events = PyList_Size(events_list);
+    events = malloc(num_events * sizeof(cl_event));
+
+    for (i = 0; i < num_events; ++i)
+    {
+        PyObject *item, *cap;
+
+        item = PyList_GetItem(events_list, i);
+        cap = PyStructSequence_GetItem(item, 0);
+        if (!PyCapsule_CheckExact(cap))
+        {
+            PyErr_SetString(PyExc_TypeError, pocky_ocl_msg_not_a_capsule);
+            free(events);
+            return NULL;
+        }
+        events[i] = PyCapsule_GetPointer(cap, "EventID");
+    }
+
+    err = clWaitForEvents(num_events, events);
+    if (err != CL_SUCCESS)
+    {
+        snprintf(buf, BUFSIZ, pocky_ocl_fmt_internal,
+                pocky_opencl_error_to_string(err), err);
+        PyErr_SetString(pocky_ocl_error, buf);
+        free(events);
+        return NULL;
+    }
+
+    free(events);
+
+    return Py_NewRef(Py_None);
+}
+
 /* vim: set ft=c.doxygen: */

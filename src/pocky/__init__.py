@@ -1,6 +1,6 @@
 from .ext import *
 
-__version__ = '1.1'
+__version__ = '1.2'
 
 def get_include():
     import os

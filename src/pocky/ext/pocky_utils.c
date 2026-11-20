@@ -501,4 +501,30 @@ cl_int pocky_opencl_program_free(cl_program *prog)
     return err;
 }
 
+static void pocky_event_destructor(PyObject *cap)
+{
+    cl_event event;
+
+    event = PyCapsule_GetPointer(cap, "EventID");
+    clReleaseEvent(event);
+}
+
+PyObject *pocky_event_new(cl_event event)
+{
+    PyObject *seq, *id;
+
+    seq = PyStructSequence_New(pocky_event_type);
+    if (!seq) return NULL;
+
+    id = PyCapsule_New(event, "EventID", &pocky_event_destructor);
+    if (!id)
+    {
+        Py_XDECREF(seq);
+        return NULL;
+    }
+
+    PyStructSequence_SetItem(seq, 0, id);
+    return seq;
+}
+
 /* vim: set ft=c.doxygen: */

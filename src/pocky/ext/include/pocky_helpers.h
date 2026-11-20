@@ -10,6 +10,9 @@ extern const char pocky_platform_type_doc[];
 /** Docstring for the Python @c pocky.ext.Device type */
 extern const char pocky_device_type_doc[];
 
+/** Docstring for the Python @c pocky.ext.Event type */
+extern const char pocky_event_type_doc[];
+
 /** Docstring for the Python @c pocky.ext.Context type */
 extern const char pocky_context_type_doc[];
 
@@ -33,6 +36,12 @@ extern PyStructSequence_Field pocky_device_fields[];
 
 /** Struct sequence descriptor for the Python @c pocky.ext.Device type */
 extern PyStructSequence_Desc pocky_device_desc;
+
+/** Fields available in the Python @c pocky.ext.Event type */
+extern PyStructSequence_Field pocky_event_fields[];
+
+/** Struct sequence descriptor for the Python @c pocky.ext.Event type */
+extern PyStructSequence_Desc pocky_event_desc;
 
 /** Fields available in the Python @c pocky.ext.Context type */
 extern PyStructSequence_Field pocky_context_fields[];

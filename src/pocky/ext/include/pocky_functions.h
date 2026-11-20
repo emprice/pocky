@@ -21,6 +21,15 @@ extern PyObject *pocky_list_all_platforms(PyObject *self, PyObject *args);
  */
 extern PyObject *pocky_list_all_devices(PyObject *self, PyObject *args);
 
+/**
+ * @brief Module method to list all available devices for a platform
+ * @param[in] self Module instance reference
+ * @param[in] args Python arguments to be parsed; expects exactly one
+ * argument that must be a Python list of @c pocky.ext.Event structs
+ * @return Python @c None
+ */
+extern PyObject *pocky_wait_all(PyObject *self, PyObject *args);
+
 #endif      /* POCKY_FUNCTIONS_H */
 
 /* vim: set ft=c.doxygen: */

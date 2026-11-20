@@ -24,6 +24,13 @@ const char pocky_context_type_doc[] =
     "  :py:func:`pocky.Context.default()` or "
     "  :py:func:`pocky.Context.from_device_list()`.\n";
 
+const char pocky_event_type_doc[] =
+    "Event()\n"
+    "Opaque object encapsulating an OpenCL event.\n\n"
+    "Danger:\n"
+    "  Do not instantiate this class directly! Rather, use valid output from "
+    "  a pocky library that returns an Event.\n";
+
 const char pocky_bufpair_type_doc[] =
     "BufferPair(context: Context, host_array: numpy.ndarray)\n"
     "Pair of buffers, one host and one device, used for input and output "
@@ -70,6 +77,18 @@ PyStructSequence_Desc pocky_device_desc = {
     pocky_device_type_doc,      /* documentation for this type */
     pocky_device_fields,        /* list of fields in this type */
     3                           /* number of visible fields */
+};
+
+PyStructSequence_Field pocky_event_fields[] = {
+    { "id", NULL },         /* event id */
+    { NULL, NULL }          /* sentinel value */
+};
+
+PyStructSequence_Desc pocky_event_desc = {
+    "Event",                    /* struct sequence type name */
+    pocky_event_type_doc,       /* documentation for this type */
+    pocky_event_fields,         /* list of fields in this type */
+    0                           /* number of visible fields */
 };
 
 /* vim: set ft=c.doxygen: */

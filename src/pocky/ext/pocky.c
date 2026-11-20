@@ -9,6 +9,7 @@
 PyObject *pocky_ocl_error;
 PyTypeObject *pocky_platform_type;
 PyTypeObject *pocky_device_type;
+PyTypeObject *pocky_event_type;
 
 /** Methods available at the module level */
 static PyMethodDef pocky_methods[] = {
@@ -25,6 +26,13 @@ static PyMethodDef pocky_methods[] = {
       "  platform: The platform to query for available devices\n\n"
       "Returns:\n"
       "  A list of devices available on the platform\n" },
+    { "wait_all", pocky_wait_all, METH_VARARGS,
+      "wait_all(events: list[Event]) -> None\n"
+      "Wait for all events in the given list.\n\n"
+      "Args:\n"
+      "  events: List of events to await\n\n"
+      "Returns:\n"
+      "  None\n" },
 
     { NULL, NULL, 0, NULL }     /* sentinel value */
 };
@@ -52,6 +60,7 @@ PyMODINIT_FUNC PyInit_ext(void)
     /* Define structure types */
     pocky_platform_type = PyStructSequence_NewType(&pocky_platform_desc);
     pocky_device_type = PyStructSequence_NewType(&pocky_device_desc);
+    pocky_event_type = PyStructSequence_NewType(&pocky_event_desc);
 
     /* Definition of the Context type */
     pocky_context_type = (PyTypeObject) {
@@ -93,6 +102,8 @@ PyMODINIT_FUNC PyInit_ext(void)
     pocky_api.opencl_kernels_free_all = &pocky_opencl_kernels_free_all;
     pocky_api.opencl_program_free = &pocky_opencl_program_free;
 
+    pocky_api.event_new = &pocky_event_new;
+
     pocky_api.bufpair_empty_like = &pocky_bufpair_empty_like;
     pocky_api.bufpair_empty_from_shape = &pocky_bufpair_empty_from_shape;
 
@@ -105,6 +116,7 @@ PyMODINIT_FUNC PyInit_ext(void)
         PyModule_AddObject(mod, "_C_API", pocky_c_api) ||
         PyModule_AddType(mod, pocky_platform_type) ||
         PyModule_AddType(mod, pocky_device_type) ||
+        PyModule_AddType(mod, pocky_event_type) ||
         PyType_Ready(&pocky_context_type) ||
         PyModule_AddType(mod, &pocky_context_type) ||
         PyType_Ready(&pocky_bufpair_type) ||
@@ -112,6 +124,7 @@ PyMODINIT_FUNC PyInit_ext(void)
     {
         Py_XDECREF(pocky_c_api);
         Py_XDECREF(pocky_ocl_error);
+        Py_XDECREF(pocky_event_type);
         Py_XDECREF(pocky_device_type);
         Py_XDECREF(pocky_platform_type);
 

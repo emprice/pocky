@@ -15,10 +15,12 @@ typedef struct
     cl_int (*opencl_kernels_free_all)(cl_uint *, cl_kernel **);
     cl_int (*opencl_program_free)(cl_program *);
 
+    PyObject* (*event_new)(cl_event);
+
     int (*bufpair_empty_like)(pocky_context_object *,
         pocky_bufpair_object *, pocky_bufpair_object **);
     int (*bufpair_empty_from_shape)(pocky_context_object *,
-        size_t, long *, pocky_bufpair_object **);
+        size_t, long *, int, pocky_bufpair_object **);
 
     const char *(*opencl_error_to_string)(cl_int);
 }

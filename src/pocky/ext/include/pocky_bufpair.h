@@ -12,6 +12,7 @@ typedef struct
     cl_mem device;
     size_t host_size;
     size_t device_size;
+    size_t element_size;
 }
 pocky_bufpair_object;
 
@@ -42,7 +43,7 @@ extern PyMethodDef pocky_bufpair_methods[];
 extern int pocky_bufpair_empty_like(pocky_context_object *context,
     pocky_bufpair_object *like, pocky_bufpair_object **bufpair);
 extern int pocky_bufpair_empty_from_shape(pocky_context_object *context,
-    size_t ndim, long *shape, pocky_bufpair_object **bufpair);
+    size_t ndim, long *shape, int dtype, pocky_bufpair_object **bufpair);
 
 #endif      /* POCKY_BUFPAIR_H */
 

@@ -260,6 +260,8 @@ extern cl_int pocky_opencl_kernels_free_all(cl_uint *num_kerns, cl_kernel **kern
  */
 extern cl_int pocky_opencl_program_free(cl_program *prog);
 
+extern PyObject *pocky_event_new(cl_event event);
+
 #endif      /* POCKY_UTILS_H */
 
 /* vim: set ft=c.doxygen: */

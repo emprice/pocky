@@ -26,6 +26,9 @@ extern PyTypeObject *pocky_platform_type;
 /** Handle of the Python @c Device type */
 extern PyTypeObject *pocky_device_type;
 
+/** Handle of the Python @c Event type */
+extern PyTypeObject *pocky_event_type;
+
 #include "pocky_context.h"
 #include "pocky_bufpair.h"
 #include "pocky_functions.h"

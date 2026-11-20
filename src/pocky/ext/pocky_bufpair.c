@@ -18,6 +18,7 @@ PyObject *pocky_bufpair_new(PyTypeObject *type, PyObject *args, PyObject *kwargs
         self->device = NULL;
         self->host_size = 0;
         self->device_size = 0;
+        self->element_size = 0;
     }
 
     return (PyObject *) self;
@@ -36,10 +37,10 @@ int pocky_bufpair_init(pocky_bufpair_object *self,
 
     if (!PyArray_Check(host) ||
         !(PyArray_FLAGS((PyArrayObject *) host) & NPY_ARRAY_C_CONTIGUOUS) ||
-        (PyArray_TYPE((PyArrayObject *) host) != NPY_FLOAT32))
+        !(PyArray_ISNUMBER((PyArrayObject *) host)))
     {
         PyErr_SetString(PyExc_ValueError, "Host array must be C-contiguous "
-            "and of dtype float32.");
+            "and of numeric dtype.");
         return -1;
     }
 
@@ -56,13 +57,14 @@ int pocky_bufpair_init(pocky_bufpair_object *self,
     self->dirty = Py_NewRef(Py_True);
     self->host_size = PyArray_SIZE((PyArrayObject *) self->host);
     self->device_size = self->host_size;
+    self->element_size = PyArray_ITEMSIZE((PyArrayObject *) self->host);
 
     if (self->device != NULL) clReleaseMemObject(self->device);
 
     if (self->device_size > 0)
     {
         self->device = clCreateBuffer(context->ctx, CL_MEM_READ_WRITE,
-            self->device_size * sizeof(cl_float), NULL, &err);
+            self->device_size * self->element_size, NULL, &err);
         if (err != CL_SUCCESS) return -1;
     }
     else
@@ -140,7 +142,7 @@ PyObject *pocky_bufpair_copy_to_device(pocky_bufpair_object *self, PyObject *arg
         if (qdev == dev)
         {
             err = clEnqueueWriteBuffer(queue, self->device,
-                CL_TRUE, 0, self->host_size * sizeof(cl_float),
+                CL_TRUE, 0, self->host_size * self->element_size,
                 PyArray_DATA((PyArrayObject *) self->host), 0, NULL, NULL);
             if (err != CL_SUCCESS)
             {
@@ -200,7 +202,7 @@ PyObject *pocky_bufpair_copy_from_device(pocky_bufpair_object *self, PyObject *a
         if (qdev == dev)
         {
             err = clEnqueueReadBuffer(queue, self->device,
-                CL_TRUE, 0, self->host_size * sizeof(cl_float),
+                CL_TRUE, 0, self->host_size * self->element_size,
                 PyArray_DATA((PyArrayObject *) self->host), 0, NULL, NULL);
             if (err != CL_SUCCESS)
             {
@@ -233,10 +235,10 @@ int pocky_bufpair_set_host(pocky_bufpair_object *self,
 
     if ((!PyArray_Check((PyArrayObject *) value)) ||
         (!(PyArray_FLAGS((PyArrayObject *) value) & NPY_ARRAY_C_CONTIGUOUS)) ||
-        (PyArray_TYPE((PyArrayObject *) value) != NPY_FLOAT32))
+        (PyArray_TYPE((PyArrayObject *) value) != PyArray_TYPE((PyArrayObject *) self->host)))
     {
         PyErr_SetString(PyExc_ValueError, "Host array must be a C-contiguous "
-            "NumPy array of dtype float32");
+            "NumPy array of the same dtype as the old host array");
         return -1;
     }
 
@@ -322,9 +324,10 @@ int pocky_bufpair_empty_like(pocky_context_object *context,
 
     (*bufpair)->host_size = like->host_size;
     (*bufpair)->device_size = like->device_size;
+    (*bufpair)->element_size = like->element_size;
 
     (*bufpair)->device = clCreateBuffer(context->ctx, CL_MEM_READ_WRITE,
-        (*bufpair)->device_size * sizeof(cl_float), NULL, &err);
+        (*bufpair)->device_size * (*bufpair)->element_size, NULL, &err);
     if (err != CL_SUCCESS)
     {
         snprintf(buf, BUFSIZ, pocky_ocl_fmt_internal,
@@ -337,7 +340,7 @@ int pocky_bufpair_empty_like(pocky_context_object *context,
 }
 
 int pocky_bufpair_empty_from_shape(pocky_context_object *context,
-    size_t ndim, long *shape, pocky_bufpair_object **bufpair)
+    size_t ndim, long *shape, int dtype, pocky_bufpair_object **bufpair)
 {
     cl_int err;
     char buf[BUFSIZ];
@@ -351,15 +354,16 @@ int pocky_bufpair_empty_from_shape(pocky_context_object *context,
     (*bufpair)->context = context;
 
     (*bufpair)->host = (PyObject *)
-        PyArray_NewFromDescr(&PyArray_Type, PyArray_DescrFromType(NPY_FLOAT32),
+        PyArray_NewFromDescr(&PyArray_Type, PyArray_DescrFromType(dtype),
             ndim, shape, NULL, NULL, 0, NULL);
     if ((*bufpair)->host == NULL) return -1;
 
     (*bufpair)->host_size = PyArray_SIZE((PyArrayObject *) (*bufpair)->host);
     (*bufpair)->device_size = (*bufpair)->host_size;
+    (*bufpair)->element_size = PyArray_ITEMSIZE((PyArrayObject *) (*bufpair)->host);
 
     (*bufpair)->device = clCreateBuffer(context->ctx, CL_MEM_READ_WRITE,
-        (*bufpair)->device_size * sizeof(cl_float), NULL, &err);
+        (*bufpair)->device_size * (*bufpair)->element_size, NULL, &err);
     if (err != CL_SUCCESS)
     {
         snprintf(buf, BUFSIZ, pocky_ocl_fmt_internal,
